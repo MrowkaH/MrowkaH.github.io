@@ -1,3 +1,21 @@
+.gallery {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.gallery img, .gallery video {
+  max-width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.project, .finance-project {
+  margin-bottom: 2.5rem;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: #fafbfc;
+}
 
 
 :root {
