@@ -1,1 +1,219 @@
-<h1>Cześć, jestem <span class="highlight">Kacper</span></h1>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kacper Kulik - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Kacper Kulik</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" data-tab="home">Główna</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-tab="gamedev">GameDev CV</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-tab="finance">Finanse CV</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-tab="other">O mnie</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Główna strona -->
+        <section id="home" class="tab-content active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>Kacper Kulik</h1>
+                    <p class="hero-subtitle">Programista | GameDev | Analityk Finansowy</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn--primary" onclick="switchTab('gamedev')">Zobacz GameDev CV</button>
+                        <button class="btn btn--outline" onclick="switchTab('finance')">Zobacz Finanse CV</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <section class="about-section">
+                    <h2>O mnie</h2>
+                    <div class="about-grid">
+                        <div class="card">
+                            <h3>💻 Programowanie</h3>
+                            <p>Pasjonat technologii z doświadczeniem w Unity, C#, Unreal Engine 5/4 i C++</p>
+                        </div>
+                        <div class="card">
+                            <h3>🎮 GameDev</h3>
+                            <p>Specjalizuję się w Unreal Engine. Tworzone przeze mnie gry łączą mechaniki gameplay z atrakcyjną oprawą wizualną.</p>
+                        </div>
+                        <div class="card">
+                            <h3>📊 Finanse</h3>
+                            <p>Analityk finansowy z doświadczeniem w modelowaniu ryzyka, Power BI i Excel.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="contact-section">
+                    <h2>Kontakt</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <strong>Email:</strong> Kacper.Kulik2003@wp.pl
+                        </div>
+                        <div class="contact-item">
+                            <strong>Telefon:</strong> +48 690 900 704
+                        </div>
+                        <div class="contact-item">
+                            <strong>Lokalizacja:</strong> Kraków, Polska/Zdalnie
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- GameDev CV -->
+        <section id="gamedev" class="tab-content">
+            <div class="container">
+                <h1>GameDev CV</h1>
+                
+                <section class="skills-section">
+                    <h2>Umiejętności Techniczne</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <span class="skill-name">Unreal Engine</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="90"></div>
+                            </div>
+                            <span class="skill-level">60%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">C++</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="85"></div>
+                            </div>
+                            <span class="skill-level">60%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Unity</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="75"></div>
+                            </div>
+                            <span class="skill-level">30%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Blender/3DMax</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="70"></div>
+                            </div>
+                            <span class="skill-level">50%</span>
+                        </div>
+                    </div>
+                </section>
+
+              
+        </section>
+
+        <!-- Finanse CV -->
+        <section id="finance" class="tab-content">
+            <div class="container">
+                <h1>Finanse CV</h1>
+                
+                <section class="skills-section">
+                    <h2>Umiejętności Finansowe</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <span class="skill-name">Excel/VBA</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="95"></div>
+                            </div>
+                            <span class="skill-level">60%</span>
+                        </div>
+                       
+                        <div class="skill-item">
+                            <span class="skill-name">SQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="82"></div>
+                            </div>
+                            <span class="skill-level">50%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Python (pandas)</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="78"></div>
+                            </div>
+                            <span class="skill-level">60%</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="certificates-section">
+                    <h2>Certyfikaty</h2>
+                  
+                </section>
+
+                <section class="experience-section">
+                    <h2>Doświadczenie Zawodowe</h2>
+                   
+                </section>
+            </div>
+        </section>
+
+        <!-- Inne CV -->
+        <section id="other" class="tab-content">
+            <div class="container">
+                <h1>Inne CV</h1>
+                
+                <section class="skills-section">
+                    <h2>Umiejętności Techniczne</h2>
+                    <div class="skills-grid">
+                        
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="80"></div>
+                            </div>
+                            <span class="skill-level">60%</span>
+                        </div>
+                        
+                    </div>
+                </section>
+
+                <section class="languages-section">
+                    <h2>Języki</h2>
+                    <div class="languages-grid">
+                        <div class="card language-card">
+                            <h3>Polski</h3>
+                            <p>Język ojczysty</p>
+                        </div>
+                        <div class="card language-card">
+                            <h3>Angielski</h3>
+                            <p>C1 - Zaawansowany</p>
+                        </div>
+                        <div class="card language-card">
+                            <h3>Niemiecki</h3>
+                            <p>A1 -Podstawowy</p>
+                        </div>
+                    </div>
+                </section>
+
+               
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
