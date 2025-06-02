@@ -32,18 +32,6 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  const links = document.querySelectorAll('.nav-link');
-  const current = window.location.pathname.split('/').pop();
-  links.forEach(link => {
-    if(link.getAttribute('href') === current) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
-});
-
 function observeElements() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
