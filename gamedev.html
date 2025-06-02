@@ -9,103 +9,77 @@
 
 <body>
   <header>
-    <nav>
-      <a href="index.html">Strona główna</a>
-      <a href="gamedev.html" class="active">GameDev CV</a>
-      <a href="finance.html">Finance CV</a>
-      <a href="inne.html">Inne CV</a>
-    </nav>
+    <nav class="navbar">
+    <div class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">Główna</a>
+            </li>
+            <li class="nav-item">
+                <a href="gamedev.html" class="nav-link active">GameDev CV</a>
+            </li>
+            <li class="nav-item">
+                <a href="finance.html" class="nav-link">Finanse CV</a>
+            </li>
+            <li class="nav-item">
+                <a href="inne.html" class="nav-link">O mnie</a>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
   </header>
   <main>
     <h1>GameDev CV</h1>
 
 <div class="container">
   <h1>GameDev CV</h1>
-  <div class="projects-grid">
-    <!-- Projekt 1 -->
-    <div class="card">
-      <div class="card__header">
-        <h2>Projekt 1: Space Adventure</h2>
-      </div>
-      <div class="card__body">
-        <p>Opis: Tworzyłem system sterowania statkiem oraz AI przeciwników...</p>
-        <img src="images/space1.jpg" alt="Screen z gry Space Adventure">
-        <img src="images/space2.jpg" alt="AI w akcji">
-        <video controls width="320">
-          <source src="videos/space_demo.mp4" type="video/mp4">
-        </video>
-      </div>
+  <div class="card">
+    <div class="card__header">
+      <h2>Projekt 1: Space Adventure</h2>
     </div>
-    <!-- Projekt 2 -->
-    <div class="card">
-      <div class="card__header">
-        <h2>Projekt 2: Puzzle Quest</h2>
-      </div>
-      <div class="card__body">
-        <p>Opis: Projektowałem poziomy oraz system punktacji...</p>
-        <img src="images/puzzle1.jpg" alt="Level design">
-        <img src="images/puzzle2.jpg" alt="System punktacji">
-        <video controls width="320">
-          <source src="videos/puzzle_demo.mp4" type="video/mp4">
-        </video>
-      </div>
+    <div class="card__body">
+      <p>Opis: Tworzyłem system sterowania statkiem oraz AI przeciwników...</p>
+      <img src="images/space1.jpg" alt="Screen z gry Space Adventure">
+      <img src="images/space2.jpg" alt="AI w akcji">
+      <video controls>
+        <source src="videos/space_demo.mp4" type="video/mp4">
+      </video>
     </div>
-    <!-- Projekt 3 -->
-    <div class="card">
-      <div class="card__header">
-        <h2>Projekt 3: VR Simulator</h2>
-      </div>
-      <div class="card__body">
-        <p>Opis: Implementacja interakcji VR oraz optymalizacja wydajności...</p>
-        <img src="images/vr1.jpg" alt="Interakcje VR">
-        <img src="images/vr2.jpg" alt="Optymalizacja">
-        <video controls width="320">
-          <source src="videos/vr_demo.mp4" type="video/mp4">
-        </video>
-      </div>
+  </div>
+  <div class="card">
+    <div class="card__header">
+      <h2>Projekt 2: Puzzle Quest</h2>
+    </div>
+    <div class="card__body">
+      <p>Opis: Projektowałem poziomy oraz system punktacji...</p>
+      <img src="images/puzzle1.jpg" alt="Level design">
+      <img src="images/puzzle2.jpg" alt="System punktacji">
+      <video controls>
+        <source src="videos/puzzle_demo.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card__header">
+      <h2>Projekt 3: VR Simulator</h2>
+    </div>
+    <div class="card__body">
+      <p>Opis: Implementacja interakcji VR oraz optymalizacja wydajności...</p>
+      <img src="images/vr1.jpg" alt="Interakcje VR">
+      <img src="images/vr2.jpg" alt="Optymalizacja">
+      <video controls>
+        <source src="videos/vr_demo.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 </div>
 
-
-    <!-- Projekt 1 -->
-    <section class="project">
-      <h2>Projekt 1</h2>
-      <p>Opis:</p>
-      <div class="gallery">
-        <img src="images/space1.jpg" alt="Screen z gry Space Adventure">
-        <img src="images/space2.jpg" alt="AI w akcji">
-        <video controls width="320">
-          <source src="videos/space_demo.mp4" type="video/mp4">
-        </video>
-      </div>
-    </section>
-
-    <!-- Projekt 2 -->
-    <section class="project">
-      <h2>Projekt 2</h2>
-      <p>Opis </p>
-      <div class="gallery">
-        <img src="images/puzzle1.jpg" alt="Level design">
-        <img src="images/puzzle2.jpg" alt="System punktacji">
-        <video controls width="320">
-          <source src="videos/puzzle_demo.mp4" type="video/mp4">
-        </video>
-      </div>
-    </section>
-
-    <!-- Projekt 3 -->
-    <section class="project">
-      <h2>Projekt 3</h2>
-      <p>Opis </p>
-      <div class="gallery">
-        <img src="images/vr1.jpg" alt="Interakcje VR">
-        <img src="images/vr2.jpg" alt="Optymalizacja">
-        <video controls width="320">
-          <source src="videos/vr_demo.mp4" type="video/mp4">
-        </video>
-      </div>
-    </section>
   </main>
 </body>
 </html>
