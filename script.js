@@ -1,4 +1,3 @@
-// Hamburger menu toggle
 function toggleMobileMenu() {
     const navMenu = document.querySelector('.nav-menu');
     const hamburger = document.querySelector('.hamburger');
@@ -6,7 +5,6 @@ function toggleMobileMenu() {
     hamburger.classList.toggle('active');
 }
 
-// Obsługa hamburgera
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     if(hamburger) {
@@ -14,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Smooth scrolling dla linków anchor (jeśli masz takie linki)
 function smoothScroll(target) {
     const element = document.querySelector(target);
     if (element) {
@@ -22,7 +19,6 @@ function smoothScroll(target) {
     }
 }
 
-// Typing animation dla tytułu (jeśli chcesz użyć)
 function typeWriter(element, text, speed = 100) {
     let i = 0;
     element.innerHTML = '';
@@ -36,7 +32,18 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
-// Intersection Observer dla animacji przy scrollowaniu (opcjonalnie)
+document.addEventListener('DOMContentLoaded', function() {
+  const links = document.querySelectorAll('.nav-link');
+  const current = window.location.pathname.split('/').pop();
+  links.forEach(link => {
+    if(link.getAttribute('href') === current) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+});
+
 function observeElements() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -54,7 +61,6 @@ function observeElements() {
     });
 }
 
-// Jeśli chcesz, żeby przyciski w hero działały jako buttony:
 document.addEventListener('DOMContentLoaded', function() {
     const gamedevBtn = document.querySelector('.btn--primary');
     const financeBtn = document.querySelector('.btn--outline');
@@ -70,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Navbar scroll effect (opcjonalnie)
 function handleNavbarScroll() {
     const navbar = document.querySelector('.navbar');
     if (!navbar) return;
@@ -84,7 +89,6 @@ function handleNavbarScroll() {
 }
 window.addEventListener('scroll', handleNavbarScroll);
 
-// Inicjalizacja animacji po załadowaniu strony (opcjonalnie)
 document.addEventListener('DOMContentLoaded', function() {
     observeElements();
 });
