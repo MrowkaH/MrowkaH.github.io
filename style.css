@@ -453,11 +453,13 @@ select.form-control {
 /* Card component */
 .card {
   background-color: var(--color-surface);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-card-border);
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
-  transition: box-shadow var(--duration-normal) var(--ease-standard);
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(44,62,80,0.08);
+  padding: 2.5rem 2rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .card:hover {
