@@ -470,6 +470,15 @@ select.form-control {
   padding: var(--space-16);
 }
 
+.card__body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+}
+
 .card__header,
 .card__footer {
   padding: var(--space-16);
