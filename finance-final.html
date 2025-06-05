@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <title>Finance CV - Kacper Kulik</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+   <nav class="navbar">
+    <div class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">
+                    <span data-lang="pl">Główna</span>
+                    <span data-lang="en" style="display: none;">Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="finance.html" class="nav-link active">
+                    <span data-lang="pl">Finanse CV</span>
+                    <span data-lang="en" style="display: none;">Finance CV</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="inne.html" class="nav-link">
+                    <span data-lang="pl">O mnie</span>
+                    <span data-lang="en" style="display: none;">About me</span>
+                </a>
+            </li>
+        </ul>
+        <button class="lang-toggle" onclick="toggleLanguage()">
+            <span id="lang-text">EN</span>
+        </button>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+  </header>
+  <main>
+    <h1>
+        <span data-lang="pl">Finance CV</span>
+        <span data-lang="en" style="display: none;">Finance CV</span>
+    </h1>
+
+   <div class="container">
+  <h1>
+      <span data-lang="pl">Finance CV</span>
+      <span data-lang="en" style="display: none;">Finance CV</span>
+  </h1>
+  
+  <div class="card">
+    <div class="card__header">
+      <h2>
+          <span data-lang="pl">Projekt 1: Podstawowy monitor budżetowy w excelu</span>
+          <span data-lang="en" style="display: none;">Project 1: Basic Budget Monitor in Excel</span>
+      </h2>
+    </div>
+    <div class="card__body">
+      <p>
+          <span data-lang="pl">Opis: Używając prostych obliczeń matematycznych oblicza wydatki oraz przychody sumując każdy koniec miesiąca. Używając google cloud'a można połączyć to z prostym skryptem na komputerze, aby zautomatyzować proces dodawania wydatków.</span>
+          <span data-lang="en" style="display: none;">Description: Using simple mathematical calculations, it calculates expenses and income by summing them up at the end of each month. Using Google Cloud, it can be connected to a simple script on the computer to automate the process of adding expenses.</span>
+      </p>
+      <img src="img/Projekt1.png" alt="Jak to wygląda / How it looks">
+    </div>
+  </div>
+  
+  <div class="card">
+    <div class="card__header">
+      <h2>
+          <span data-lang="pl">Projekt 2: Prosta strategia Handlu na MEXC:SUI/USDT.P</span>
+          <span data-lang="en" style="display: none;">Project 2: Simple Trading Strategy on MEXC:SUI/USDT.P</span>
+      </h2>
+    </div>
+    <div class="card__body">
+      <p>
+          <span data-lang="pl">Opis: Strategia była backtestowana na tradingview na instrumencie SUI/USDT. Zaliczyła całkiem dobry wynik, Z głównym profit factorem 1.364, przy RR 1:2(TimeFrame 15min).
+                Strategia „Enhanced EMA Cross + Bollinger Squeeze" opiera się na przecięciach dwóch średnich wykładniczych (EMA 9 i EMA 21), które sygnalizują potencjalne wejście w pozycję. 
+        Opcjonalnie można włączyć filtr trendu oparty na długoterminowej EMA 200, aby grać tylko zgodnie z dominującym kierunkiem rynku. Dodatkowy warunek wejścia to tzw. Bollinger Squeeze, 
+        co może zwiastować zbliżający się ruch. Strategia wykorzystuje również filtry techniczne: RSI (wyklucza skrajne warunki rynku), ADX (sprawdza siłę trendu) oraz wolumen (porównanie z jego średnią). Pozycje są otwierane tylko wtedy, gdy spełnione są wszystkie aktywne filtry.
+        Zarządzanie ryzykiem bazuje na wskaźniku ATR – na jego podstawie ustalane są poziomy stop loss i take profit, zgodnie z ustalonym stosunkiem RR(1:2). Wielkość pozycji jest dynamicznie obliczana w zależności od procenta kapitału, który chcemy ryzykować.
+        Po osiągnięciu poziomu zysku równego ponoszonemu ryzyku (RR = 1:1), strategia automatycznie przesuwa stop loss do poziomu wejścia (break even). Można wybrać kierunek handlu (tylko long, tylko short, oba).</span>
+          <span data-lang="en" style="display: none;">Description: The strategy was backtested on TradingView using the SUI/USDT instrument. It achieved quite good results with a main profit factor of 1.364, with RR 1:2 (15min TimeFrame).
+                The "Enhanced EMA Cross + Bollinger Squeeze" strategy is based on crossovers of two exponential moving averages (EMA 9 and EMA 21), which signal potential position entries.
+        Optionally, you can enable a trend filter based on the long-term EMA 200 to trade only in accordance with the dominant market direction. An additional entry condition is the so-called Bollinger Squeeze,
+        which may herald an approaching move. The strategy also uses technical filters: RSI (excludes extreme market conditions), ADX (checks trend strength) and volume (comparison with its average). Positions are opened only when all active filters are met.
+        Risk management is based on the ATR indicator - based on it, stop loss and take profit levels are set, according to the established RR ratio (1:2). Position size is dynamically calculated depending on the percentage of capital we want to risk.
+        After reaching a profit level equal to the risk taken (RR = 1:1), the strategy automatically moves the stop loss to the entry level (break even). You can choose the trading direction (long only, short only, both).</span>
+      </p>
+    </div>
+    <div>
+      <p>
+          <span data-lang="pl">Wyniki z strategy testera:</span>
+          <span data-lang="en" style="display: none;">Results from strategy tester:</span>
+      </p>
+      <img src="img/Projekt2.png" alt="Strategy Tester Results 1">
+      <img src="img/Projekt3.png" alt="Strategy Tester Results 2">
+      <img src="img/Projekt4.png" alt="Strategy Tester Results 3">
+    </div>
+  </div>
+</div>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
