@@ -49,6 +49,11 @@ function observeElements() {
     });
 }
 
+function switchTab(url) {
+    window.location.href = url;
+}
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const gamedevBtn = document.querySelector('.btn--primary');
     const financeBtn = document.querySelector('.btn--outline');
