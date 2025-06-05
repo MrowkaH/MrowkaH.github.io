@@ -1477,3 +1477,69 @@ html {
     align-items: center;
   }
 }
+
+/* PRZYCISK PRZEŁĄCZANIA JĘZYKA */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: var(--color-btn-primary-text);
+  border: none;
+  border-radius: var(--radius-base);
+  padding: var(--space-8) var(--space-16);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-standard);
+  margin-left: var(--space-16);
+  box-shadow: var(--shadow-sm);
+  min-width: 40px;
+}
+
+.lang-toggle:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.lang-toggle:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-xs);
+}
+
+.lang-toggle span {
+  display: inline-block;
+  min-width: 2ch;
+  text-align: center;
+  font-weight: var(--font-weight-bold);
+}
+
+/* RESPONSYWNOŚĆ DLA PRZYCISKU JĘZYKA */
+@media (max-width: 768px) {
+  .lang-toggle {
+    margin-left: var(--space-12);
+    padding: var(--space-6) var(--space-12);
+    font-size: var(--font-size-xs);
+    min-width: 36px;
+  }
+  
+  .nav-container {
+    justify-content: space-between;
+    padding: var(--space-12) var(--space-16);
+  }
+}
+
+/* ANIMACJA PRZEJŚCIA MIĘDZY JĘZYKAMI */
+[data-lang] {
+  transition: opacity var(--duration-fast) var(--ease-standard);
+}
+
+.card__body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
