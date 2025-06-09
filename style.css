@@ -224,7 +224,7 @@ p, span, div {
 
 /* ====== CARDS ====== */
 .card {
-  max-width: 600px;
+  max-width: 1200px;
   width: 90%;
   margin: 3rem auto 2rem auto; /* wyśrodkowanie i większy odstęp od góry */
   padding: 2.5rem 2rem;
