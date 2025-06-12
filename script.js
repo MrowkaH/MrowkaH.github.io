@@ -13,25 +13,30 @@ function toggleLanguage() {
             element.style.display = 'none';
         }
     });
-    <script>
-  var modal = document.getElementById('myModal');
-  var img = document.getElementById('myImg');
-  var modalImg = document.getElementById('img01');
-  var span = document.getElementsByClassName('close')[0];
+   document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("myModal");
+  const img = document.getElementById("myImg");
+  const modalImg = document.getElementById("img01");
+  const closeBtn = document.querySelector(".close");
 
-  img.onclick = function() {
-    modal.style.display = 'block';
-    modalImg.src = this.src;
-  }
-  span.onclick = function() {
-    modal.style.display = 'none';
-  }
-  modal.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = 'none';
+  img.addEventListener("click", (e) => {
+    e.stopPropagation(); // Zapobiega zamknięciu od razu po otwarciu
+    modal.style.display = "block";
+    modalImg.src = img.src;
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Zamknięcie po kliknięciu poza obrazem
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
     }
-  }
-</script>
+  });
+});
+
 
     // Update language toggle button text
     const langButton = document.getElementById('lang-text');
