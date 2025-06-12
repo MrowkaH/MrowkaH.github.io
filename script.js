@@ -1,120 +1,75 @@
-// Language toggle functionality
+// Current language state
 let currentLanguage = 'pl';
 
+// Toggle language functionality
 function toggleLanguage() {
     currentLanguage = currentLanguage === 'pl' ? 'en' : 'pl';
-    
-    // Update all elements with data-lang attributes
-    const elements = document.querySelectorAll('[data-lang]');
-    elements.forEach(element => {
-        if (element.getAttribute('data-lang') === currentLanguage) {
-            element.style.display = '';
-        } else {
-            element.style.display = 'none';
-        }
-    });
-   document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("myModal");
-  const img = document.getElementById("myImg");
-  const modalImg = document.getElementById("img01");
-  const closeBtn = document.querySelector(".close");
-
-  img.addEventListener("click", (e) => {
-    e.stopPropagation(); // Zapobiega zamknięciu od razu po otwarciu
-    modal.style.display = "block";
-    modalImg.src = img.src;
-  });
-
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-  // Zamknięcie po kliknięciu poza obrazem
-  window.addEventListener("click", (event) => {
-    if (event.target === modal) {
-      modal.style.display = "none";
-    }
-  });
-});
-
-
-    // Update language toggle button text
-    const langButton = document.getElementById('lang-text');
-    if (langButton) {
-        langButton.textContent = currentLanguage === 'pl' ? 'EN' : 'PL';
-    }
-    
-    // Update HTML lang attribute
+    updateLanguageDisplay();
+    updateLangButtonText();
     document.documentElement.setAttribute('lang', currentLanguage);
-    
-    // Store language preference in localStorage
     localStorage.setItem('language', currentLanguage);
 }
 
-// Initialize language on page load
+// Apply saved or default language on page load
 function initializeLanguage() {
-    // Get saved language preference or default to 'pl'
     const savedLanguage = localStorage.getItem('language') || 'pl';
     currentLanguage = savedLanguage;
-    
-    // Apply the saved language
+    updateLanguageDisplay();
+    updateLangButtonText();
+    document.documentElement.setAttribute('lang', currentLanguage);
+}
+
+// Update visible elements based on current language
+function updateLanguageDisplay() {
     const elements = document.querySelectorAll('[data-lang]');
     elements.forEach(element => {
-        if (element.getAttribute('data-lang') === currentLanguage) {
-            element.style.display = '';
-        } else {
-            element.style.display = 'none';
-        }
+        element.style.display = element.getAttribute('data-lang') === currentLanguage ? '' : 'none';
     });
-    
-    // Update language toggle button text
+}
+
+// Update toggle button text
+function updateLangButtonText() {
     const langButton = document.getElementById('lang-text');
     if (langButton) {
         langButton.textContent = currentLanguage === 'pl' ? 'EN' : 'PL';
     }
-    
-    // Update HTML lang attribute
-    document.documentElement.setAttribute('lang', currentLanguage);
 }
 
-// Hamburger menu toggle
+// Hamburger menu
 function toggleMobileMenu() {
     const navMenu = document.querySelector('.nav-menu');
     const hamburger = document.querySelector('.hamburger');
-    navMenu.classList.toggle('active');
-    hamburger.classList.toggle('active');
+    navMenu?.classList.toggle('active');
+    hamburger?.classList.toggle('active');
 }
 
-// Event listeners
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize language
-    initializeLanguage();
-    
-    // Hamburger menu
-    const hamburger = document.querySelector('.hamburger');
-    if(hamburger) {
-        hamburger.addEventListener('click', toggleMobileMenu);
-    }
-    
-    // Navigation buttons
-    const gamedevBtn = document.querySelector('.btn--primary');
-    const financeBtn = document.querySelector('.btn--outline');
-    if(gamedevBtn) {
-        gamedevBtn.addEventListener('click', function() {
-            window.location.href = 'gamedev.html';
-        });
-    }
-    if(financeBtn) {
-        financeBtn.addEventListener('click', function() {
-            window.location.href = 'finance.html';
-        });
-    }
-    
-    // Initialize animations
-    observeElements();
-});
+// Modal initialization
+function initializeModal() {
+    const modal = document.getElementById("myModal");
+    const img = document.getElementById("myImg");
+    const modalImg = document.getElementById("img01");
+    const closeBtn = document.querySelector(".close");
 
-// Smooth scrolling function
+    if (!modal || !img || !modalImg || !closeBtn) return;
+
+    img.addEventListener("click", (e) => {
+        e.stopPropagation();
+        modal.style.display = "block";
+        modalImg.src = img.src;
+    });
+
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+}
+
+// Smooth scroll to element
 function smoothScroll(target) {
     const element = document.querySelector(target);
     if (element) {
@@ -122,7 +77,7 @@ function smoothScroll(target) {
     }
 }
 
-// Typewriter effect function
+// Typewriter effect
 function typeWriter(element, text, speed = 100) {
     let i = 0;
     element.innerHTML = '';
@@ -136,7 +91,7 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
-// Intersection Observer for animations
+// Animate elements on scroll
 function observeElements() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -146,15 +101,13 @@ function observeElements() {
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    const elementsToObserve = document.querySelectorAll(
+    const elements = document.querySelectorAll(
         '.about-card, .project-card, .timeline-item, .cert-card, .skill-item, .interest-item, .course, .language-card'
     );
-    elementsToObserve.forEach(el => {
-        observer.observe(el);
-    });
+    elements.forEach(el => observer.observe(el));
 }
 
-// Tab switching function for SPA behavior
+// Tab switching
 function switchTab(url) {
     window.location.href = url;
 }
@@ -172,10 +125,7 @@ function handleNavbarScroll() {
     }
 }
 
-// Event listeners for scroll effects
-window.addEventListener('scroll', handleNavbarScroll);
-
-// Loading animation for skill bars
+// Animate skill bars
 function animateSkillBars() {
     const skillBars = document.querySelectorAll('.skill-progress');
     skillBars.forEach(bar => {
@@ -186,29 +136,47 @@ function animateSkillBars() {
     });
 }
 
-// Initialize skill bar animation when in view
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateSkillBars();
-        }
+function observeSkillsSection() {
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateSkillBars();
+            }
+        });
     });
-});
 
-// Observe skills section
-document.addEventListener('DOMContentLoaded', function() {
     const skillsSection = document.querySelector('.skills-section');
     if (skillsSection) {
         skillObserver.observe(skillsSection);
     }
-});
+}
 
-// Utility function to get current language
+// Utility to get current language
 function getCurrentLanguage() {
     return currentLanguage;
 }
 
-// Export functions for global use
+// Initialize on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    initializeLanguage();
+    initializeModal();
+    observeElements();
+    observeSkillsSection();
+
+    const hamburger = document.querySelector('.hamburger');
+    hamburger?.addEventListener('click', toggleMobileMenu);
+
+    const gamedevBtn = document.querySelector('.btn--primary');
+    gamedevBtn?.addEventListener('click', () => switchTab('gamedev.html'));
+
+    const financeBtn = document.querySelector('.btn--outline');
+    financeBtn?.addEventListener('click', () => switchTab('finance.html'));
+});
+
+// Scroll event
+window.addEventListener('scroll', handleNavbarScroll);
+
+// Export globals
 window.toggleLanguage = toggleLanguage;
 window.toggleMobileMenu = toggleMobileMenu;
 window.smoothScroll = smoothScroll;
