@@ -862,6 +862,19 @@ p, span, div {
 }
 
 /* ====== TRADING TIMELINE ====== */
+.timeline-image-container {
+  text-align: center;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.timeline-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(32,178,255,0.15);
+}
+
 .trading-timeline {
   background: #ffffff;
   border-radius: 14px;
@@ -936,8 +949,74 @@ p, span, div {
   transform: translateX(-50%);
   white-space: nowrap;
   font-weight: 600;
-  color: #20b2ff;
   font-size: 0.95rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+/* Stage 1 - Jasnoniebieski (Light Blue) */
+.stage-1 .timeline-dot {
+  border-color: #87CEEB;
+}
+
+.stage-1 .timeline-dot:hover,
+.stage-1 .timeline-dot.active {
+  background: #87CEEB;
+  border-color: #5DADE2;
+}
+
+.stage-1 .timeline-label {
+  background: rgba(135, 206, 235, 0.15);
+  color: #2E86AB;
+}
+
+/* Stage 2 - Zielony (Green) */
+.stage-2 .timeline-dot {
+  border-color: #52C41A;
+}
+
+.stage-2 .timeline-dot:hover,
+.stage-2 .timeline-dot.active {
+  background: #52C41A;
+  border-color: #389E0D;
+}
+
+.stage-2 .timeline-label {
+  background: rgba(82, 196, 26, 0.15);
+  color: #237804;
+}
+
+/* Stage 3 - Pomarańczowy (Orange) */
+.stage-3 .timeline-dot {
+  border-color: #FFA940;
+}
+
+.stage-3 .timeline-dot:hover,
+.stage-3 .timeline-dot.active {
+  background: #FFA940;
+  border-color: #FA8C16;
+}
+
+.stage-3 .timeline-label {
+  background: rgba(255, 169, 64, 0.15);
+  color: #D46B08;
+}
+
+/* Stage 4 - Ciemnoniebieski (Dark Blue) - obecnie */
+.stage-4 .timeline-dot {
+  border-color: #1890FF;
+}
+
+.stage-4 .timeline-dot:hover,
+.stage-4 .timeline-dot.active {
+  background: #1890FF;
+  border-color: #096DD9;
+}
+
+.stage-4 .timeline-label {
+  background: rgba(24, 144, 255, 0.15);
+  color: #0050B3;
 }
 
 .timeline-description {
