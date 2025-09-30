@@ -45,27 +45,36 @@ function toggleMobileMenu() {
 
 // Modal initialization
 function initializeModal() {
-    const modal = document.getElementById("myModal");
-    const img = document.getElementById("myImg");
-    const modalImg = document.getElementById("img01");
-    const closeBtn = document.querySelector(".close");
+    // Initialize all certificate modals
+    const certificates = [
+        { imgId: "myImg", modalId: "myModal", modalImgId: "img01" },
+        { imgId: "myImg2", modalId: "myModal2", modalImgId: "img02" },
+        { imgId: "myImg3", modalId: "myModal3", modalImgId: "img03" }
+    ];
 
-    if (!modal || !img || !modalImg || !closeBtn) return;
+    certificates.forEach(cert => {
+        const modal = document.getElementById(cert.modalId);
+        const img = document.getElementById(cert.imgId);
+        const modalImg = document.getElementById(cert.modalImgId);
+        const closeBtn = modal?.querySelector(".close");
 
-    img.addEventListener("click", (e) => {
-        e.stopPropagation();
-        modal.style.display = "block";
-        modalImg.src = img.src;
-    });
+        if (!modal || !img || !modalImg || !closeBtn) return;
 
-    closeBtn.addEventListener("click", () => {
-        modal.style.display = "none";
-    });
+        img.addEventListener("click", (e) => {
+            e.stopPropagation();
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        });
 
-    window.addEventListener("click", (event) => {
-        if (event.target === modal) {
+        closeBtn.addEventListener("click", () => {
             modal.style.display = "none";
-        }
+        });
+
+        window.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
     });
 }
 

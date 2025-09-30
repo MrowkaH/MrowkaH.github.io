@@ -677,13 +677,49 @@ p, span, div {
 }
 
 .certificate-section {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto 2.5rem auto;
   background: #23272f;
   border-radius: 14px;
   padding: 2rem 2rem 1.5rem 2rem;
   box-shadow: 0 2px 12px rgba(32,178,255,0.07);
+}
+
+.certificate-section h2 {
   text-align: center;
+  margin-bottom: 2rem;
+  color: #20b2ff;
+}
+
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.certificate-item {
+  background: #1a1e24;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(32,178,255,0.15);
+}
+
+.certificate-item img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.certificate-item img:hover {
+  transform: scale(1.05);
 }
 
 .certificate-img {
@@ -695,23 +731,29 @@ p, span, div {
 }
 
 .certificate-desc {
-  font-size: 1.08rem;
+  font-size: 0.95rem;
   color: #e0e8ef;
   text-align: left;
   margin: 0 auto;
-  max-width: 760px;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 @media (max-width: 700px) {
   .certificate-section {
     padding: 1.2rem 0.5rem;
   }
+  .certificates-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .certificate-item {
+    padding: 1rem;
+  }
   .certificate-img {
     max-width: 100%;
   }
   .certificate-desc {
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding: 0 0.2rem;
   }
 }
