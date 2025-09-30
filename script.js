@@ -176,12 +176,49 @@ function getCurrentLanguage() {
     return currentLanguage;
 }
 
+// Scroll to trading detail section
+function scrollToStageDetail(stageNumber) {
+    const targetId = `stage-detail-${stageNumber}`;
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+        targetElement.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+        
+        // Add highlight animation
+        targetElement.classList.add('highlight-pulse');
+        setTimeout(() => {
+            targetElement.classList.remove('highlight-pulse');
+        }, 2000);
+    }
+}
+
+// Initialize timeline click handlers
+function initializeTimelineClicks() {
+    const timelinePoints = document.querySelectorAll('.timeline-point');
+    
+    timelinePoints.forEach((point, index) => {
+        const stageNumber = index + 1;
+        
+        point.addEventListener('click', (e) => {
+            e.preventDefault();
+            scrollToStageDetail(stageNumber);
+        });
+        
+        // Add cursor pointer style
+        point.style.cursor = 'pointer';
+    });
+}
+
 // Initialize on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
     initializeLanguage();
     initializeModal();
     observeElements();
     observeSkillsSection();
+    initializeTimelineClicks();
 
     const hamburger = document.querySelector('.hamburger');
     hamburger?.addEventListener('click', toggleMobileMenu);
