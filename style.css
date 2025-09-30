@@ -876,18 +876,21 @@ p, span, div {
 }
 
 .trading-timeline {
-  background: #ffffff;
+  background: linear-gradient(135deg, #1a1e24 0%, #23272f 100%);
   border-radius: 14px;
-  padding: 2.5rem 2rem;
-  margin: 2rem auto 3rem auto;
-  box-shadow: 0 2px 12px rgba(32,178,255,0.1);
+  padding: 3rem 2rem;
+  margin: 2.5rem auto;
+  max-width: 95%;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 .trading-timeline h2 {
   text-align: center;
-  color: #000000;
+  color: #ffffff;
   margin-bottom: 3rem;
-  font-size: 1.8rem;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .timeline-container {
