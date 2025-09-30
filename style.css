@@ -905,11 +905,11 @@ p, span, div {
   top: 50%;
   left: 0;
   right: 0;
-  height: 6px;
+  height: 26px;
   background: linear-gradient(to right, #20b2ff, #0d8ed6);
   transform: translateY(-50%);
   z-index: 1;
-  border-radius: 3px;
+  border-radius: 13px;
 }
 
 .timeline-point {
@@ -921,27 +921,27 @@ p, span, div {
 }
 
 .timeline-dot {
-  width: 28px;
-  height: 28px;
+  width: 48px;
+  height: 48px;
   background: #87CEEB;
   border: none;
   border-radius: 50%;
   transition: all 0.3s ease;
   position: relative;
   z-index: 3;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.25);
 }
 
 .timeline-dot.active {
-  width: 32px;
-  height: 32px;
-  box-shadow: 0 0 0 4px rgba(32,178,255,0.2), 0 2px 8px rgba(0,0,0,0.15);
+  width: 56px;
+  height: 56px;
+  box-shadow: 0 0 0 6px rgba(32,178,255,0.3), 0 4px 16px rgba(0,0,0,0.3);
 }
 
 .timeline-dot:hover {
-  width: 32px;
-  height: 32px;
-  box-shadow: 0 0 0 4px rgba(32,178,255,0.2), 0 2px 8px rgba(0,0,0,0.15);
+  width: 56px;
+  height: 56px;
+  box-shadow: 0 0 0 6px rgba(32,178,255,0.3), 0 4px 16px rgba(0,0,0,0.3);
 }
 
 .timeline-label {
@@ -968,8 +968,8 @@ p, span, div {
 }
 
 .stage-1 .timeline-label {
-  background: #D4EDFC;
-  color: #1A5276;
+  background: #87CEEB;
+  color: #000000;
 }
 
 /* Stage 2 - Zielony (Green) */
@@ -983,8 +983,8 @@ p, span, div {
 }
 
 .stage-2 .timeline-label {
-  background: #D9F7BE;
-  color: #135200;
+  background: #52C41A;
+  color: #000000;
 }
 
 /* Stage 3 - Pomarańczowy (Orange) */
@@ -998,8 +998,8 @@ p, span, div {
 }
 
 .stage-3 .timeline-label {
-  background: #FFE7BA;
-  color: #AD4E00;
+  background: #FFA940;
+  color: #000000;
 }
 
 /* Stage 4 - Ciemnoniebieski (Dark Blue) - obecnie */
@@ -1013,8 +1013,8 @@ p, span, div {
 }
 
 .stage-4 .timeline-label {
-  background: #BAE7FF;
-  color: #003A8C;
+  background: #1890FF;
+  color: #000000;
 }
 
 .timeline-description {
