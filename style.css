@@ -293,9 +293,10 @@ p, span, div {
 .about-flex {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  gap: 3rem;
-  max-width: 900px;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -303,13 +304,10 @@ p, span, div {
   background: var(--color-card);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-sm);
-  padding: 2.5rem 2.5rem 2rem 2.5rem;
-  min-width: 260px;
-  max-width: 45%;
-  flex: 1 1 40%;
-  margin-top: 3rem;
-  color: var(--color-text);
-  font-size: 1.1rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  min-width: 280px;
+  max-width: 400px;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -317,30 +315,21 @@ p, span, div {
   margin-bottom: 1.2rem;
   font-size: 1.4rem;
   color: var(--color-primary);
-  font-weight: 700;
-}
-
-.gamedev-card {
-  align-self: flex-end;
-  margin-left: auto;
-  margin-right: 0;
 }
 
 .finance-card {
-  align-self: flex-start;
-  margin-right: auto;
-  margin-left: 0;
+  align-self: center;
+  margin: 0 auto;
 }
 
 .about-card p {
   margin-top: 1.5rem;
   text-align: center;
   padding: 1.2rem 0.5rem 0.5rem 0.5rem;
-  font-size: 1.13rem;
+  color: var(--color-text-secondary);
   line-height: 1.6;
 }
 
-/* ====== PROFILE SECTION ====== */
 .profile-section {
   max-width: 900px;
   margin: 2.5rem auto 2rem auto;
@@ -515,6 +504,66 @@ p, span, div {
 .contact-bottom a,
 .contact-info a {
   color: var(--color-text-muted);
+}
+
+.contact-section {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.contact-item {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+}
+
+.contact-footer {
+  background: #23272f;
+  padding: 2rem 1.5rem;
+  margin-top: 3rem;
+  text-align: center;
+  border-top: 2px solid #20b2ff;
+}
+
+.contact-footer h2 {
+  color: #20b2ff;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.contact-footer .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-footer .contact-item {
+  font-size: 1.1rem;
+  color: #e0e8ef;
+}
+
+.contact-footer .contact-item a {
+  color: #20b2ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-footer .contact-item a:hover {
+  color: #1a8fd9;
+  text-decoration: underline;
+}
+
+.contact-footer .contact-item strong {
+  color: #fff;
+  margin-right: 0.5rem;
 }
 
 /* ====== LANGUAGE TOGGLE ====== */
@@ -788,5 +837,17 @@ p, span, div {
   
   .hero-subtitle {
     font-size: 1.1rem;
+  }
+  
+  .contact-footer {
+    padding: 1.5rem 1rem;
+  }
+  
+  .contact-footer h2 {
+    font-size: 1.5rem;
+  }
+  
+  .contact-footer .contact-item {
+    font-size: 1rem;
   }
 }
