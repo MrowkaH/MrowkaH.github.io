@@ -59,7 +59,7 @@
           <span data-lang="pl">Opis: Używając prostych obliczeń matematycznych oblicza wydatki oraz przychody sumując każdy koniec miesiąca. Używając google cloud'a można połączyć to z prostym skryptem na komputerze, aby zautomatyzować proces dodawania wydatków.</span>
           <span data-lang="en" style="display: none;">Description: Using simple mathematical calculations, it calculates expenses and income by summing them up at the end of each month. Using Google Cloud, it can be connected to a simple script on the computer to automate the process of adding expenses.</span>
       </p>
-      <img src="img/Projekt1.png" alt="Jak to wygląda / How it looks">
+      <img id="financeImg1" src="img/Projekt1.png" alt="Jak to wygląda / How it looks" style="cursor:pointer;">
     </div>
   </div>
   
@@ -89,14 +89,33 @@
           <span data-lang="pl">Wyniki z strategy testera:</span>
           <span data-lang="en" style="display: none;">Results from strategy tester:</span>
       </p>
-      <img src="img/Projekt2.png" alt="Strategy Tester Results 1">
-      <img src="img/Projekt3.png" alt="Strategy Tester Results 2">
-      <img src="img/Projekt4.png" alt="Strategy Tester Results 3">
+      <img id="financeImg2" src="img/Projekt2.png" alt="Strategy Tester Results 1" style="cursor:pointer;">
+      <img id="financeImg3" src="img/Projekt3.png" alt="Strategy Tester Results 2" style="cursor:pointer;">
+      <img id="financeImg4" src="img/Projekt4.png" alt="Strategy Tester Results 3" style="cursor:pointer;">
     </div>
   </div>
 </div>
 
   </main>
+  
+  <!-- Modals for image zoom -->
+  <div id="financeModal1" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="financeModalImg1">
+  </div>
+  <div id="financeModal2" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="financeModalImg2">
+  </div>
+  <div id="financeModal3" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="financeModalImg3">
+  </div>
+  <div id="financeModal4" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="financeModalImg4">
+  </div>
+  
   <script src="script.js"></script>
 </body>
 </html>

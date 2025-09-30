@@ -52,10 +52,21 @@ function initializeModal() {
         { imgId: "myImg3", modalId: "myModal3", modalImgId: "img03" }
     ];
 
-    certificates.forEach(cert => {
-        const modal = document.getElementById(cert.modalId);
-        const img = document.getElementById(cert.imgId);
-        const modalImg = document.getElementById(cert.modalImgId);
+    // Initialize all finance project modals
+    const financeImages = [
+        { imgId: "financeImg1", modalId: "financeModal1", modalImgId: "financeModalImg1" },
+        { imgId: "financeImg2", modalId: "financeModal2", modalImgId: "financeModalImg2" },
+        { imgId: "financeImg3", modalId: "financeModal3", modalImgId: "financeModalImg3" },
+        { imgId: "financeImg4", modalId: "financeModal4", modalImgId: "financeModalImg4" }
+    ];
+
+    // Combine all modals
+    const allModals = [...certificates, ...financeImages];
+
+    allModals.forEach(item => {
+        const modal = document.getElementById(item.modalId);
+        const img = document.getElementById(item.imgId);
+        const modalImg = document.getElementById(item.modalImgId);
         const closeBtn = modal?.querySelector(".close");
 
         if (!modal || !img || !modalImg || !closeBtn) return;
