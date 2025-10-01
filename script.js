@@ -71,9 +71,14 @@ function initializeModal() {
 
         if (!modal || !img || !modalImg || !closeBtn) return;
 
-        // Zoom state
+        // Zoom and pan state
         let zoomLevel = 1;
         let isZoomed = false;
+        let isPanning = false;
+        let startX = 0;
+        let startY = 0;
+        let translateX = 0;
+        let translateY = 0;
 
         img.addEventListener("click", (e) => {
             e.stopPropagation();
@@ -81,12 +86,16 @@ function initializeModal() {
             modalImg.src = img.src;
             zoomLevel = 1;
             isZoomed = false;
-            modalImg.style.transform = 'scale(1)';
+            isPanning = false;
+            translateX = 0;
+            translateY = 0;
+            modalImg.style.transform = 'scale(1) translate(0, 0)';
             modalImg.style.cursor = 'zoom-in';
         });
 
         // Zoom on modal image click
         modalImg.addEventListener("click", (e) => {
+            if (isPanning) return; // Don't zoom if we were panning
             e.stopPropagation();
             
             if (!isZoomed) {
@@ -95,18 +104,54 @@ function initializeModal() {
                 const x = ((e.clientX - rect.left) / rect.width) * 100;
                 const y = ((e.clientY - rect.top) / rect.height) * 100;
                 
-                zoomLevel = 2;
+                zoomLevel = 2.5;
                 isZoomed = true;
+                translateX = 0;
+                translateY = 0;
                 modalImg.style.transformOrigin = `${x}% ${y}%`;
-                modalImg.style.transform = `scale(${zoomLevel})`;
-                modalImg.style.cursor = 'zoom-out';
+                modalImg.style.transform = `scale(${zoomLevel}) translate(0, 0)`;
+                modalImg.style.cursor = 'grab';
             } else {
                 // Second click - zoom out
                 zoomLevel = 1;
                 isZoomed = false;
-                modalImg.style.transform = 'scale(1)';
+                translateX = 0;
+                translateY = 0;
+                modalImg.style.transform = 'scale(1) translate(0, 0)';
                 modalImg.style.transformOrigin = 'center center';
                 modalImg.style.cursor = 'zoom-in';
+            }
+        });
+
+        // Pan functionality
+        modalImg.addEventListener("mousedown", (e) => {
+            if (!isZoomed) return;
+            e.preventDefault();
+            isPanning = true;
+            startX = e.clientX - translateX;
+            startY = e.clientY - translateY;
+            modalImg.style.cursor = 'grabbing';
+        });
+
+        modalImg.addEventListener("mousemove", (e) => {
+            if (!isPanning || !isZoomed) return;
+            e.preventDefault();
+            translateX = e.clientX - startX;
+            translateY = e.clientY - startY;
+            modalImg.style.transform = `scale(${zoomLevel}) translate(${translateX}px, ${translateY}px)`;
+        });
+
+        modalImg.addEventListener("mouseup", () => {
+            if (isPanning) {
+                isPanning = false;
+                modalImg.style.cursor = 'grab';
+            }
+        });
+
+        modalImg.addEventListener("mouseleave", () => {
+            if (isPanning) {
+                isPanning = false;
+                modalImg.style.cursor = 'grab';
             }
         });
 
