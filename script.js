@@ -226,17 +226,10 @@ function switchTab(url) {
     window.location.href = url;
 }
 
-// Navbar scroll effect
+// Navbar scroll effect - DISABLED to keep dark theme
 function handleNavbarScroll() {
-    const navbar = document.querySelector('.navbar');
-    if (!navbar) return;
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.backdropFilter = 'blur(10px)';
-    } else {
-        navbar.style.background = '';
-        navbar.style.backdropFilter = 'none';
-    }
+    // Navbar stays dark - no color change on scroll
+    return;
 }
 
 // Animate skill bars

@@ -37,6 +37,11 @@
 }
 
 /* ====== BASE STYLES ====== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Offset for fixed navbar */
+}
+
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: #181c1f;
