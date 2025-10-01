@@ -74,7 +74,8 @@ function initializeModal() {
         // Zoom and pan state
         let zoomLevel = 1;
         let isZoomed = false;
-        let isPanning = false;
+        let isDragging = false;
+        let hasMoved = false;
         let startX = 0;
         let startY = 0;
         let translateX = 0;
@@ -86,7 +87,8 @@ function initializeModal() {
             modalImg.src = img.src;
             zoomLevel = 1;
             isZoomed = false;
-            isPanning = false;
+            isDragging = false;
+            hasMoved = false;
             translateX = 0;
             translateY = 0;
             modalImg.style.transform = 'scale(1) translate(0, 0)';
@@ -95,7 +97,11 @@ function initializeModal() {
 
         // Zoom on modal image click
         modalImg.addEventListener("click", (e) => {
-            if (isPanning) return; // Don't zoom if we were panning
+            if (hasMoved) {
+                // If we moved during drag, don't toggle zoom
+                hasMoved = false;
+                return;
+            }
             e.stopPropagation();
             
             if (!isZoomed) {
@@ -104,7 +110,7 @@ function initializeModal() {
                 const x = ((e.clientX - rect.left) / rect.width) * 100;
                 const y = ((e.clientY - rect.top) / rect.height) * 100;
                 
-                zoomLevel = 2.5;
+                zoomLevel = 1.5;
                 isZoomed = true;
                 translateX = 0;
                 translateY = 0;
@@ -127,31 +133,35 @@ function initializeModal() {
         modalImg.addEventListener("mousedown", (e) => {
             if (!isZoomed) return;
             e.preventDefault();
-            isPanning = true;
+            isDragging = true;
+            hasMoved = false;
             startX = e.clientX - translateX;
             startY = e.clientY - translateY;
             modalImg.style.cursor = 'grabbing';
         });
 
         modalImg.addEventListener("mousemove", (e) => {
-            if (!isPanning || !isZoomed) return;
+            if (!isDragging || !isZoomed) return;
             e.preventDefault();
+            hasMoved = true;
             translateX = e.clientX - startX;
             translateY = e.clientY - startY;
             modalImg.style.transform = `scale(${zoomLevel}) translate(${translateX}px, ${translateY}px)`;
         });
 
         modalImg.addEventListener("mouseup", () => {
-            if (isPanning) {
-                isPanning = false;
+            if (isDragging) {
+                isDragging = false;
                 modalImg.style.cursor = 'grab';
+                // Image stays zoomed and in position
             }
         });
 
         modalImg.addEventListener("mouseleave", () => {
-            if (isPanning) {
-                isPanning = false;
+            if (isDragging) {
+                isDragging = false;
                 modalImg.style.cursor = 'grab';
+                // Image stays zoomed and in position
             }
         });
 
