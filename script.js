@@ -43,7 +43,7 @@ function toggleMobileMenu() {
     hamburger?.classList.toggle('active');
 }
 
-// Modal initialization
+// Modal initialization with zoom functionality
 function initializeModal() {
     // Initialize all certificate modals
     const certificates = [
@@ -71,19 +71,58 @@ function initializeModal() {
 
         if (!modal || !img || !modalImg || !closeBtn) return;
 
+        // Zoom state
+        let zoomLevel = 1;
+        let isZoomed = false;
+
         img.addEventListener("click", (e) => {
             e.stopPropagation();
             modal.style.display = "block";
             modalImg.src = img.src;
+            zoomLevel = 1;
+            isZoomed = false;
+            modalImg.style.transform = 'scale(1)';
+            modalImg.style.cursor = 'zoom-in';
+        });
+
+        // Zoom on modal image click
+        modalImg.addEventListener("click", (e) => {
+            e.stopPropagation();
+            
+            if (!isZoomed) {
+                // First click - zoom in
+                const rect = modalImg.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                
+                zoomLevel = 2;
+                isZoomed = true;
+                modalImg.style.transformOrigin = `${x}% ${y}%`;
+                modalImg.style.transform = `scale(${zoomLevel})`;
+                modalImg.style.cursor = 'zoom-out';
+            } else {
+                // Second click - zoom out
+                zoomLevel = 1;
+                isZoomed = false;
+                modalImg.style.transform = 'scale(1)';
+                modalImg.style.transformOrigin = 'center center';
+                modalImg.style.cursor = 'zoom-in';
+            }
         });
 
         closeBtn.addEventListener("click", () => {
             modal.style.display = "none";
+            zoomLevel = 1;
+            isZoomed = false;
+            modalImg.style.transform = 'scale(1)';
         });
 
         window.addEventListener("click", (event) => {
             if (event.target === modal) {
                 modal.style.display = "none";
+                zoomLevel = 1;
+                isZoomed = false;
+                modalImg.style.transform = 'scale(1)';
             }
         });
     });

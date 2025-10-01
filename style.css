@@ -660,6 +660,8 @@ p, span, div {
   max-height: 80%;
   animation-name: zoom;
   animation-duration: 0.3s;
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
 }
 
 @keyframes zoom {
