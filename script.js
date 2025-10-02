@@ -49,7 +49,8 @@ function initializeModal() {
     const certificates = [
         { imgId: "myImg", modalId: "myModal", modalImgId: "img01" },
         { imgId: "myImg2", modalId: "myModal2", modalImgId: "img02" },
-        { imgId: "myImg3", modalId: "myModal3", modalImgId: "img03" }
+        { imgId: "myImg3", modalId: "myModal3", modalImgId: "img03" },
+        { imgId: "myImg4", modalId: "myModal4", modalImgId: "img04" }
     ];
 
     // Initialize all finance project modals

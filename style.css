@@ -770,6 +770,19 @@ header {
   margin-top: 1.5rem;
 }
 
+.certificate-single-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(119, 124, 124, 0.2);
+}
+
+.certificate-single-row .certificate-item {
+  max-width: 500px;
+  width: 100%;
+}
+
 .certificate-item {
   background: #1a1e24;
   border-radius: 12px;
@@ -824,6 +837,13 @@ header {
   .certificates-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+  .certificate-single-row {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+  }
+  .certificate-single-row .certificate-item {
+    max-width: 100%;
   }
   .certificate-item {
     padding: 1rem;
