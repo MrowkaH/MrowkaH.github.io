@@ -190,17 +190,17 @@ def backtest(df: pd.DataFrame, position: pd.Series, cost_bps: float = 1.0) -> pd
             <div style="min-width:260px; text-align:left;">
               <strong>Performance Metrics</strong>
               <ul>
-                <li>CAGR: 977.4283632559337</li>
-                <li>Sharpe: 0.5425095605064917</li>
-                <li>Sortino: 2.1310717612579833</li>
-                <li>Vol: 0.005163749771286614</li>
-                <li>MaxDD: -0.012254128581817292</li>
-                <li>MaxDD_Days: 2071.0</li>
-                <li>Calmar: 0.22860733022312174</li>
-                <li>WinRate: 0.22020725388601037</li>
-                <li>AvgWin: 0.0012775024227172536</li>
-                <li>AvgLoss: -0.00023489145334664528</li>
-                <li>Trades: 772.0</li>
+                <li><span class="kk-term" data-tooltip-pl="CAGR (średn. roczna stopa zwrotu, skumulowana z reinwestycją zysków; uśrednia wynik rocznie)." data-tooltip-en="CAGR (Compound Annual Growth Rate): average yearly return assuming profits are reinvested; a smoothed annualized growth.">CAGR</span>: 977.4283632559337</li>
+                <li><span class="kk-term" data-tooltip-pl="Sharpe: zysk skorygowany o ryzyko = średni zwrot / odchylenie std zwrotów (im wyżej, tym lepiej)." data-tooltip-en="Sharpe: risk-adjusted return = mean return / std dev of returns (higher is better).">Sharpe</span>: 0.5425095605064917</li>
+                <li><span class="kk-term" data-tooltip-pl="Sortino: jak Sharpe, ale karze tylko zmienność spadkową (downside); lepiej mierzy asymetrię ryzyka." data-tooltip-en="Sortino: like Sharpe, but penalizes only downside volatility; better for asymmetric risk.">Sortino</span>: 2.1310717612579833</li>
+                <li><span class="kk-term" data-tooltip-pl="Vol: zmienność = odchylenie standardowe zwrotów; pokazuje, jak mocno wynik oscyluje." data-tooltip-en="Vol: volatility = standard deviation of returns; shows variability of outcomes.">Vol</span>: 0.005163749771286614</li>
+                <li><span class="kk-term" data-tooltip-pl="MaxDD: maksymalna obsuwka kapitału (od szczytu do dołka); miara najgłębszej straty w czasie." data-tooltip-en="MaxDD: maximum drawdown from peak to trough; deepest loss over the period.">MaxDD</span>: -0.012254128581817292</li>
+                <li><span class="kk-term" data-tooltip-pl="MaxDD_Days: czas trwania najgłębszej obsuwy (liczba kroków/czasu) do pełnego odrobienia." data-tooltip-en="MaxDD_Days: length of the deepest drawdown (bars/time) until recovery.">MaxDD_Days</span>: 2071.0</li>
+                <li><span class="kk-term" data-tooltip-pl="Calmar: stosunek CAGR do MaxDD; zysk wzgl. głębokości obsuwy (wyżej = lepiej)." data-tooltip-en="Calmar: CAGR to MaxDD ratio; return relative to drawdown depth (higher is better).">Calmar</span>: 0.22860733022312174</li>
+                <li><span class="kk-term" data-tooltip-pl="WinRate: udział transakcji z dodatnim wynikiem." data-tooltip-en="WinRate: share of trades with positive return.">WinRate</span>: 0.22020725388601037</li>
+                <li><span class="kk-term" data-tooltip-pl="AvgWin: średni zwrot pojedynczej wygranej transakcji." data-tooltip-en="AvgWin: average return of a winning trade.">AvgWin</span>: 0.0012775024227172536</li>
+                <li><span class="kk-term" data-tooltip-pl="AvgLoss: średni zwrot pojedynczej przegranej transakcji." data-tooltip-en="AvgLoss: average return of a losing trade.">AvgLoss</span>: -0.00023489145334664528</li>
+                <li><span class="kk-term" data-tooltip-pl="Trades: łączna liczba transakcji w badanym okresie." data-tooltip-en="Trades: total number of executed trades in the sample.">Trades</span>: 772.0</li>
               </ul>
             </div>
           </div>
@@ -296,5 +296,65 @@ def backtest(df: pd.DataFrame, position: pd.Series, cost_bps: float = 1.0) -> pd
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // Lightweight tooltips using existing language toggle
+    (function(){
+      const tip = document.createElement('div');
+      tip.className = 'kk-tooltip';
+      document.body.appendChild(tip);
+
+      let activeEl = null;
+      const OFFSET = 12;
+
+      function getLang(){
+        try { return window.getCurrentLanguage ? window.getCurrentLanguage() : (document.documentElement.getAttribute('lang') || 'pl'); } catch(e){ return 'pl'; }
+      }
+
+      function showTooltip(el, evt){
+        activeEl = el;
+        const lang = getLang();
+        const text = lang === 'en' ? (el.getAttribute('data-tooltip-en') || el.getAttribute('data-tooltip-pl') || '')
+                                   : (el.getAttribute('data-tooltip-pl') || el.getAttribute('data-tooltip-en') || '');
+        if(!text){ hideTooltip(); return; }
+        tip.textContent = text;
+        tip.classList.add('show');
+        positionTooltip(evt);
+      }
+
+      function positionTooltip(evt){
+        if(!activeEl) return;
+        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+        const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+        const rect = tip.getBoundingClientRect();
+        let x = evt.clientX + OFFSET;
+        let y = evt.clientY + OFFSET;
+        if (x + rect.width + 8 > vw) x = evt.clientX - rect.width - OFFSET;
+        if (y + rect.height + 8 > vh) y = evt.clientY - rect.height - OFFSET;
+        tip.style.left = x + 'px';
+        tip.style.top  = y + 'px';
+      }
+
+      function hideTooltip(){
+        activeEl = null;
+        tip.classList.remove('show');
+      }
+
+      function bind(){
+        const els = document.querySelectorAll('.kk-term[data-tooltip-pl], .kk-term[data-tooltip-en]');
+        els.forEach(el => {
+          el.addEventListener('mouseenter', (e)=> showTooltip(el, e));
+          el.addEventListener('mousemove', positionTooltip);
+          el.addEventListener('mouseleave', hideTooltip);
+          el.addEventListener('blur', hideTooltip);
+          el.setAttribute('tabindex', '0'); // keyboard focusable
+          el.addEventListener('focus', (e)=> showTooltip(el, e));
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', bind);
+      } else { bind(); }
+    })();
+  </script>
 </body>
 </html>
