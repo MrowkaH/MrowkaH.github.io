@@ -206,6 +206,45 @@ def backtest(df: pd.DataFrame, position: pd.Series, cost_bps: float = 1.0) -> pd
         </div>
       </div>
 
+      <!-- DETAILED RESULTS (split by timeframe with candidate filenames) -->
+      <div class="card">
+        <div class="card__header">
+          <h2>
+            <span data-lang="pl">Wyniki szczegółowe</span>
+            <span data-lang="en" style="display:none;">Detailed results</span>
+          </h2>
+        </div>
+        <div class="card__body">
+          <!-- 1m section -->
+          <h3 style="margin-top:0;">
+            <span data-lang="pl">Interwał 1m</span>
+            <span data-lang="en" style="display:none;">Timeframe 1m</span>
+          </h3>
+          <p style="color:var(--color-text-muted);">
+            <span data-lang="pl">Zakres: 2025‑10‑19 18:00 → 2025‑10‑24 16:59; ok. 6.8k barów; ~411 transakcji.</span>
+            <span data-lang="en" style="display:none;">Range: 2025‑10‑19 18:00 → 2025‑10‑24 16:59; ~6.8k bars; ~411 trades.</span>
+          </p>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; align-items: start;">
+            <img data-candidates="img/trading-bots/EquityAndDrawdown.png, img/trading-bots/equity_1m.png, img/trading-bots/equity.png, img/trading-bots/equity_ob_reverse_pullback_GCF_1m_20251026_233432.png" alt="Equity 1m" />
+            <img data-candidates="img/trading-bots/EquityAndDrawdown.png, img/trading-bots/drawdown_1m.png, img/trading-bots/drawdown.png, img/trading-bots/drawdown_ob_reverse_pullback_GCF_1m_20251026_233432.png" alt="Drawdown 1m" />
+          </div>
+
+          <!-- 5m section -->
+          <h3 style="margin-top:2rem;">
+            <span data-lang="pl">Interwał 5m</span>
+            <span data-lang="en" style="display:none;">Timeframe 5m</span>
+          </h3>
+          <p style="color:var(--color-text-muted);">
+            <span data-lang="pl">Zakres: 2025‑08‑17 18:00 → 2025‑10‑26 18:20; ~13.3k barów; ~798 transakcji.</span>
+            <span data-lang="en" style="display:none;">Range: 2025‑08‑17 18:00 → 2025‑10‑26 18:20; ~13.3k bars; ~798 trades.</span>
+          </p>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; align-items: start;">
+            <img data-candidates="img/trading-bots/Equity Curve1.png, img/trading-bots/Equity and Drawdown1.png, img/trading-bots/equity_5m.png, img/trading-bots/equity1.png, img/trading-bots/equity_ob_reverse_pullback_GCF_5m_20251026_233416.png" alt="Equity 5m" />
+            <img data-candidates="img/trading-bots/Equity and Drawdown1.png, img/trading-bots/drawdown_5m.png, img/trading-bots/drawdown1.png, img/trading-bots/drawdown_ob_reverse_pullback_GCF_5m_20251026_233416.png" alt="Drawdown 5m" />
+          </div>
+        </div>
+      </div>
+
       <!-- METHODOLOGY -->
       <div class="card">
         <div class="card__header">
@@ -341,6 +380,31 @@ def backtest(df: pd.DataFrame, position: pd.Series, cost_bps: float = 1.0) -> pd
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', bind);
       } else { bind(); }
+    })();
+  </script>
+  <script>
+    // Resolve candidate image filenames: pick the first that loads; hide if none
+    (function(){
+      function tryLoad(imgEl, candidates){
+        if(!candidates || !candidates.length){ imgEl.style.display='none'; return; }
+        const src = candidates.shift().trim();
+        if(!src){ return tryLoad(imgEl, candidates); }
+        const probe = new Image();
+        probe.onload = function(){ imgEl.src = src; imgEl.style.display=''; };
+        probe.onerror = function(){ tryLoad(imgEl, candidates); };
+        probe.src = src;
+      }
+      function init(){
+        const imgs = document.querySelectorAll('img[data-candidates]');
+        imgs.forEach(img => {
+          const list = (img.getAttribute('data-candidates') || '').split(',');
+          img.style.display = 'none';
+          tryLoad(img, list);
+        });
+      }
+      if(document.readyState === 'loading'){
+        document.addEventListener('DOMContentLoaded', init);
+      } else { init(); }
     })();
   </script>
 </body>
