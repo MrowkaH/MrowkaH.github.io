@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trading Bots – Redirect | Kacper Kulik</title>
-  <meta name="description" content="Strona przekierowująca do pełnego opisu projektu Trading Bots (backtesty, walk-forward, metryki, equity).">
+  <title>Trading Bots – Dokumentacja | Kacper Kulik</title>
+  <meta name="description" content="Trading Bots – skrócona dokumentacja projektu: architektura, metodologia testów, bezpieczne próbki kodu, metryki i equity curve.">
   <link rel="stylesheet" href="style.css">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- Optional: quick meta refresh if TARGET_URL is set via server build -->
-  <!-- <meta http-equiv="refresh" content="1; url=TRADING_BOTS_TARGET_URL" /> -->
 </head>
 <body>
   <header>
@@ -66,30 +64,205 @@
 
   <main>
     <div class="container">
-      <div class="card" style="max-width:900px;">
+      <!-- HERO / OVERVIEW -->
+      <div class="card">
         <div class="card__header">
           <h1>
-            <span data-lang="pl">Trading Bots – przejście do pełnego opisu</span>
-            <span data-lang="en" style="display:none;">Trading Bots – redirect to full description</span>
+            <span data-lang="pl">Trading Bots – skrócona dokumentacja</span>
+            <span data-lang="en" style="display:none;">Trading Bots – brief documentation</span>
           </h1>
         </div>
         <div class="card__body">
           <p>
-            <span data-lang="pl">Ta strona automatycznie przekieruje Cię do szczegółowego opisu projektu (metodologia, metryki, wykresy). Jeśli przekierowanie nie nastąpi, użyj przycisku poniżej.</span>
-            <span data-lang="en" style="display:none;">This page will automatically redirect you to the detailed project description (methodology, metrics, charts). If it doesn’t, use the button below.</span>
-          </p>
-          <p style="margin-top:1rem;">
-            <a id="redirectLink" class="project-link" href="#" rel="noopener" target="_self">
-              <span data-lang="pl">Przejdź do pełnego opisu</span>
-              <span data-lang="en" style="display:none;">Go to full description</span>
-            </a>
-          </p>
-          <p style="margin-top:1rem; color: var(--color-text-muted); font-size:0.95rem;">
-            <span data-lang="pl">Uwaga: docelowy adres możesz łatwo zmienić, edytując stałą <code>TARGET_URL</code> w tym pliku.</span>
-            <span data-lang="en" style="display:none;">Note: you can change the destination URL by editing the <code>TARGET_URL</code> constant in this file.</span>
+            <span data-lang="pl">Modułowy ekosystem do badań nad strategiami tradingowymi: ładowanie danych, kontrakt strategii, wektorowy backtest, koszty transakcyjne, metryki ryzyka oraz zestaw testów głębokich (grid search, walk‑forward, permutation test, bootstrap CI). Poniżej znajdziesz bezpieczne próbki kodu, metodologię oraz zrzut equity.</span>
+            <span data-lang="en" style="display:none;">A modular research stack for trading strategies: data loading, strategy contract, vectorized backtest, transaction cost model, risk metrics, and deep-testing (grid search, walk‑forward, permutation test, bootstrap CI). Below you’ll find safe code samples, methodology and an equity snapshot.</span>
           </p>
         </div>
       </div>
+
+      <!-- ARCHITECTURE / WORKFLOW -->
+      <div class="card">
+        <div class="card__header">
+          <h2>
+            <span data-lang="pl">Architektura i przepływ</span>
+            <span data-lang="en" style="display:none;">Architecture & workflow</span>
+          </h2>
+        </div>
+        <div class="card__body">
+          <ul style="text-align:left; max-width:800px; margin:0 auto;">
+            <li>
+              <strong>Data layer</strong> — <span data-lang="pl">Yahoo/CSV (TradingView) → walidacja → feature’y bazowe (zwroty)</span><span data-lang="en" style="display:none;">Yahoo/CSV (TradingView) → validation → base features (returns)</span>
+            </li>
+            <li>
+              <strong>Strategy layer</strong> — <span data-lang="pl">kontrakt: DataFrame → pozycja [-1..1], parametry jako config (bez ujawniania edge’a)</span><span data-lang="en" style="display:none;">contract: DataFrame → position [-1..1], params as config (no edge disclosure)</span>
+            </li>
+            <li>
+              <strong>Backtester</strong> — <span data-lang="pl">wektorowy PnL, koszty (bps), equity i drawdown</span><span data-lang="en" style="display:none;">vectorized PnL, costs (bps), equity and drawdown</span>
+            </li>
+            <li>
+              <strong>Deep‑tests</strong> — <span data-lang="pl">grid search, walk‑forward, test permutacyjny (p‑value), bootstrap CI</span><span data-lang="en" style="display:none;">grid search, walk‑forward, permutation test (p‑value), bootstrap CI</span>
+            </li>
+            <li>
+              <strong>Reporting</strong> — <span data-lang="pl">metryki: CAGR, Sharpe, Sortino, MaxDD, Calmar, WinRate; wykresy</span><span data-lang="en" style="display:none;">metrics: CAGR, Sharpe, Sortino, MaxDD, Calmar, WinRate; charts</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SAFE CODE SAMPLES -->
+      <div class="card">
+        <div class="card__header">
+          <h2>
+            <span data-lang="pl">Próbki kodu (bez ujawniania strategii)</span>
+            <span data-lang="en" style="display:none;">Code samples (strategy‑safe)</span>
+          </h2>
+        </div>
+        <div class="card__body" style="text-align:left;">
+<pre style="white-space:pre-wrap; background:#1a1e24; padding:1rem; border-radius:10px;"><code># Strategy contract (Python)
+from typing import Dict, Any
+import pandas as pd
+
+def strategy_contract(df: pd.DataFrame, params: Dict[str, Any]) -> pd.Series:
+    """
+    Input:
+      - df: columns >= ['Close', 'RetSimple']
+      - params: hyperparameters (e.g. windows, thresholds)
+    Output:
+      - position Series in [-1..1], index aligned with df.index
+    """
+    pos = pd.Series(0.0, index=df.index)
+    # ... compute signal safely; do NOT expose edge logic
+    return pos
+</code></pre>
+
+<pre style="white-space:pre-wrap; background:#1a1e24; padding:1rem; border-radius:10px;"><code># Max drawdown utility
+import numpy as np
+import pandas as pd
+
+def max_drawdown(equity: pd.Series) -> float:
+    roll_max = equity.cummax()
+    dd = equity / roll_max - 1.0
+    return float(dd.min())
+</code></pre>
+
+<pre style="white-space:pre-wrap; background:#1a1e24; padding:1rem; border-radius:10px;"><code># Vectorized backtest stub
+def backtest(df: pd.DataFrame, position: pd.Series, cost_bps: float = 1.0) -> pd.DataFrame:
+    ret = df['RetSimple'].fillna(0.0)
+    shift_pos = position.shift().fillna(0.0)
+    gross = shift_pos * ret
+    cost = (position.diff().abs().fillna(0.0)) * (cost_bps / 10000.0)
+    net = gross - cost
+    equity = (1.0 + net).cumprod()
+    return pd.DataFrame({'ret_net': net, 'equity': equity})
+</code></pre>
+          <p style="color:var(--color-text-muted);">
+            <span data-lang="pl">Powyższe fragmenty pokazują interfejsy i narzędzia — bez konkretnych reguł wejścia/wyjścia.</span>
+            <span data-lang="en" style="display:none;">Samples show interfaces and utilities — no entry/exit rules exposed.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- RESULTS: EQUITY + METRICS -->
+      <div class="card">
+        <div class="card__header">
+          <h2>
+            <span data-lang="pl">Wyniki (snapshot)</span>
+            <span data-lang="en" style="display:none;">Results (snapshot)</span>
+          </h2>
+        </div>
+        <div class="card__body">
+          <img src="img/equitychart.png" alt="Equity curve – OB Reverse Pullback (5 dni)" />
+          <p style="margin-top:1rem;">
+            <strong>OB Reverse Pullback — Summary</strong><br/>
+            <span style="color:var(--color-text-muted);">Data: 2025‑10‑19 18:00:00‑04:00 → 2025‑10‑24 16:59:00‑04:00 (6816 rows)</span>
+          </p>
+          <div style="display:flex; gap:2rem; justify-content:center; flex-wrap:wrap;">
+            <div style="min-width:260px; text-align:left;">
+              <strong>Parameters</strong>
+              <ul>
+                <li>sw: 5</li>
+                <li>bos_break_bps: 0.0</li>
+                <li>ob_zone_type: full</li>
+                <li>ob_buffer_bps: 0.0</li>
+                <li>entry_pct: 0.6</li>
+              </ul>
+            </div>
+            <div style="min-width:260px; text-align:left;">
+              <strong>Performance Metrics</strong>
+              <ul>
+                <li>CAGR: 977.4283632559337</li>
+                <li>Sharpe: 0.5425095605064917</li>
+                <li>Sortino: 2.1310717612579833</li>
+                <li>Vol: 0.005163749771286614</li>
+                <li>MaxDD: -0.012254128581817292</li>
+                <li>MaxDD_Days: 2071.0</li>
+                <li>Calmar: 0.22860733022312174</li>
+                <li>WinRate: 0.22020725388601037</li>
+                <li>AvgWin: 0.0012775024227172536</li>
+                <li>AvgLoss: -0.00023489145334664528</li>
+                <li>Trades: 772.0</li>
+              </ul>
+            </div>
+          </div>
+          <p style="color:var(--color-text-muted); font-size:0.95rem; margin-top:0.5rem;">
+            <span data-lang="pl">Uwaga: powyższe to snapshot backtestu z 5 dni; pełna metodologia w sekcji poniżej.</span>
+            <span data-lang="en" style="display:none;">Note: snapshot from a 5‑day backtest; full methodology below.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- METHODOLOGY -->
+      <div class="card">
+        <div class="card__header">
+          <h2>
+            <span data-lang="pl">Metodologia i rzetelność testów</span>
+            <span data-lang="en" style="display:none;">Methodology and test rigor</span>
+          </h2>
+        </div>
+        <div class="card__body">
+          <ul style="text-align:left; max-width:900px; margin:0 auto;">
+            <li>
+              <strong>Walk‑forward</strong> — <span data-lang="pl">okna train/test dla walidacji czasowej; unikanie data leakage</span><span data-lang="en" style="display:none;">train/test rolling windows for time validation; avoid leakage</span>
+            </li>
+            <li>
+              <strong>Koszty i slippage</strong> — <span data-lang="pl">model bps, wpływ na equity i metryki</span><span data-lang="en" style="display:none;">bps model impacting equity and metrics</span>
+            </li>
+            <li>
+              <strong>Permutation test</strong> — <span data-lang="pl">p‑value względem reshuffle w blokach</span><span data-lang="en" style="display:none;">p‑value vs. block‑reshuffled baseline</span>
+            </li>
+            <li>
+              <strong>Bootstrap CI</strong> — <span data-lang="pl">przedziały ufności dla CAGR/MaxDD</span><span data-lang="en" style="display:none;">confidence intervals for CAGR/MaxDD</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- AI ASSISTANCE NOTE -->
+      <div class="card" style="max-width:900px;">
+        <div class="card__header">
+          <h2>
+            <span data-lang="pl">Adnotacja</span>
+            <span data-lang="en" style="display:none;">Annotation</span>
+          </h2>
+        </div>
+        <div class="card__body">
+          <p>
+            <span data-lang="pl">Projekt został zrealizowany z pomocą narzędzi AI (asysta w projektowaniu, kodzie i dokumentacji). Wszystkie kluczowe elementy zostały przeze mnie zweryfikowane i zintegrowane.</span>
+            <span data-lang="en" style="display:none;">This project was built with the assistance of AI tools (design, code and documentation support). All key parts were reviewed and integrated by me.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="card" style="max-width:900px;">
+        <div class="card__body">
+          <a class="project-link" href="contact.html">
+            <span data-lang="pl">Skontaktuj się, aby zobaczyć więcej</span>
+            <span data-lang="en" style="display:none;">Contact me to see more</span>
+          </a>
+        </div>
+      </div>
+
     </div>
   </main>
 
@@ -123,24 +296,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    // Ustaw docelowy adres tutaj (np. pełna podstrona lub zewnętrzny link)
-    // Przykład: const TARGET_URL = 'https://twojadomena/trading-bots-detail.html';
-    const TARGET_URL = '';
-
-    // Aktualizuj link i wykonaj przekierowanie, jeśli URL ustawiony
-    const linkEl = document.getElementById('redirectLink');
-    if (TARGET_URL && linkEl) {
-      linkEl.href = TARGET_URL;
-      // Krótkie opóźnienie, żeby użytkownik zobaczył komunikat
-      setTimeout(() => { window.location.href = TARGET_URL; }, 900);
-    } else if (linkEl) {
-      // Jeżeli nie ustawiono URL – zostaw placeholder i wyłącz klik
-      linkEl.href = '#';
-      linkEl.setAttribute('aria-disabled', 'true');
-      linkEl.style.opacity = '0.7';
-      linkEl.style.pointerEvents = 'none';
-    }
-  </script>
 </body>
 </html>
