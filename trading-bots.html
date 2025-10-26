@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trading Bots – Redirect | Kacper Kulik</title>
+  <meta name="description" content="Strona przekierowująca do pełnego opisu projektu Trading Bots (backtesty, walk-forward, metryki, equity).">
+  <link rel="stylesheet" href="style.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Optional: quick meta refresh if TARGET_URL is set via server build -->
+  <!-- <meta http-equiv="refresh" content="1; url=TRADING_BOTS_TARGET_URL" /> -->
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-container">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index-final.html" class="nav-link">
+              <span data-lang="pl">Strona główna</span>
+              <span data-lang="en" style="display: none;">Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="finance-final.html" class="nav-link">
+              <span data-lang="pl">Portfolio</span>
+              <span data-lang="en" style="display: none;">Portfolio</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="trading-tool.html" class="nav-link">
+              <span data-lang="pl">Narzędzie Tradingowe</span>
+              <span data-lang="en" style="display: none;">Trading Tool</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="trading-bots.html" class="nav-link active">
+              <span data-lang="pl">Trading Bots</span>
+              <span data-lang="en" style="display: none;">Trading Bots</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="inne-final.html" class="nav-link">
+              <span data-lang="pl">O mnie</span>
+              <span data-lang="en" style="display: none;">About Me</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">
+              <span data-lang="pl">Kontakt</span>
+              <span data-lang="en" style="display: none;">Contact</span>
+            </a>
+          </li>
+        </ul>
+        <button class="lang-toggle" onclick="toggleLanguage()">
+          <span id="lang-text">EN</span>
+        </button>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="card" style="max-width:900px;">
+        <div class="card__header">
+          <h1>
+            <span data-lang="pl">Trading Bots – przejście do pełnego opisu</span>
+            <span data-lang="en" style="display:none;">Trading Bots – redirect to full description</span>
+          </h1>
+        </div>
+        <div class="card__body">
+          <p>
+            <span data-lang="pl">Ta strona automatycznie przekieruje Cię do szczegółowego opisu projektu (metodologia, metryki, wykresy). Jeśli przekierowanie nie nastąpi, użyj przycisku poniżej.</span>
+            <span data-lang="en" style="display:none;">This page will automatically redirect you to the detailed project description (methodology, metrics, charts). If it doesn’t, use the button below.</span>
+          </p>
+          <p style="margin-top:1rem;">
+            <a id="redirectLink" class="project-link" href="#" rel="noopener" target="_self">
+              <span data-lang="pl">Przejdź do pełnego opisu</span>
+              <span data-lang="en" style="display:none;">Go to full description</span>
+            </a>
+          </p>
+          <p style="margin-top:1rem; color: var(--color-text-muted); font-size:0.95rem;">
+            <span data-lang="pl">Uwaga: docelowy adres możesz łatwo zmienić, edytując stałą <code>TARGET_URL</code> w tym pliku.</span>
+            <span data-lang="en" style="display:none;">Note: you can change the destination URL by editing the <code>TARGET_URL</code> constant in this file.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="contact" class="contact-footer">
+    <h2>
+      <span data-lang="pl">Kontakt</span>
+      <span data-lang="en" style="display: none;">Contact</span>
+    </h2>
+    <div class="contact-info">
+      <div class="contact-item">
+        <strong>Email:</strong> <a href="mailto:Kacper.Kulik2003@wp.pl">Kacper.Kulik2003@wp.pl</a>
+      </div>
+      <div class="contact-item">
+        <strong>
+          <span data-lang="pl">Telefon:</span>
+          <span data-lang="en" style="display: none;">Phone:</span>
+        </strong> <a href="tel:+48690900704">+48 690 900 704</a>
+      </div>
+      <div class="contact-item">
+        <strong>
+          <span data-lang="pl">Lokalizacja:</span>
+          <span data-lang="en" style="display: none;">Location:</span>
+        </strong>
+        <span data-lang="pl">Kraków, Polska / Zdalnie</span>
+        <span data-lang="en" style="display: none;">Krakow, Poland / Remote</span>
+      </div>
+      <div class="contact-item">
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kacper-kulik-3713b1302" target="_blank" rel="noopener">linkedin.com/in/kacper-kulik</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Ustaw docelowy adres tutaj (np. pełna podstrona lub zewnętrzny link)
+    // Przykład: const TARGET_URL = 'https://twojadomena/trading-bots-detail.html';
+    const TARGET_URL = '';
+
+    // Aktualizuj link i wykonaj przekierowanie, jeśli URL ustawiony
+    const linkEl = document.getElementById('redirectLink');
+    if (TARGET_URL && linkEl) {
+      linkEl.href = TARGET_URL;
+      // Krótkie opóźnienie, żeby użytkownik zobaczył komunikat
+      setTimeout(() => { window.location.href = TARGET_URL; }, 900);
+    } else if (linkEl) {
+      // Jeżeli nie ustawiono URL – zostaw placeholder i wyłącz klik
+      linkEl.href = '#';
+      linkEl.setAttribute('aria-disabled', 'true');
+      linkEl.style.opacity = '0.7';
+      linkEl.style.pointerEvents = 'none';
+    }
+  </script>
+</body>
+</html>
