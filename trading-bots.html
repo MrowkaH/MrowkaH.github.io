@@ -7,6 +7,9 @@
   <meta name="description" content="Trading Bots – skrócona dokumentacja projektu: architektura, metodologia testów, bezpieczne próbki kodu, metryki i equity curve.">
   <link rel="stylesheet" href="style.css">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Prism.js for code highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" integrity="sha512-0zF0rRrXz8M8W2v3JxwqvXx2mGQyq8k4mM1cC1r4aVYH3wL7Jt2zthY4pZQG7Q7yZP9Xv4QwV3nM9nFZ+q1+2w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-+w7wQ1l7kq5XnT9X9y7C1rQn0T2Yq7z6v6xWJH2r0Cqv7Rj8YtQ0L8lHjY6b9m9e5A0z9qjv3Ue7F6fQbqA1wg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <header>
@@ -148,6 +151,24 @@ def max_drawdown(equity: pd.Series) -> float:
 def backtest(df: pd.DataFrame, position: pd.Series, cost_bps: float = 1.0) -> pd.DataFrame:
     ret = df['RetSimple'].fillna(0.0)
     shift_pos = position.shift().fillna(0.0)
+
+      <!-- FULL FILE (safe) -->
+      <div class="card" id="full-file-example">
+        <div class="card__header">
+          <h2>
+            <span data-lang="pl">Pełny plik (bezpieczny przykład)</span>
+            <span data-lang="en" style="display:none;">Full file (safe example)</span>
+          </h2>
+          <p style="color:var(--color-text-muted); margin-top:.5rem;">
+            <span data-lang="pl">Eksporter wyników do PNG (bez logiki strategii). Ułatwia generowanie wykresów equity i drawdown bez ujawniania edge’a.</span>
+            <span data-lang="en" style="display:none;">Results-to-PNG exporter (no strategy logic). Helps render equity and drawdown charts without exposing the edge.</span>
+          </p>
+        </div>
+        <div class="card__body" style="text-align:left;">
+          <div style="display:flex; justify-content:flex-end; margin-bottom:.5rem;">
+            <button class="btn btn--outline copy-code-btn" data-target="#code-exporter">Copy</button>
+          </div>
+          <pre class="line-numbers" style="white-space:pre;"><code id="code-exporter" class="language-python">import os
     gross = shift_pos * ret
     cost = (position.diff().abs().fillna(0.0)) * (cost_bps / 10000.0)
     net = gross - cost
@@ -240,6 +261,8 @@ def backtest(df: pd.DataFrame, position: pd.Series, cost_bps: float = 1.0) -> pd
               </p>
               <img class="zoomable" src="img/trading-bots/EquityAndDrawdown.png" alt="EquityAndDrawdown – 1m" style="width:100%; height:auto; display:block; border-radius:8px;" onerror="this.style.display='none'" />
               <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted); text-align:center;">EquityAndDrawdown</figcaption>
+        </div>
+      </div>
             </figure>
 
             <figure style="margin:0 0 1.5rem 0;">
@@ -591,6 +614,10 @@ def backtest(df: pd.DataFrame, position: pd.Series, cost_bps: float = 1.0) -> pd
   </footer>
 
   <script src="script.js"></script>
+  <!-- Prism.js scripts for highlighting -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-4A9l9D4v3H7x3bYg0a5P3N2UuA0i5g2E0t0a2l7o6o7l3h5fP0uQJ5Lr4g9Sh9o6U5D5J3S6kZ0nZP2jWgJwJw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js" integrity="sha512-V1z1hYqf9vX3pH3hCwYQ2q3i6yQ2i5S1e7J8N8QZ4v9sXQmYV4w0g7qK9qQv6m7h9yZxQ8m6mIYzA2r9uQ7FWA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-9t5J2E9oX3hZ1Kxq+o9R7B9w2Rj0pB8Qj0i2D9N6kH0y1M1b2u5z6Gx5M0h4YxJ5c+uSg8p9H1J4U3uN9Sc5TQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     // Lightweight tooltips using existing language toggle
     (function(){
@@ -743,6 +770,29 @@ def backtest(df: pd.DataFrame, position: pd.Series, cost_bps: float = 1.0) -> pd
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', bindZoomables);
       } else { bindZoomables(); }
+    })();
+  </script>
+  <script>
+    // Copy button for code blocks
+    (function(){
+      function bindCopy(){
+        document.querySelectorAll('.copy-code-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const targetSel = btn.getAttribute('data-target');
+            const codeEl = document.querySelector(targetSel);
+            if (!codeEl) return;
+            const text = codeEl.innerText || codeEl.textContent || '';
+            navigator.clipboard.writeText(text).then(() => {
+              const old = btn.textContent;
+              btn.textContent = 'Copied!';
+              setTimeout(()=> btn.textContent = old, 1200);
+            });
+          });
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', bindCopy);
+      } else { bindCopy(); }
     })();
   </script>
   <script>
