@@ -72,6 +72,10 @@
             <span data-lang="pl">Modułowy ekosystem do badań nad strategiami tradingowymi: ładowanie danych, kontrakt strategii, wektorowy backtest, koszty transakcyjne, metryki ryzyka oraz zestaw testów głębokich (grid search, walk‑forward, permutation test, bootstrap CI). Poniżej znajdziesz bezpieczne próbki kodu, metodologię oraz zrzut equity.</span>
             <span data-lang="en" style="display:none;">A modular research stack for trading strategies: data loading, strategy contract, vectorized backtest, transaction cost model, risk metrics, and deep-testing (grid search, walk‑forward, permutation test, bootstrap CI). Below you’ll find safe code samples, methodology and an equity snapshot.</span>
           </p>
+          <p style="margin-top:.5rem; color:var(--color-text-muted);">
+            <span data-lang="pl"><strong>Adnotacja:</strong> Strategia testowana na interwale <strong>5m</strong> (ok. 60 dni) oraz <strong>1m</strong> (ok. 6 dni).</span>
+            <span data-lang="en" style="display:none;"><strong>Note:</strong> Strategy evaluated on <strong>5m</strong> (~60 days) and <strong>1m</strong> (~6 days) samples.</span>
+          </p>
         </div>
       </div>
 
@@ -206,7 +210,7 @@ def backtest(df: pd.DataFrame, position: pd.Series, cost_bps: float = 1.0) -> pd
         </div>
       </div>
 
-      <!-- DETAILED RESULTS (split by timeframe with candidate filenames) -->
+      <!-- DETAILED RESULTS (grouped, larger images, centered) -->
       <div class="card">
         <div class="card__header">
           <h2>
@@ -216,36 +220,237 @@ def backtest(df: pd.DataFrame, position: pd.Series, cost_bps: float = 1.0) -> pd
         </div>
         <div class="card__body">
           <!-- 1m section -->
-          <h3 style="margin-top:0;">
+          <h2 style="margin-top:0; text-align:center;">
             <span data-lang="pl">Interwał 1m</span>
             <span data-lang="en" style="display:none;">Timeframe 1m</span>
-          </h3>
-          <p style="color:var(--color-text-muted);">
+          </h2>
+          <p style="color:var(--color-text-muted); text-align:center;">
             <span data-lang="pl">Zakres: 2025‑10‑19 18:00 → 2025‑10‑24 16:59; ok. 6.8k barów; ~411 transakcji.</span>
             <span data-lang="en" style="display:none;">Range: 2025‑10‑19 18:00 → 2025‑10‑24 16:59; ~6.8k bars; ~411 trades.</span>
           </p>
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; align-items: start;">
-            <img data-candidates="img/trading-bots/EquityAndDrawdown.png, img/trading-bots/equity_1m.png, img/trading-bots/equity.png, img/trading-bots/equity_ob_reverse_pullback_GCF_1m_20251026_233432.png" alt="Equity 1m" />
-            <img data-candidates="img/trading-bots/EquityAndDrawdown.png, img/trading-bots/drawdown_1m.png, img/trading-bots/drawdown.png, img/trading-bots/drawdown_ob_reverse_pullback_GCF_1m_20251026_233432.png" alt="Drawdown 1m" />
+          <div style="max-width:1100px; margin:0 auto;">
+            <figure style="margin:0 0 1.5rem 0;">
+              <h4 style="margin:0 0 .25rem 0; text-align:center;">
+                <span data-lang="pl">Equity i Drawdown</span>
+                <span data-lang="en" style="display:none;">Equity and Drawdown</span>
+              </h4>
+              <p style="margin:0 0 .5rem 0; color:var(--color-text-muted); text-align:center;">
+                <span data-lang="pl">Timeframe: 1m</span>
+                <span data-lang="en" style="display:none;">Timeframe: 1m</span>
+              </p>
+              <img src="img/trading-bots/EquityAndDrawdown.png" alt="EquityAndDrawdown – 1m" style="width:100%; height:auto; display:block; border-radius:8px;" onerror="this.style.display='none'" />
+              <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted); text-align:center;">EquityAndDrawdown</figcaption>
+            </figure>
+
+            <figure style="margin:0 0 1.5rem 0;">
+              <h4 style="margin:0 0 .25rem 0; text-align:center;">
+                <span data-lang="pl">Dzienne wyniki: Long/Short i średnia</span>
+                <span data-lang="en" style="display:none;">Daily results Long Short PnL and Average</span>
+              </h4>
+              <p style="margin:0 0 .5rem 0; color:var(--color-text-muted); text-align:center;">
+                <span data-lang="pl">Timeframe: 1m</span>
+                <span data-lang="en" style="display:none;">Timeframe: 1m</span>
+              </p>
+              <img src="img/trading-bots/Daily results Long Short PnL and Average.png" alt="Daily results Long Short PnL and Average – 1m" style="width:100%; height:auto; display:block; border-radius:8px;" onerror="this.style.display='none'" />
+              <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted); text-align:center;">Daily results Long Short PnL and Average</figcaption>
+            </figure>
+
+            <figure style="margin:0 0 1.5rem 0;">
+              <h4 style="margin:0 0 .25rem 0; text-align:center;">
+                <span data-lang="pl">Kroczący Sharpe (okno=1440)</span>
+                <span data-lang="en" style="display:none;">Rolling Sharpe (window=1440)</span>
+              </h4>
+              <p style="margin:0 0 .5rem 0; color:var(--color-text-muted); text-align:center;">
+                <span data-lang="pl">Timeframe: 1m</span>
+                <span data-lang="en" style="display:none;">Timeframe: 1m</span>
+              </p>
+              <img src="img/trading-bots/Rolling Sharpe (window=1440).png" alt="Rolling Sharpe (window=1440) – 1m" style="width:100%; height:auto; display:block; border-radius:8px;" onerror="this.style.display='none'" />
+              <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted); text-align:center;">Rolling Sharpe (window=1440)</figcaption>
+            </figure>
+
+            <figure style="margin:0 0 1.5rem 0;">
+              <h4 style="margin:0 0 .25rem 0; text-align:center;">
+                <span data-lang="pl">Kroczący Max Drawdown (okno=1440)</span>
+                <span data-lang="en" style="display:none;">Rolling Max Drawdown (window=1440)</span>
+              </h4>
+              <p style="margin:0 0 .5rem 0; color:var(--color-text-muted); text-align:center;">
+                <span data-lang="pl">Timeframe: 1m</span>
+                <span data-lang="en" style="display:none;">Timeframe: 1m</span>
+              </p>
+              <img src="img/trading-bots/Rolling Max Drawdown (window=1440).png" alt="Rolling Max Drawdown (window=1440) – 1m" style="width:100%; height:auto; display:block; border-radius:8px;" onerror="this.style.display='none'" />
+              <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted); text-align:center;">Rolling Max Drawdown (window=1440)</figcaption>
+            </figure>
+
+            <figure style="margin:0 0 1.5rem 0;">
+              <h4 style="margin:0 0 .25rem 0; text-align:center;">
+                <span data-lang="pl">Udział czasu (ekspozycja)</span>
+                <span data-lang="en" style="display:none;">Exposure (time shares)</span>
+              </h4>
+              <p style="margin:0 0 .5rem 0; color:var(--color-text-muted); text-align:center;">
+                <span data-lang="pl">Timeframe: 1m</span>
+                <span data-lang="en" style="display:none;">Timeframe: 1m</span>
+              </p>
+              <img src="img/trading-bots/Exposure (time shares).png" alt="Exposure (time shares) – 1m" style="width:100%; height:auto; display:block; border-radius:8px;" onerror="this.style.display='none'" />
+              <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted); text-align:center;">Exposure (time shares)</figcaption>
+            </figure>
+
+            <figure style="margin:0 0 1.5rem 0;">
+              <h4 style="margin:0 0 .25rem 0; text-align:center;">
+                <span data-lang="pl">Skuteczność wg godziny wejścia</span>
+                <span data-lang="en" style="display:none;">Win rate by entry hour</span>
+              </h4>
+              <p style="margin:0 0 .5rem 0; color:var(--color-text-muted); text-align:center;">
+                <span data-lang="pl">Timeframe: 1m</span>
+                <span data-lang="en" style="display:none;">Timeframe: 1m</span>
+              </p>
+              <img src="img/trading-bots/Win rate by hour (entry).png" alt="Win rate by hour (entry) – 1m" style="width:100%; height:auto; display:block; border-radius:8px;" onerror="this.style.display='none'" />
+              <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted); text-align:center;">Win rate by hour (entry)</figcaption>
+            </figure>
+
+            <figure style="margin:0 0 1.5rem 0;">
+              <h4 style="margin:0 0 .25rem 0; text-align:center;">
+                <span data-lang="pl">Średni PnL wg godziny wejścia</span>
+                <span data-lang="en" style="display:none;">Average PnL by entry hour</span>
+              </h4>
+              <p style="margin:0 0 .5rem 0; color:var(--color-text-muted); text-align:center;">
+                <span data-lang="pl">Timeframe: 1m</span>
+                <span data-lang="en" style="display:none;">Timeframe: 1m</span>
+              </p>
+              <img src="img/trading-bots/Average PnL by Hour (entry).png" alt="Average PnL by Hour (entry) – 1m" style="width:100%; height:auto; display:block; border-radius:8px;" onerror="this.style.display='none'" />
+              <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted); text-align:center;">Average PnL by Hour (entry)</figcaption>
+            </figure>
+
+            <figure style="margin:0 0 1.5rem 0;">
+              <h4 style="margin:0 0 .25rem 0; text-align:center;">
+                <span data-lang="pl">Rozkład PnL transakcji</span>
+                <span data-lang="en" style="display:none;">Distribution of Trade PnL</span>
+              </h4>
+              <p style="margin:0 0 .5rem 0; color:var(--color-text-muted); text-align:center;">
+                <span data-lang="pl">Timeframe: 1m</span>
+                <span data-lang="en" style="display:none;">Timeframe: 1m</span>
+              </p>
+              <img src="img/trading-bots/Distribution of Trade PnL.png" alt="Distribution of Trade PnL – 1m" style="width:100%; height:auto; display:block; border-radius:8px;" onerror="this.style.display='none'" />
+              <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted); text-align:center;">Distribution of Trade PnL</figcaption>
+            </figure>
           </div>
 
           <!-- 5m section -->
-          <h3 style="margin-top:2rem;">
+          <h2 style="margin-top:2rem; text-align:center;">
             <span data-lang="pl">Interwał 5m</span>
             <span data-lang="en" style="display:none;">Timeframe 5m</span>
-          </h3>
-          <p style="color:var(--color-text-muted);">
+          </h2>
+          <p style="color:var(--color-text-muted); text-align:center;">
             <span data-lang="pl">Zakres: 2025‑08‑17 18:00 → 2025‑10‑26 18:20; ~13.3k barów; ~798 transakcji.</span>
             <span data-lang="en" style="display:none;">Range: 2025‑08‑17 18:00 → 2025‑10‑26 18:20; ~13.3k bars; ~798 trades.</span>
           </p>
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; align-items: start;">
-            <img data-candidates="img/trading-bots/Equity Curve1.png, img/trading-bots/Equity and Drawdown1.png, img/trading-bots/equity_5m.png, img/trading-bots/equity1.png, img/trading-bots/equity_ob_reverse_pullback_GCF_5m_20251026_233416.png" alt="Equity 5m" />
-            <img data-candidates="img/trading-bots/Equity and Drawdown1.png, img/trading-bots/drawdown_5m.png, img/trading-bots/drawdown1.png, img/trading-bots/drawdown_ob_reverse_pullback_GCF_5m_20251026_233416.png" alt="Drawdown 5m" />
+          <div style="max-width:1100px; margin:0 auto;">
+            <figure style="margin:0 0 1.5rem 0;">
+              <h4 style="margin:0 0 .25rem 0; text-align:center;">
+                <span data-lang="pl">Equity i Drawdown</span>
+                <span data-lang="en" style="display:none;">Equity and Drawdown</span>
+              </h4>
+              <p style="margin:0 0 .5rem 0; color:var(--color-text-muted); text-align:center;">
+                <span data-lang="pl">Timeframe: 5m</span>
+                <span data-lang="en" style="display:none;">Timeframe: 5m</span>
+              </p>
+              <img src="img/trading-bots/Equity and Drawdown1.png" alt="Equity and Drawdown – 5m" style="width:100%; height:auto; display:block; border-radius:8px;" onerror="this.style.display='none'" />
+              <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted); text-align:center;">Equity and Drawdown1</figcaption>
+            </figure>
+
+            <figure style="margin:0 0 1.5rem 0;">
+              <h4 style="margin:0 0 .25rem 0; text-align:center;">
+                <span data-lang="pl">Krzywa kapitału</span>
+                <span data-lang="en" style="display:none;">Equity Curve</span>
+              </h4>
+              <p style="margin:0 0 .5rem 0; color:var(--color-text-muted); text-align:center;">
+                <span data-lang="pl">Timeframe: 5m</span>
+                <span data-lang="en" style="display:none;">Timeframe: 5m</span>
+              </p>
+              <img src="img/trading-bots/Equity Curve1.png" alt="Equity Curve – 5m" style="width:100%; height:auto; display:block; border-radius:8px;" onerror="this.style.display='none'" />
+              <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted); text-align:center;">Equity Curve1</figcaption>
+            </figure>
+
+            <figure style="margin:0 0 1.5rem 0;">
+              <h4 style="margin:0 0 .25rem 0; text-align:center;">
+                <span data-lang="pl">Kroczący Sharpe (okno=288)</span>
+                <span data-lang="en" style="display:none;">Rolling Sharpe (window=288)</span>
+              </h4>
+              <p style="margin:0 0 .5rem 0; color:var(--color-text-muted); text-align:center;">
+                <span data-lang="pl">Timeframe: 5m</span>
+                <span data-lang="en" style="display:none;">Timeframe: 5m</span>
+              </p>
+              <img src="img/trading-bots/Rolling Sharpe (window=288)1.png" alt="Rolling Sharpe (window=288) – 5m" style="width:100%; height:auto; display:block; border-radius:8px;" onerror="this.style.display='none'" />
+              <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted); text-align:center;">Rolling Sharpe (window=288)1</figcaption>
+            </figure>
+
+            <figure style="margin:0 0 1.5rem 0;">
+              <h4 style="margin:0 0 .25rem 0; text-align:center;">
+                <span data-lang="pl">Kroczący Max Drawdown (okno=288)</span>
+                <span data-lang="en" style="display:none;">Rolling Max Drawdown (window=288)</span>
+              </h4>
+              <p style="margin:0 0 .5rem 0; color:var(--color-text-muted); text-align:center;">
+                <span data-lang="pl">Timeframe: 5m</span>
+                <span data-lang="en" style="display:none;">Timeframe: 5m</span>
+              </p>
+              <img src="img/trading-bots/Rolling Max Drawdown (window=288)1.png" alt="Rolling Max Drawdown (window=288) – 5m" style="width:100%; height:auto; display:block; border-radius:8px;" onerror="this.style.display='none'" />
+              <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted); text-align:center;">Rolling Max Drawdown (window=288)1</figcaption>
+            </figure>
+
+            <figure style="margin:0 0 1.5rem 0;">
+              <h4 style="margin:0 0 .25rem 0; text-align:center;">
+                <span data-lang="pl">Udział czasu (ekspozycja)</span>
+                <span data-lang="en" style="display:none;">Exposure (time shares)</span>
+              </h4>
+              <p style="margin:0 0 .5rem 0; color:var(--color-text-muted); text-align:center;">
+                <span data-lang="pl">Timeframe: 5m</span>
+                <span data-lang="en" style="display:none;">Timeframe: 5m</span>
+              </p>
+              <img src="img/trading-bots/Exposure (time shares)1.png" alt="Exposure (time shares) – 5m" style="width:100%; height:auto; display:block; border-radius:8px;" onerror="this.style.display='none'" />
+              <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted); text-align:center;">Exposure (time shares)1</figcaption>
+            </figure>
+
+            <figure style="margin:0 0 1.5rem 0;">
+              <h4 style="margin:0 0 .25rem 0; text-align:center;">
+                <span data-lang="pl">Skuteczność wg godziny wejścia</span>
+                <span data-lang="en" style="display:none;">Win rate by entry hour</span>
+              </h4>
+              <p style="margin:0 0 .5rem 0; color:var(--color-text-muted); text-align:center;">
+                <span data-lang="pl">Timeframe: 5m</span>
+                <span data-lang="en" style="display:none;">Timeframe: 5m</span>
+              </p>
+              <img src="img/trading-bots/Win rate by hour (entry)1.png" alt="Win rate by hour (entry) – 5m" style="width:100%; height:auto; display:block; border-radius:8px;" onerror="this.style.display='none'" />
+              <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted); text-align:center;">Win rate by hour (entry)1</figcaption>
+            </figure>
+
+            <figure style="margin:0 0 1.5rem 0;">
+              <h4 style="margin:0 0 .25rem 0; text-align:center;">
+                <span data-lang="pl">Średni PnL wg godziny wejścia</span>
+                <span data-lang="en" style="display:none;">Average PnL by entry hour</span>
+              </h4>
+              <p style="margin:0 0 .5rem 0; color:var(--color-text-muted); text-align:center;">
+                <span data-lang="pl">Timeframe: 5m</span>
+                <span data-lang="en" style="display:none;">Timeframe: 5m</span>
+              </p>
+              <img src="img/trading-bots/Average PnL by Hour (entry)1.png" alt="Average PnL by Hour (entry) – 5m" style="width:100%; height:auto; display:block; border-radius:8px;" onerror="this.style.display='none'" />
+              <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted); text-align:center;">Average PnL by Hour (entry)1</figcaption>
+            </figure>
+
+            <figure style="margin:0 0 1.5rem 0;">
+              <h4 style="margin:0 0 .25rem 0; text-align:center;">
+                <span data-lang="pl">Rozkład PnL transakcji</span>
+                <span data-lang="en" style="display:none;">Distribution of Trade PnL</span>
+              </h4>
+              <p style="margin:0 0 .5rem 0; color:var(--color-text-muted); text-align:center;">
+                <span data-lang="pl">Timeframe: 5m</span>
+                <span data-lang="en" style="display:none;">Timeframe: 5m</span>
+              </p>
+              <img src="img/trading-bots/Distribution of Trade PnL1.png" alt="Distribution of Trade PnL – 5m" style="width:100%; height:auto; display:block; border-radius:8px;" onerror="this.style.display='none'" />
+              <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted); text-align:center;">Distribution of Trade PnL1</figcaption>
+            </figure>
           </div>
         </div>
       </div>
-
-      <!-- METHODOLOGY -->
+      <!-- METHODOLOGY (moved below charts) -->
       <div class="card">
         <div class="card__header">
           <h2>
@@ -271,7 +476,7 @@ def backtest(df: pd.DataFrame, position: pd.Series, cost_bps: float = 1.0) -> pd
         </div>
       </div>
 
-      <!-- AI ASSISTANCE NOTE -->
+      <!-- AI ASSISTANCE NOTE (moved below charts) -->
       <div class="card" style="max-width:900px;">
         <div class="card__header">
           <h2>
@@ -287,245 +492,30 @@ def backtest(df: pd.DataFrame, position: pd.Series, cost_bps: float = 1.0) -> pd
         </div>
       </div>
 
+      <!-- RESULTS DISCUSSION / SUMMARY AT THE BOTTOM -->
+      <div class="card" style="max-width:1000px;">
+        <div class="card__header">
+          <h2>
+            <span data-lang="pl">Omówienie wyników</span>
+            <span data-lang="en" style="display:none;">Results discussion</span>
+          </h2>
+        </div>
+        <div class="card__body" style="text-align:left;">
+          <p>
+            <span data-lang="pl">W skrócie: krzywe kapitału i wykresy drawdown pokazują stabilny wzrost w okresach testowych, z rozsądną kontrolą obsunięć. Wykresy kroczącego Sharpe sugerują utrzymujące się dodatnie relacje zysku do ryzyka, natomiast rozkłady PnL oraz statystyki godzin wejścia wskazują, że zyskowność jest nierównomierna w czasie — istnieją godziny o wyraźnie lepszych parametrach wejścia/wyjścia. Ekspozycja czasowa pozostaje zbalansowana względem kierunków, co wspiera powtarzalność zachowań strategii.</span>
+            <span data-lang="en" style="display:none;">In brief: equity and drawdown charts indicate steady growth over the test windows with reasonable drawdown control. Rolling Sharpe remains positive, suggesting sustained risk‑adjusted performance, while PnL distributions and entry‑hour statistics show uneven profitability across time — with certain hours outperforming. Time exposure is balanced across directions, supporting repeatable strategy behavior.</span>
+          </p>
+          <p>
+            <span data-lang="pl">Na podstawie zaprezentowanych wyników strategia wygląda obiecująco, choć pełna ocena opłacalności wymagałaby dłuższej próby (szczególnie dla 1m) oraz testów out‑of‑sample i na danych live. Wdrożenie rygorystycznej metodologii (walk‑forward, koszty i slippage, permutation, bootstrap CI) minimalizuje ryzyko overfittingu i ułatwia interpretację metryk.</span>
+            <span data-lang="en" style="display:none;">Based on the presented results, the strategy looks promising; however, a fuller profitability assessment would benefit from longer samples (especially for 1m) and out‑of‑sample/live validations. The rigorous methodology (walk‑forward, costs and slippage, permutation, bootstrap CI) helps mitigate overfitting risk and makes metrics more interpretable.</span>
+          </p>
+        </div>
+      </div>
+
       
 
     </div>
   </main>
-  
-  <!-- ADDITIONAL VISUALS: auto-organized by timeframe with captions -->
-  <section class="container" style="margin-top:2rem;">
-    <div class="card">
-      <div class="card__header">
-        <h2>
-          <span data-lang="pl">Dodatkowe wizualizacje</span>
-          <span data-lang="en" style="display:none;">Additional visuals</span>
-        </h2>
-      </div>
-      <div class="card__body">
-        <!-- 1m block -->
-        <h3 style="margin-top:0;">
-          <span data-lang="pl">Interwał 1m</span>
-          <span data-lang="en" style="display:none;">Timeframe 1m</span>
-        </h3>
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; align-items:start;">
-          <figure style="margin:0;">
-            <h4 style="margin:0 0 .25rem 0;">
-              <span data-lang="pl">Średni PnL wg godziny wejścia</span>
-              <span data-lang="en" style="display:none;">Average PnL by entry hour</span>
-            </h4>
-            <p style="margin:0 0 .5rem 0; color:var(--color-text-muted);">
-              <span data-lang="pl">Timeframe: 1m</span>
-              <span data-lang="en" style="display:none;">Timeframe: 1m</span>
-            </p>
-            <img src="img/trading-bots/Average PnL by Hour (entry).png" alt="Average PnL by Hour (entry) – 1m" onerror="this.style.display='none'" />
-            <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted);">Average PnL by Hour (entry)</figcaption>
-          </figure>
-
-          <figure style="margin:0;">
-            <h4 style="margin:0 0 .25rem 0;">
-              <span data-lang="pl">Skuteczność wg godziny wejścia</span>
-              <span data-lang="en" style="display:none;">Win rate by entry hour</span>
-            </h4>
-            <p style="margin:0 0 .5rem 0; color:var(--color-text-muted);">
-              <span data-lang="pl">Timeframe: 1m</span>
-              <span data-lang="en" style="display:none;">Timeframe: 1m</span>
-            </p>
-            <img src="img/trading-bots/Win rate by hour (entry).png" alt="Win rate by hour (entry) – 1m" onerror="this.style.display='none'" />
-            <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted);">Win rate by hour (entry)</figcaption>
-          </figure>
-
-          <figure style="margin:0;">
-            <h4 style="margin:0 0 .25rem 0;">
-              <span data-lang="pl">Rozkład PnL transakcji</span>
-              <span data-lang="en" style="display:none;">Distribution of Trade PnL</span>
-            </h4>
-            <p style="margin:0 0 .5rem 0; color:var(--color-text-muted);">
-              <span data-lang="pl">Timeframe: 1m</span>
-              <span data-lang="en" style="display:none;">Timeframe: 1m</span>
-            </p>
-            <img src="img/trading-bots/Distribution of Trade PnL.png" alt="Distribution of Trade PnL – 1m" onerror="this.style.display='none'" />
-            <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted);">Distribution of Trade PnL</figcaption>
-          </figure>
-
-          <figure style="margin:0;">
-            <h4 style="margin:0 0 .25rem 0;">
-              <span data-lang="pl">Udział czasu (ekspozycja)</span>
-              <span data-lang="en" style="display:none;">Exposure (time shares)</span>
-            </h4>
-            <p style="margin:0 0 .5rem 0; color:var(--color-text-muted);">
-              <span data-lang="pl">Timeframe: 1m</span>
-              <span data-lang="en" style="display:none;">Timeframe: 1m</span>
-            </p>
-            <img src="img/trading-bots/Exposure (time shares).png" alt="Exposure (time shares) – 1m" onerror="this.style.display='none'" />
-            <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted);">Exposure (time shares)</figcaption>
-          </figure>
-
-          <figure style="margin:0;">
-            <h4 style="margin:0 0 .25rem 0;">
-              <span data-lang="pl">Kroczący Sharpe (okno=1440)</span>
-              <span data-lang="en" style="display:none;">Rolling Sharpe (window=1440)</span>
-            </h4>
-            <p style="margin:0 0 .5rem 0; color:var(--color-text-muted);">
-              <span data-lang="pl">Timeframe: 1m</span>
-              <span data-lang="en" style="display:none;">Timeframe: 1m</span>
-            </p>
-            <img src="img/trading-bots/Rolling Sharpe (window=1440).png" alt="Rolling Sharpe (window=1440) – 1m" onerror="this.style.display='none'" />
-            <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted);">Rolling Sharpe (window=1440)</figcaption>
-          </figure>
-
-          <figure style="margin:0;">
-            <h4 style="margin:0 0 .25rem 0;">
-              <span data-lang="pl">Kroczący Max Drawdown (okno=1440)</span>
-              <span data-lang="en" style="display:none;">Rolling Max Drawdown (window=1440)</span>
-            </h4>
-            <p style="margin:0 0 .5rem 0; color:var(--color-text-muted);">
-              <span data-lang="pl">Timeframe: 1m</span>
-              <span data-lang="en" style="display:none;">Timeframe: 1m</span>
-            </p>
-            <img src="img/trading-bots/Rolling Max Drawdown (window=1440).png" alt="Rolling Max Drawdown (window=1440) – 1m" onerror="this.style.display='none'" />
-            <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted);">Rolling Max Drawdown (window=1440)</figcaption>
-          </figure>
-
-          <figure style="margin:0;">
-            <h4 style="margin:0 0 .25rem 0;">
-              <span data-lang="pl">Dzienne wyniki: Long/Short i średnia</span>
-              <span data-lang="en" style="display:none;">Daily results Long Short PnL and Average</span>
-            </h4>
-            <p style="margin:0 0 .5rem 0; color:var(--color-text-muted);">
-              <span data-lang="pl">Timeframe: 1m</span>
-              <span data-lang="en" style="display:none;">Timeframe: 1m</span>
-            </p>
-            <img src="img/trading-bots/Daily results Long Short PnL and Average.png" alt="Daily results Long Short PnL and Average – 1m" onerror="this.style.display='none'" />
-            <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted);">Daily results Long Short PnL and Average</figcaption>
-          </figure>
-
-          <figure style="margin:0;">
-            <h4 style="margin:0 0 .25rem 0;">
-              <span data-lang="pl">Equity i Drawdown</span>
-              <span data-lang="en" style="display:none;">Equity and Drawdown</span>
-            </h4>
-            <p style="margin:0 0 .5rem 0; color:var(--color-text-muted);">
-              <span data-lang="pl">Timeframe: 1m</span>
-              <span data-lang="en" style="display:none;">Timeframe: 1m</span>
-            </p>
-            <img src="img/trading-bots/EquityAndDrawdown.png" alt="EquityAndDrawdown – 1m" onerror="this.style.display='none'" />
-            <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted);">EquityAndDrawdown</figcaption>
-          </figure>
-        </div>
-
-        <!-- 5m block -->
-        <h3 style="margin-top:2rem;">
-          <span data-lang="pl">Interwał 5m</span>
-          <span data-lang="en" style="display:none;">Timeframe 5m</span>
-        </h3>
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; align-items:start;">
-          <figure style="margin:0;">
-            <h4 style="margin:0 0 .25rem 0;">
-              <span data-lang="pl">Średni PnL wg godziny wejścia</span>
-              <span data-lang="en" style="display:none;">Average PnL by entry hour</span>
-            </h4>
-            <p style="margin:0 0 .5rem 0; color:var(--color-text-muted);">
-              <span data-lang="pl">Timeframe: 5m</span>
-              <span data-lang="en" style="display:none;">Timeframe: 5m</span>
-            </p>
-            <img src="img/trading-bots/Average PnL by Hour (entry)1.png" alt="Average PnL by Hour (entry) – 5m" onerror="this.style.display='none'" />
-            <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted);">Average PnL by Hour (entry)1</figcaption>
-          </figure>
-
-          <figure style="margin:0;">
-            <h4 style="margin:0 0 .25rem 0;">
-              <span data-lang="pl">Skuteczność wg godziny wejścia</span>
-              <span data-lang="en" style="display:none;">Win rate by entry hour</span>
-            </h4>
-            <p style="margin:0 0 .5rem 0; color:var(--color-text-muted);">
-              <span data-lang="pl">Timeframe: 5m</span>
-              <span data-lang="en" style="display:none;">Timeframe: 5m</span>
-            </p>
-            <img src="img/trading-bots/Win rate by hour (entry)1.png" alt="Win rate by hour (entry) – 5m" onerror="this.style.display='none'" />
-            <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted);">Win rate by hour (entry)1</figcaption>
-          </figure>
-
-          <figure style="margin:0;">
-            <h4 style="margin:0 0 .25rem 0;">
-              <span data-lang="pl">Rozkład PnL transakcji</span>
-              <span data-lang="en" style="display:none;">Distribution of Trade PnL</span>
-            </h4>
-            <p style="margin:0 0 .5rem 0; color:var(--color-text-muted);">
-              <span data-lang="pl">Timeframe: 5m</span>
-              <span data-lang="en" style="display:none;">Timeframe: 5m</span>
-            </p>
-            <img src="img/trading-bots/Distribution of Trade PnL1.png" alt="Distribution of Trade PnL – 5m" onerror="this.style.display='none'" />
-            <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted);">Distribution of Trade PnL1</figcaption>
-          </figure>
-
-          <figure style="margin:0;">
-            <h4 style="margin:0 0 .25rem 0;">
-              <span data-lang="pl">Udział czasu (ekspozycja)</span>
-              <span data-lang="en" style="display:none;">Exposure (time shares)</span>
-            </h4>
-            <p style="margin:0 0 .5rem 0; color:var(--color-text-muted);">
-              <span data-lang="pl">Timeframe: 5m</span>
-              <span data-lang="en" style="display:none;">Timeframe: 5m</span>
-            </p>
-            <img src="img/trading-bots/Exposure (time shares)1.png" alt="Exposure (time shares) – 5m" onerror="this.style.display='none'" />
-            <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted);">Exposure (time shares)1</figcaption>
-          </figure>
-
-          <figure style="margin:0;">
-            <h4 style="margin:0 0 .25rem 0;">
-              <span data-lang="pl">Kroczący Sharpe (okno=288)</span>
-              <span data-lang="en" style="display:none;">Rolling Sharpe (window=288)</span>
-            </h4>
-            <p style="margin:0 0 .5rem 0; color:var(--color-text-muted);">
-              <span data-lang="pl">Timeframe: 5m</span>
-              <span data-lang="en" style="display:none;">Timeframe: 5m</span>
-            </p>
-            <img src="img/trading-bots/Rolling Sharpe (window=288)1.png" alt="Rolling Sharpe (window=288) – 5m" onerror="this.style.display='none'" />
-            <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted);">Rolling Sharpe (window=288)1</figcaption>
-          </figure>
-
-          <figure style="margin:0;">
-            <h4 style="margin:0 0 .25rem 0;">
-              <span data-lang="pl">Kroczący Max Drawdown (okno=288)</span>
-              <span data-lang="en" style="display:none;">Rolling Max Drawdown (window=288)</span>
-            </h4>
-            <p style="margin:0 0 .5rem 0; color:var(--color-text-muted);">
-              <span data-lang="pl">Timeframe: 5m</span>
-              <span data-lang="en" style="display:none;">Timeframe: 5m</span>
-            </p>
-            <img src="img/trading-bots/Rolling Max Drawdown (window=288)1.png" alt="Rolling Max Drawdown (window=288) – 5m" onerror="this.style.display='none'" />
-            <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted);">Rolling Max Drawdown (window=288)1</figcaption>
-          </figure>
-
-          <figure style="margin:0;">
-            <h4 style="margin:0 0 .25rem 0;">
-              <span data-lang="pl">Equity i Drawdown</span>
-              <span data-lang="en" style="display:none;">Equity and Drawdown</span>
-            </h4>
-            <p style="margin:0 0 .5rem 0; color:var(--color-text-muted);">
-              <span data-lang="pl">Timeframe: 5m</span>
-              <span data-lang="en" style="display:none;">Timeframe: 5m</span>
-            </p>
-            <img src="img/trading-bots/Equity and Drawdown1.png" alt="Equity and Drawdown – 5m" onerror="this.style.display='none'" />
-            <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted);">Equity and Drawdown1</figcaption>
-          </figure>
-
-          <figure style="margin:0;">
-            <h4 style="margin:0 0 .25rem 0;">
-              <span data-lang="pl">Krzywa kapitału</span>
-              <span data-lang="en" style="display:none;">Equity Curve</span>
-            </h4>
-            <p style="margin:0 0 .5rem 0; color:var(--color-text-muted);">
-              <span data-lang="pl">Timeframe: 5m</span>
-              <span data-lang="en" style="display:none;">Timeframe: 5m</span>
-            </p>
-            <img src="img/trading-bots/Equity Curve1.png" alt="Equity Curve – 5m" onerror="this.style.display='none'" />
-            <figcaption style="margin-top:.5rem; font-size:.9rem; color:var(--color-text-muted);">Equity Curve1</figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <footer id="contact" class="contact-footer">
     <h2>
