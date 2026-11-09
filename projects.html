@@ -4,292 +4,277 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects — Kacper Kulik</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   <header>
     <nav class="navbar">
       <div class="nav-container">
-        <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link">
-              <span data-lang="en">Home</span>
-              <span data-lang="pl" style="display: none;">Strona główna</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="experience.html" class="nav-link">
-              <span data-lang="en">Experience</span>
-              <span data-lang="pl" style="display: none;">Doświadczenie</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="projects.html" class="nav-link active">
-              <span data-lang="en">Projects</span>
-              <span data-lang="pl" style="display: none;">Projekty</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="skills.html" class="nav-link">
-              <span data-lang="en">Skills &amp; Education</span>
-              <span data-lang="pl" style="display: none;">Umiejętności</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link">
-              <span data-lang="en">Contact</span>
-              <span data-lang="pl" style="display: none;">Kontakt</span>
-            </a>
-          </li>
-        </ul>
-        <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch language">
-          <span id="lang-text">PL</span>
-        </button>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+        <a href="index.html" class="nav-brand">
+          <span class="nav-brand-badge">KK</span>
+          <span>Kacper Kulik</span>
+        </a>
+        <div class="nav-right">
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">
+                <span data-lang="en">Home</span>
+                <span data-lang="pl" style="display: none;">Start</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="experience.html" class="nav-link">
+                <span data-lang="en">Experience</span>
+                <span data-lang="pl" style="display: none;">Doświadczenie</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="projects.html" class="nav-link active">
+                <span data-lang="en">Projects</span>
+                <span data-lang="pl" style="display: none;">Projekty</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="skills.html" class="nav-link">
+                <span data-lang="en">Skills &amp; Edu</span>
+                <span data-lang="pl" style="display: none;">Umiejętności</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">
+                <span data-lang="en">Contact</span>
+                <span data-lang="pl" style="display: none;">Kontakt</span>
+              </a>
+            </li>
+          </ul>
+          <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch language">
+            <span id="lang-text">PL</span>
+          </button>
+          <button class="hamburger" aria-label="Toggle navigation menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
         </div>
       </div>
     </nav>
   </header>
 
   <main>
-    <div class="page-header">
-      <h1>
-        <span data-lang="en">Selected Technical Projects</span>
-        <span data-lang="pl" style="display: none;">Wybrane Projekty Techniczne</span>
-      </h1>
-      <p>
-        <span data-lang="en">Software engineering, quantitative backtesting, machine learning, and systems programming projects in Python, C++, and MQL5.</span>
-        <span data-lang="pl" style="display: none;">Projekty programistyczne, backtesting ilościowy, uczenie maszynowe oraz programowanie systemowe w Pythonie, C++ i MQL5.</span>
-      </p>
-    </div>
-
     <div class="container">
+      <div class="page-header">
+        <span class="eyebrow">02 // Engineering Portfolio</span>
+        <h1>
+          <span data-lang="en">Technical Projects</span>
+          <span data-lang="pl" style="display: none;">Projekty Techniczne</span>
+        </h1>
+        <p>
+          <span data-lang="en">Software engineering, quantitative backtesting, machine learning, and systems programming projects built in Python, C++, and MQL5.</span>
+          <span data-lang="pl" style="display: none;">Projekty programistyczne, backtesting ilościowy, uczenie maszynowe oraz programowanie systemowe w Pythonie, C++ i MQL5.</span>
+        </p>
+      </div>
 
-      <!-- PROJECT 1: Quantitative Strategy Research & Backtesting Stack (Python) -->
-      <div class="card">
-        <div class="card__header">
-          <h2>
-            <span data-lang="en">Quantitative Strategy Research &amp; Backtesting Engine — Python</span>
-            <span data-lang="pl" style="display: none;">Silnik Badań i Backtestingu Strategii — Python</span>
-          </h2>
-          <div class="tech-tags">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Pandas</span>
-            <span class="tech-tag">NumPy</span>
-            <span class="tech-tag">Vectorized Backtesting</span>
-            <span class="tech-tag">Walk-Forward Validation</span>
-            <span class="tech-tag">Bootstrap CI</span>
-          </div>
+      <!-- FEATURED PROJECT: Python Backtesting Engine -->
+      <article class="featured-project">
+        <span class="featured-badge">
+          <span data-lang="en">Featured Architecture · Deep-Dive Available</span>
+          <span data-lang="pl" style="display: none;">Wyróżniona Architektura · Pełna Dokumentacja</span>
+        </span>
+        <h2>
+          <span data-lang="en">Quantitative Strategy Research &amp; Backtesting Engine — Python</span>
+          <span data-lang="pl" style="display: none;">Silnik Badań i Backtestingu Strategii — Python</span>
+        </h2>
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Pandas</span>
+          <span class="tech-tag">NumPy</span>
+          <span class="tech-tag">Vectorized Backtesting</span>
+          <span class="tech-tag">Walk-Forward Validation</span>
+          <span class="tech-tag">Permutation &amp; Bootstrap CI</span>
         </div>
-        <div class="card__body">
-          <p>
-            <span data-lang="en">A modular quantitative research stack designed with clean separation of concerns: OHLCV data ingestion (Yahoo Finance / CSV with synthetic fallback), strict strategy contract interfaces, a vectorized backtester with transaction-cost modelling (bps), risk metrics (CAGR, Sharpe, Sortino, MaxDD, Calmar, WinRate), and statistical deep-testing (grid search, walk-forward windows, block permutation test, bootstrap confidence intervals).</span>
-            <span data-lang="pl" style="display: none;">Modułowy ekosystem badawczy z wyraźnym podziałem warstw: ładowanie danych OHLCV (Yahoo Finance / CSV z trybem syntetycznym), czysty interfejs kontraktu strategii, wektorowy backtester uwzględniający koszty transakcyjne (bps), metryki ryzyka (CAGR, Sharpe, Sortino, MaxDD, Calmar, WinRate) oraz testy statystyczne (grid search, walk-forward, test permutacyjny, przedziały ufności bootstrap).</span>
-          </p>
 
-          <pre><code># Strategy contract (Python) — clean interface separating signal logic from backtesting
+        <div class="featured-split">
+          <div>
+            <p style="color: var(--text-secondary); margin-top: 0;">
+              <span data-lang="en">A modular quantitative research stack built with clear separation of concerns: OHLCV data ingestion (Yahoo Finance / CSV with synthetic fallback), strict strategy contract interfaces, vectorized PnL with transaction-cost modelling (bps), risk metrics, and anti-overfitting validation.</span>
+              <span data-lang="pl" style="display: none;">Modułowy ekosystem badawczy z wyraźnym podziałem warstw: ładowanie danych OHLCV (Yahoo Finance / CSV z trybem syntetycznym), czysty kontrakt strategii, wektorowy rachunek PnL z kosztami (bps), metryki ryzyka oraz testy przeciw przeuczeniu (overfitting).</span>
+            </p>
+            <pre><code># Strategy contract — decoupled from execution &amp; metrics
 from typing import Dict, Any
 import pandas as pd
 
-def strategy_contract(df: pd.DataFrame, params: Dict[str, Any]) -> pd.Series:
+def strategy_contract(df: pd.DataFrame, params: Dict[str, Any]) -&gt; pd.Series:
     """
-    Input:  df with columns &gt;= ['Close', 'RetSimple'], params: hyperparameters
+    Input:  df with columns &gt;= ['Close', 'RetSimple']
     Output: position Series in [-1..1], aligned with df.index
     """
     pos = pd.Series(0.0, index=df.index)
-    # ... compute signal safely; strategy edge decoupled from execution engine
+    # ... compute signal safely; edge decoupled from engine
     return pos</code></pre>
-
-          <img id="equityPreviewImg" src="img/equitychart.png" alt="Equity Curve — Strategy Backtest Snapshot" class="zoomable" style="cursor:pointer;">
-
-          <div class="metrics-grid">
-            <div class="metric-box">
-              <div class="metric-value">0.598</div>
-              <div class="metric-label">Sharpe (5m)</div>
-            </div>
-            <div class="metric-box">
-              <div class="metric-value">2.288</div>
-              <div class="metric-label">Sortino (5m)</div>
-            </div>
-            <div class="metric-box">
-              <div class="metric-value">45.3%</div>
-              <div class="metric-label">WinRate (trades)</div>
-            </div>
-            <div class="metric-box">
-              <div class="metric-value">$1,873.93</div>
-              <div class="metric-label">Total PnL</div>
-            </div>
-            <div class="metric-box">
-              <div class="metric-value">-1.43%</div>
-              <div class="metric-label">Max Drawdown</div>
+            <div style="margin-top: 1.25rem;">
+              <a href="trading-bots.html" class="btn btn--primary">
+                <span data-lang="en">View full architecture, code &amp; charts →</span>
+                <span data-lang="pl" style="display: none;">Pełna architektura, kod i wykresy →</span>
+              </a>
             </div>
           </div>
 
-          <div style="margin-top: 1.25rem;">
-            <a href="trading-bots.html" class="project-link">
-              <span data-lang="en">View full architecture, code &amp; charts →</span>
-              <span data-lang="pl" style="display: none;">Zobacz pełną architekturę, kod i wykresy →</span>
-            </a>
+          <div>
+            <div style="border: 1px solid var(--border-strong); border-radius: var(--radius-md); overflow: hidden; background: #090d12;">
+              <img id="equityPreviewImg" src="img/equitychart.png" alt="Equity Curve — Strategy Backtest Snapshot" class="zoomable" style="display: block; width: 100%; cursor: zoom-in;">
+            </div>
+            <div class="metrics-grid">
+              <div class="metric-box">
+                <div class="metric-value">0.598</div>
+                <div class="metric-label">Sharpe (5m)</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-value">2.288</div>
+                <div class="metric-label">Sortino (5m)</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-value">45.3%</div>
+                <div class="metric-label">WinRate</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-value">$1,873</div>
+                <div class="metric-label">Total PnL</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-value">-1.43%</div>
+                <div class="metric-label">MaxDD</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-value">1,484</div>
+                <div class="metric-label">Trades (5m)</div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <!-- PROJECT 2: Puzzle / Escape Game (UE5 / C++) -->
-      <div class="card">
-        <div class="card__header">
-          <h2>
-            <span data-lang="en">Puzzle / Escape Game — Unreal Engine 5, C++, Blueprints</span>
-            <span data-lang="pl" style="display: none;">Gra Puzzle / Escape — Unreal Engine 5, C++, Blueprints</span>
-          </h2>
-          <div class="tech-tags">
+      <!-- CV TECHNICAL PROJECTS GRID -->
+      <div class="projects-cards-grid">
+
+        <!-- Project 2: Puzzle / Escape Game -->
+        <article class="project-item-card full-span">
+          <h2>Puzzle / Escape Game — Unreal Engine 5, C++, Blueprints</h2>
+          <div class="project-meta">
+            <span data-lang="en">8-month team project (3-person team)</span>
+            <span data-lang="pl" style="display: none;">8-miesięczny projekt zespołowy (zespół 3-osobowy)</span>
+          </div>
+          <div class="tech-tags" style="margin-top: 0; margin-bottom: 1rem;">
             <span class="tech-tag">C++</span>
             <span class="tech-tag">Unreal Engine 5</span>
             <span class="tech-tag">Blueprints</span>
+            <span class="tech-tag">Procedural Generation</span>
             <span class="tech-tag">AI Task Trees</span>
-            <span class="tech-tag">8-Month Team Project</span>
           </div>
-        </div>
-        <div class="card__body">
           <p>
-            <span data-lang="en">Eight-month collaborative project delivered within a three-person team. Responsible for architecting, implementing, and integrating core gameplay systems while incorporating art and level assets produced by teammates.</span>
-            <span data-lang="pl" style="display: none;">Ośmiomiesięczny projekt zespołowy realizowany w trzyosobowym zespole. Odpowiadałem za projektowanie, implementację oraz integrację kluczowych systemów rozgrywki z assetami tworzonymi przez pozostałych członków zespołu.</span>
+            <span data-lang="en">Developed and integrated core gameplay systems within a three-person team, incorporating 3D assets and environments produced by teammates.</span>
+            <span data-lang="pl" style="display: none;">Tworzenie i integracja kluczowych systemów rozgrywki w trzyosobowym zespole, z wykorzystaniem assetów przygotowywanych przez pozostałych członków zespołu.</span>
           </p>
           <ul class="feature-list">
             <li>
-              <span data-lang="en"><strong>Performance-Critical C++:</strong> Implemented computationally intensive systems in C++, including procedural map generation, while keeping simpler gameplay mechanics modular in Blueprints.</span>
-              <span data-lang="pl" style="display: none;"><strong>Wydajny kod C++:</strong> Wykorzystałem C++ do obliczeniowo wymagającej logiki, w tym proceduralnego generowania map, łącząc to z prostszymi mechanikami w Blueprints.</span>
+              <span data-lang="en"><strong>C++ Performance Systems:</strong> Used C++ for computationally intensive functionality, including procedural map generation; built simpler mechanics with Blueprints.</span>
+              <span data-lang="pl" style="display: none;"><strong>Wydajność w C++:</strong> Wykorzystanie C++ do złożonych obliczeniowo systemów, w tym proceduralnego generowania map, oraz Blueprints do prostszych mechanik.</span>
             </li>
             <li>
-              <span data-lang="en"><strong>AI &amp; Persistence Systems:</strong> Built patrolling enemy AI driven by task trees, a full inventory system, and automatic level-progress saving.</span>
-              <span data-lang="pl" style="display: none;"><strong>Systemy AI i zapisu stanu:</strong> Zaimplementowałem patrolujące AI oparte na drzewach zadań (task trees), system ekwipunku oraz automatyczny zapis postępów poziomu.</span>
-            </li>
-            <li>
-              <span data-lang="en"><strong>Team Integration:</strong> Integrated code systems seamlessly with 3D assets, animations, and level designs created by two teammates over an 8-month development cycle.</span>
-              <span data-lang="pl" style="display: none;"><strong>Praca zespołowa:</strong> Zintegrowałem systemy kodu z assetami i projektami poziomów pozostałych dwóch członków zespołu w trakcie 8-miesięcznego cyklu produkcji.</span>
+              <span data-lang="en"><strong>Gameplay &amp; AI Systems:</strong> Implemented patrolling AI with task trees, an inventory system, and automatic level-progress saving.</span>
+              <span data-lang="pl" style="display: none;"><strong>AI i zapis postępu:</strong> Implementacja patrolującego AI z drzewami zadań (task trees), systemu ekwipunku oraz automatycznego zapisu postępu poziomu.</span>
             </li>
           </ul>
-        </div>
-      </div>
+        </article>
 
-      <!-- PROJECT 3: Macroeconomic Release Prediction (Python, Scikit-learn) -->
-      <div class="card">
-        <div class="card__header">
+        <!-- Project 3: Macroeconomic Release Prediction -->
+        <article class="project-item-card">
           <h2>
-            <span data-lang="en">Macroeconomic Release Prediction — Python, Scikit-learn</span>
-            <span data-lang="pl" style="display: none;">Predykcja Publikacji Makroekonomicznych — Python, Scikit-learn</span>
+            <span data-lang="en">Macroeconomic Release Prediction</span>
+            <span data-lang="pl" style="display: none;">Predykcja Danych Makroekonomicznych</span>
           </h2>
-          <div class="tech-tags">
+          <div class="project-meta">Python · Machine Learning</div>
+          <div class="tech-tags" style="margin-top: 0; margin-bottom: 1rem;">
             <span class="tech-tag">Python</span>
             <span class="tech-tag">Scikit-learn</span>
             <span class="tech-tag">Pandas</span>
             <span class="tech-tag">NumPy</span>
             <span class="tech-tag">Matplotlib</span>
-            <span class="tech-tag">Machine Learning</span>
           </div>
-        </div>
-        <div class="card__body">
           <p>
-            <span data-lang="en">Machine learning pipeline built to estimate upcoming macroeconomic release outcomes (such as CPI and PPI) from historical time-series datasets.</span>
-            <span data-lang="pl" style="display: none;">Pipeline uczenia maszynowego przygotowany do estymacji wyników nadchodzących publikacji makroekonomicznych (m.in. CPI oraz PPI) na podstawie danych historycznych.</span>
+            <span data-lang="en">Trained a machine-learning model on historical macroeconomic data to estimate CPI, PPI, and related indicator release outcomes.</span>
+            <span data-lang="pl" style="display: none;">Model uczenia maszynowego trenowany na historycznych danych makroekonomicznych do estymacji publikacji CPI, PPI i powiązanych wskaźników.</span>
           </p>
           <ul class="feature-list">
             <li>
-              <span data-lang="en"><strong>Model Training:</strong> Trained predictive models using Scikit-learn on historical macroeconomic series to forecast CPI, PPI, and related indicator releases.</span>
-              <span data-lang="pl" style="display: none;"><strong>Trening modeli ML:</strong> Wytrenowanie modeli predykcyjnych w Scikit-learn na historycznych szeregach makroekonomicznych dla szacowania odczytów CPI, PPI i powiązanych wskaźników.</span>
+              <span data-lang="en"><strong>Predictive Modelling:</strong> Trained and evaluated regression/classification models in Scikit-learn on historical economic series.</span>
+              <span data-lang="pl" style="display: none;"><strong>Modelowanie ML:</strong> Trening i ewaluacja modeli w Scikit-learn na historycznych szeregach czasowych.</span>
             </li>
             <li>
-              <span data-lang="en"><strong>Data Analysis &amp; Visualisation:</strong> Used Pandas, NumPy, and Matplotlib for feature engineering, cleaning, exploratory statistical analysis, and result visualisation.</span>
-              <span data-lang="pl" style="display: none;"><strong>Analiza i wizualizacja danych:</strong> Wykorzystanie Pandas, NumPy i Matplotlib do przygotowania cech, oczyszczania danych, analizy statystycznej i wykresów wyników.</span>
+              <span data-lang="en"><strong>Analysis &amp; Visualisation:</strong> Used Pandas, NumPy, and Matplotlib for preprocessing, feature analysis, and charting.</span>
+              <span data-lang="pl" style="display: none;"><strong>Analiza i wykresy:</strong> Wykorzystanie Pandas, NumPy i Matplotlib do analizy danych i wizualizacji.</span>
             </li>
           </ul>
-        </div>
-      </div>
+        </article>
 
-      <!-- PROJECT 4: Automated Trading Bot (MQL5, MetaTrader 5) -->
-      <div class="card">
-        <div class="card__header">
-          <h2>
-            <span data-lang="en">Automated Trading Bot — MQL5, MetaTrader 5</span>
-            <span data-lang="pl" style="display: none;">Zautomatyzowany Bot Tradingowy — MQL5, MetaTrader 5</span>
-          </h2>
-          <div class="tech-tags">
+        <!-- Project 4: Automated Trading Bot (MQL5) -->
+        <article class="project-item-card">
+          <h2>Automated Trading Bot — MQL5</h2>
+          <div class="project-meta">MetaTrader 5 · VPS Deployment</div>
+          <div class="tech-tags" style="margin-top: 0; margin-bottom: 1rem;">
             <span class="tech-tag">MQL5</span>
             <span class="tech-tag">MetaTrader 5</span>
-            <span class="tech-tag">Automated Execution</span>
-            <span class="tech-tag">VPS Deployment</span>
+            <span class="tech-tag">Scoring Evaluator</span>
+            <span class="tech-tag">VPS</span>
           </div>
-        </div>
-        <div class="card__body">
           <p>
-            <span data-lang="en">AI-assisted modular execution bot built in MQL5 for MetaTrader 5, engineered for continuous, unattended operation on a remote VPS.</span>
-            <span data-lang="pl" style="display: none;">Modularny bot egzekucyjny wspomagany przez AI, zbudowany w MQL5 dla platformy MetaTrader 5 i przystosowany do ciągłej, bezobsługowej pracy na serwerze VPS.</span>
+            <span data-lang="en">Built an AI-assisted modular trading bot using ICT Unicorn strategy conditions, automated trade execution, and a scoring-based signal evaluator.</span>
+            <span data-lang="pl" style="display: none;">Modułowy bot tradingowy wspierany przez AI, realizujący warunki strategii ICT Unicorn, automatyczną egzekucję zleceń i punktową ocenę sygnałów.</span>
           </p>
           <ul class="feature-list">
             <li>
-              <span data-lang="en"><strong>Modular Signal Evaluation:</strong> Implemented ICT Unicorn strategy conditions paired with a scoring-based signal evaluator and automated trade execution.</span>
-              <span data-lang="pl" style="display: none;"><strong>Modułowa ewaluacja sygnałów:</strong> Implementacja warunków strategii ICT Unicorn połączona z punktowym systemem oceny sygnałów oraz automatyczną egzekucją zleceń.</span>
+              <span data-lang="en"><strong>Data Collection Loop:</strong> Implemented periodic market-data collection at 30-second intervals with modular signal scoring.</span>
+              <span data-lang="pl" style="display: none;"><strong>Pętla danych rynkowych:</strong> Okresowe zbieranie danych co 30 sekund połączone z ewaluatorem sygnałów opartym na scoringu.</span>
             </li>
             <li>
-              <span data-lang="en"><strong>Unattended VPS Operation:</strong> Implemented periodic market-data collection at 30-second intervals and designed fault-tolerant execution for 24/5 VPS deployment.</span>
-              <span data-lang="pl" style="display: none;"><strong>Praca na VPS:</strong> Zaimplementowano cykliczne zbieranie danych rynkowych co 30 sekund oraz bezobsługową architekturę pod uruchomienie na zdalnym VPS.</span>
+              <span data-lang="en"><strong>Unattended Deployment:</strong> Designed for reliable, unattended 24/5 execution on a dedicated VPS.</span>
+              <span data-lang="pl" style="display: none;"><strong>Praca bezobsługowa:</strong> Architektura przygotowana do stabilnej, ciągłej pracy na serwerze VPS.</span>
             </li>
           </ul>
-        </div>
+        </article>
+
       </div>
 
       <!-- GitHub CTA -->
-      <div style="text-align: center; margin-top: 2rem;">
+      <div style="text-align: center; margin-top: 2.5rem;">
         <a href="https://github.com/MrowkaH" target="_blank" rel="noopener noreferrer" class="btn btn--outline">
-          <span data-lang="en">Explore more repositories on GitHub (github.com/MrowkaH) ↗</span>
-          <span data-lang="pl" style="display: none;">Zobacz więcej repozytoriów na GitHubie (github.com/MrowkaH) ↗</span>
+          <span data-lang="en">Explore repositories on GitHub (github.com/MrowkaH) ↗</span>
+          <span data-lang="pl" style="display: none;">Zobacz repozytoria na GitHubie (github.com/MrowkaH) ↗</span>
         </a>
       </div>
-
     </div>
   </main>
 
-  <!-- Modal for equity chart zoom -->
   <div id="equityModal" class="modal">
     <span class="close">&times;</span>
     <img class="modal-content" id="equityModalImg" alt="Zoomed equity curve">
   </div>
 
   <footer class="contact-footer">
-    <h2>
-      <span data-lang="en">Contact</span>
-      <span data-lang="pl" style="display: none;">Kontakt</span>
-    </h2>
-    <div class="contact-info">
-      <div class="contact-item">
-        <strong>Email:</strong> <a href="mailto:Kacper.Kulik2003@wp.pl">Kacper.Kulik2003@wp.pl</a>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>Kacper Kulik</strong> ·
+        <span data-lang="en">Kraków, Poland</span>
+        <span data-lang="pl" style="display: none;">Kraków, Polska</span>
       </div>
-      <div class="contact-item">
-        <strong>
-          <span data-lang="en">Phone:</span>
-          <span data-lang="pl" style="display: none;">Telefon:</span>
-        </strong>
-        <a href="tel:+48690900704">+48 690 900 704</a>
-      </div>
-      <div class="contact-item">
-        <strong>
-          <span data-lang="en">Location:</span>
-          <span data-lang="pl" style="display: none;">Lokalizacja:</span>
-        </strong>
-        <span data-lang="en">Kraków, Poland / Remote</span>
-        <span data-lang="pl" style="display: none;">Kraków, Polska / Zdalnie</span>
-      </div>
-      <div class="contact-item">
-        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kacper-kulik-3713b1302" target="_blank" rel="noopener noreferrer">linkedin.com/in/kacper-kulik</a>
-      </div>
-      <div class="contact-item">
-        <strong>GitHub:</strong> <a href="https://github.com/MrowkaH" target="_blank" rel="noopener noreferrer">github.com/MrowkaH</a>
+      <div class="contact-info">
+        <div class="contact-item"><a href="mailto:Kacper.Kulik2003@wp.pl">Kacper.Kulik2003@wp.pl</a></div>
+        <div class="contact-item"><a href="tel:+48690900704">+48 690 900 704</a></div>
+        <div class="contact-item"><a href="https://www.linkedin.com/in/kacper-kulik-3713b1302" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
+        <div class="contact-item"><a href="https://github.com/MrowkaH" target="_blank" rel="noopener noreferrer">GitHub</a></div>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>

@@ -5,212 +5,280 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Kacper Kulik — Computer Science Engineer | Banking Technology | Software Engineering. Portfolio tailored for Software Engineer roles in banking and fintech.">
   <title>Kacper Kulik — Software Engineer | Banking Technology</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   <header>
     <nav class="navbar">
       <div class="nav-container">
-        <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link active">
-              <span data-lang="en">Home</span>
-              <span data-lang="pl" style="display: none;">Strona główna</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="experience.html" class="nav-link">
-              <span data-lang="en">Experience</span>
-              <span data-lang="pl" style="display: none;">Doświadczenie</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="projects.html" class="nav-link">
-              <span data-lang="en">Projects</span>
-              <span data-lang="pl" style="display: none;">Projekty</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="skills.html" class="nav-link">
-              <span data-lang="en">Skills &amp; Education</span>
-              <span data-lang="pl" style="display: none;">Umiejętności</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link">
-              <span data-lang="en">Contact</span>
-              <span data-lang="pl" style="display: none;">Kontakt</span>
-            </a>
-          </li>
-        </ul>
-        <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch language">
-          <span id="lang-text">PL</span>
-        </button>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+        <a href="index.html" class="nav-brand">
+          <span class="nav-brand-badge">KK</span>
+          <span>Kacper Kulik</span>
+        </a>
+        <div class="nav-right">
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link active">
+                <span data-lang="en">Home</span>
+                <span data-lang="pl" style="display: none;">Start</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="experience.html" class="nav-link">
+                <span data-lang="en">Experience</span>
+                <span data-lang="pl" style="display: none;">Doświadczenie</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="projects.html" class="nav-link">
+                <span data-lang="en">Projects</span>
+                <span data-lang="pl" style="display: none;">Projekty</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="skills.html" class="nav-link">
+                <span data-lang="en">Skills &amp; Edu</span>
+                <span data-lang="pl" style="display: none;">Umiejętności</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">
+                <span data-lang="en">Contact</span>
+                <span data-lang="pl" style="display: none;">Kontakt</span>
+              </a>
+            </li>
+          </ul>
+          <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch language">
+            <span id="lang-text">PL</span>
+          </button>
+          <button class="hamburger" aria-label="Toggle navigation menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
         </div>
       </div>
     </nav>
   </header>
 
   <main>
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span data-lang="en">Kraków, Poland · MSc CS Student · Business Analyst @ BBH</span>
-          <span data-lang="pl" style="display: none;">Kraków · Student Mgr Informatyki · Business Analyst @ BBH</span>
+    <!-- Hero Split Section -->
+    <section class="hero-wrapper">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span data-lang="en">Open to Software Engineer opportunities · Kraków / Hybrid</span>
+            <span data-lang="pl" style="display: none;">Otwarty na pozycje Software Engineer · Kraków / Hybrydowo</span>
+          </div>
+          <h1>Kacper Kulik</h1>
+          <p class="hero-subtitle">
+            <span data-lang="en">Computer Science Engineer · Banking Technology · Software Engineering</span>
+            <span data-lang="pl" style="display: none;">Inżynier Informatyki · Technologia Bankowa · Software Engineering</span>
+          </p>
+          <p class="hero-bio">
+            <span data-lang="en">Computer Science engineer pursuing a part-time MSc, with hands-on experience in banking technology, payment processing and software testing. Works across UAT/SIT, defect investigation and legacy-system scripting, collaborating with developers and business stakeholders. Built technical projects involving C++, Python machine learning and automated trading systems.</span>
+            <span data-lang="pl" style="display: none;">Inżynier informatyki kontynuujący studia magisterskie w trybie zaocznym, z praktycznym doświadczeniem w technologii bankowej, przetwarzaniu płatności i testowaniu oprogramowania. Pracuję w obszarach UAT/SIT, analizy defektów oraz skryptowania systemów legacy, współpracując z deweloperami i zespołami biznesowymi. Realizowałem projekty techniczne w C++, Python machine learning oraz zautomatyzowane systemy tradingowe.</span>
+          </p>
+          <div class="hero-buttons">
+            <a href="experience.html" class="btn btn--primary">
+              <span data-lang="en">View Experience</span>
+              <span data-lang="pl" style="display: none;">Zobacz Doświadczenie</span>
+            </a>
+            <a href="projects.html" class="btn btn--outline">
+              <span data-lang="en">Explore Projects</span>
+              <span data-lang="pl" style="display: none;">Zobacz Projekty</span>
+            </a>
+            <a href="https://github.com/MrowkaH" target="_blank" rel="noopener noreferrer" class="btn btn--outline">
+              GitHub ↗
+            </a>
+          </div>
         </div>
-        <h1>Kacper Kulik</h1>
-        <p class="hero-subtitle">
-          <span data-lang="en">Computer Science Engineer | Banking Technology | Software Engineering</span>
-          <span data-lang="pl" style="display: none;">Inżynier Informatyki | Technologia Bankowa | Software Engineering</span>
-        </p>
-        <p class="hero-location">
-          <span data-lang="en">Payment Systems (SWIFT MT / ISO 20022 MX) · UAT/SIT &amp; Defect Investigation · Python &amp; C++</span>
-          <span data-lang="pl" style="display: none;">Systemy Płatnicze (SWIFT MT / ISO 20022 MX) · UAT/SIT i Analiza Defektów · Python &amp; C++</span>
-        </p>
-        <div class="hero-buttons">
-          <a href="experience.html" class="btn btn--primary">
-            <span data-lang="en">View Experience</span>
-            <span data-lang="pl" style="display: none;">Zobacz Doświadczenie</span>
-          </a>
-          <a href="projects.html" class="btn btn--outline">
-            <span data-lang="en">View Projects</span>
-            <span data-lang="pl" style="display: none;">Zobacz Projekty</span>
-          </a>
-          <a href="https://github.com/MrowkaH" target="_blank" rel="noopener noreferrer" class="btn btn--outline">
-            GitHub ↗
+
+        <aside class="snapshot-card" aria-label="Candidate snapshot">
+          <div class="snapshot-topbar">
+            <div class="snapshot-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="snapshot-title">profile_summary.json</div>
+          </div>
+          <div class="snapshot-body">
+            <div class="snapshot-row">
+              <span class="snapshot-label">
+                <span data-lang="en">Current Role</span>
+                <span data-lang="pl" style="display: none;">Obecna rola</span>
+              </span>
+              <span class="snapshot-value">Business Analyst @ Brown Brothers Harriman <small>(Apr 2026–Present)</small></span>
+            </div>
+            <div class="snapshot-row">
+              <span class="snapshot-label">
+                <span data-lang="en">Education</span>
+                <span data-lang="pl" style="display: none;">Wykształcenie</span>
+              </span>
+              <span class="snapshot-value">
+                <span data-lang="en">MSc CS (in progress) · BEng CS <small>(4.0/5.0)</small></span>
+                <span data-lang="pl" style="display: none;">Mgr Informatyki (w toku) · Inż. Informatyki <small>(4.0/5.0)</small></span>
+              </span>
+            </div>
+            <div class="snapshot-row">
+              <span class="snapshot-label">
+                <span data-lang="en">Banking &amp; Payments</span>
+                <span data-lang="pl" style="display: none;">Bankowość i Płatności</span>
+              </span>
+              <span class="snapshot-value">SWIFT MT · ISO 20022 MX · FircoSoft · Trade Lifecycle</span>
+            </div>
+            <div class="snapshot-row">
+              <span class="snapshot-label">
+                <span data-lang="en">Core Tech &amp; QA</span>
+                <span data-lang="pl" style="display: none;">Stack Techniczny i QA</span>
+              </span>
+              <span class="snapshot-value">Python · C++ · C# · SQL · UAT/SIT · qTest · Jenkins · Git</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- Core Pillars -->
+      <section class="section-block">
+        <div class="section-heading">
+          <h2>
+            <span data-lang="en">What I Bring to Banking Software Engineering</span>
+            <span data-lang="pl" style="display: none;">Kompetencje dla Inżynierii Oprogramowania w Bankowości</span>
+          </h2>
+          <a href="skills.html" class="section-heading-link">
+            <span data-lang="en">Full skill matrix →</span>
+            <span data-lang="pl" style="display: none;">Pełna lista umiejętności →</span>
           </a>
         </div>
-      </div>
-    </section>
 
-    <!-- Professional Profile Section -->
-    <section class="profile-section">
-      <div class="profile-card">
-        <h2>
-          <span data-lang="en">Professional Profile</span>
-          <span data-lang="pl" style="display: none;">Profil Zawodowy</span>
-        </h2>
-        <p>
-          <span data-lang="en">Computer Science engineer pursuing a part-time MSc, with hands-on experience in banking technology, payment processing and software testing. Works across UAT/SIT, defect investigation and legacy-system scripting, collaborating with developers and business stakeholders. Built technical projects involving C++, Python machine learning and automated trading systems.</span>
-          <span data-lang="pl" style="display: none;">Inżynier informatyki kontynuujący studia magisterskie w trybie zaocznym, z praktycznym doświadczeniem w technologii bankowej, przetwarzaniu płatności i testowaniu oprogramowania. Pracuję w obszarach UAT/SIT, analizy defektów i skryptowania systemów legacy, współpracując z deweloperami i zespołami biznesowymi. Tworzyłem projekty techniczne z wykorzystaniem C++, Python machine learning oraz zautomatyzowanych systemów tradingowych.</span>
-        </p>
-      </div>
-    </section>
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M3 10h18"/><path d="M5 6l7-3 7 3"/><path d="M4 10v11"/><path d="M20 10v11"/><path d="M8 14v3"/><path d="M12 14v3"/><path d="M16 14v3"/></svg>
+            </div>
+            <h3>
+              <span data-lang="en">Payment &amp; Banking Systems</span>
+              <span data-lang="pl" style="display: none;">Systemy Płatnicze i Bankowość</span>
+            </h3>
+            <p>
+              <span data-lang="en">Real-world experience with SWIFT MT, ISO 20022 MX message analysis, transaction verification, FircoSoft workflows, and legacy IBM system scripting.</span>
+              <span data-lang="pl" style="display: none;">Praktyka w analizie komunikatów SWIFT MT i ISO 20022 MX, weryfikacji transakcji, FircoSoft oraz skryptowaniu wewnętrznych systemów legacy IBM.</span>
+            </p>
+          </div>
 
-    <!-- Key Highlights Grid -->
-    <section class="projects-section">
-      <h2>
-        <span data-lang="en">Core Competencies &amp; Portfolio</span>
-        <span data-lang="pl" style="display: none;">Kluczowe Kompetencje i Portfolio</span>
-      </h2>
-      <div class="projects-grid">
+          <div class="pillar-card">
+            <div class="icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>
+              <span data-lang="en">Software &amp; Systems Engineering</span>
+              <span data-lang="pl" style="display: none;">Inżynieria Oprogramowania</span>
+            </h3>
+            <p>
+              <span data-lang="en">Built modular quantitative backtesting pipelines in Python, C++ procedural systems in Unreal Engine 5, Scikit-learn ML models, and MQL5 automation.</span>
+              <span data-lang="pl" style="display: none;">Budowa modułowych silników backtestingu w Pythonie, systemów C++ w Unreal Engine 5, modeli ML w Scikit-learn oraz automatyzacji w MQL5.</span>
+            </p>
+          </div>
 
-        <a href="experience.html" class="project-card">
-          <div class="project-icon">🏦</div>
-          <h3>
-            <span data-lang="en">Banking Technology &amp; Payments</span>
-            <span data-lang="pl" style="display: none;">Technologia Bankowa i Płatności</span>
-          </h3>
-          <p>
-            <span data-lang="en">Hands-on experience at Brown Brothers Harriman (BBH) in payment processing, SWIFT MT / ISO 20022 MX message analysis, FircoSoft verification, and legacy IBM system scripting.</span>
-            <span data-lang="pl" style="display: none;">Praktyczne doświadczenie w Brown Brothers Harriman (BBH): przetwarzanie płatności, analiza komunikatów SWIFT MT / ISO 20022 MX, FircoSoft oraz skrypty w języku legacy IBM.</span>
-          </p>
-          <span class="project-card-cta">
-            <span data-lang="en">Explore experience →</span>
-            <span data-lang="pl" style="display: none;">Zobacz doświadczenie →</span>
-          </span>
-        </a>
+          <div class="pillar-card">
+            <div class="icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <h3>
+              <span data-lang="en">Testing, Defect Analysis &amp; Delivery</span>
+              <span data-lang="pl" style="display: none;">Testy, Analiza Defektów i Jakość</span>
+            </h3>
+            <p>
+              <span data-lang="en">Executing UAT &amp; supporting SIT before client release. Reproducing complex defects, documenting root causes, and collaborating closely with engineering teams via qTest &amp; Jenkins.</span>
+              <span data-lang="pl" style="display: none;">Realizacja testów UAT i wsparcie SIT przed wdrożeniem. Reprodukcja defektów, dokumentacja oraz współpraca z zespołami developerskimi w qTest i Jenkins.</span>
+            </p>
+          </div>
+        </div>
+      </section>
 
-        <a href="projects.html" class="project-card">
-          <div class="project-icon">💻</div>
-          <h3>
-            <span data-lang="en">Software Engineering Projects</span>
-            <span data-lang="pl" style="display: none;">Projekty Programistyczne</span>
-          </h3>
-          <p>
-            <span data-lang="en">Engineered a modular Python backtesting &amp; strategy research stack, C++ procedural generation in Unreal Engine 5 (8-month team project), Scikit-learn macro ML models, and MQL5 trading bots.</span>
-            <span data-lang="pl" style="display: none;">Modularny system backtestingu w Pythonie, proceduralne generowanie w C++ / Unreal Engine 5 (8-mies. projekt zespołowy), modele ML w Scikit-learn oraz boty w MQL5.</span>
-          </p>
-          <span class="project-card-cta">
-            <span data-lang="en">View technical projects →</span>
-            <span data-lang="pl" style="display: none;">Zobacz projekty techniczne →</span>
-          </span>
-        </a>
+      <!-- Featured Preview: Experience & Projects -->
+      <section class="section-block" style="margin-bottom: 0;">
+        <div class="section-heading">
+          <h2>
+            <span data-lang="en">Quick Highlights</span>
+            <span data-lang="pl" style="display: none;">Wybrane Elementy</span>
+          </h2>
+        </div>
 
-        <a href="experience.html" class="project-card">
-          <div class="project-icon">🧪</div>
-          <h3>
-            <span data-lang="en">Software Testing, QA &amp; Tooling</span>
-            <span data-lang="pl" style="display: none;">Testowanie Oprogramowania i QA</span>
-          </h3>
-          <p>
-            <span data-lang="en">Executing UAT and supporting SIT for payment applications before client release. Defect reproduction, root-cause documentation, and workflow collaboration using qTest, Jenkins, Jira, and Git.</span>
-            <span data-lang="pl" style="display: none;">Wykonywanie testów UAT i wsparcie SIT dla aplikacji płatniczych przed wydaniem. Reprodukcja defektów, dokumentacja oraz praca z qTest, Jenkins, Jira i Git.</span>
-          </p>
-          <span class="project-card-cta">
-            <span data-lang="en">See QA &amp; testing stack →</span>
-            <span data-lang="pl" style="display: none;">Zobacz doświadczenie QA →</span>
-          </span>
-        </a>
+        <div class="preview-grid">
+          <div class="preview-card">
+            <div>
+              <span class="eyebrow">01 // Experience</span>
+              <h3>Brown Brothers Harriman &amp; Luxoft</h3>
+              <p>
+                <span data-lang="en">Currently working as a Business Analyst on payment applications (UAT/SIT, IBM scripting, SWIFT MT / ISO 20022 MX). Previously IT Support &amp; Asset Management at Luxoft Poland.</span>
+                <span data-lang="pl" style="display: none;">Obecnie Business Analyst w zespole aplikacji płatniczych (UAT/SIT, skrypty IBM, SWIFT MT / ISO 20022 MX). Wcześniej IT Support / Asset Management w Luxoft Poland.</span>
+              </p>
+              <div class="tech-tags">
+                <span class="tech-tag">BBH</span>
+                <span class="tech-tag">UAT/SIT</span>
+                <span class="tech-tag">SWIFT MT</span>
+                <span class="tech-tag">ISO 20022</span>
+                <span class="tech-tag">Luxoft</span>
+              </div>
+            </div>
+            <div class="preview-card-footer">
+              <a href="experience.html" class="preview-link">
+                <span data-lang="en">Read full experience →</span>
+                <span data-lang="pl" style="display: none;">Zobacz pełne doświadczenie →</span>
+              </a>
+            </div>
+          </div>
 
-        <a href="skills.html" class="project-card">
-          <div class="project-icon">🎓</div>
-          <h3>
-            <span data-lang="en">CS Degree &amp; Banking Certifications</span>
-            <span data-lang="pl" style="display: none;">Edukacja IT i Certyfikaty Bankowe</span>
-          </h3>
-          <p>
-            <span data-lang="en">BEng in Computer Science (4.0/5.0) and part-time MSc in Computer Science (in progress), complemented by Luxoft banking trainings: Trade Lifecycle, Derivatives, and Investment Banking.</span>
-            <span data-lang="pl" style="display: none;">Inżynier informatyki (4.0/5.0), studia magisterskie z informatyki w toku oraz certyfikaty bankowe Luxoft: Trade Lifecycle, Derivatives i Investment Banking.</span>
-          </p>
-          <span class="project-card-cta">
-            <span data-lang="en">View skills &amp; education →</span>
-            <span data-lang="pl" style="display: none;">Zobacz umiejętności i edukację →</span>
-          </span>
-        </a>
-
-      </div>
-    </section>
+          <div class="preview-card">
+            <div>
+              <span class="eyebrow">02 // Projects</span>
+              <h3>
+                <span data-lang="en">Python Backtesting, C++ &amp; ML Systems</span>
+                <span data-lang="pl" style="display: none;">Systemy Python, C++ i Machine Learning</span>
+              </h3>
+              <p>
+                <span data-lang="en">Explore a modular Python strategy research stack with walk-forward testing, an 8-month Unreal Engine 5 C++ team game, CPI/PPI ML prediction, and an MQL5 VPS trading bot.</span>
+                <span data-lang="pl" style="display: none;">Modułowy silnik badań strategii w Pythonie (walk-forward, bootstrap CI), 8-miesięczny projekt zespołowy w C++ / UE5, predykcja makro ML oraz bot MQL5 na VPS.</span>
+              </p>
+              <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">Scikit-learn</span>
+                <span class="tech-tag">UE5</span>
+                <span class="tech-tag">MQL5</span>
+              </div>
+            </div>
+            <div class="preview-card-footer">
+              <a href="projects.html" class="preview-link">
+                <span data-lang="en">Explore all projects →</span>
+                <span data-lang="pl" style="display: none;">Zobacz wszystkie projekty →</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer class="contact-footer">
-    <h2>
-      <span data-lang="en">Contact</span>
-      <span data-lang="pl" style="display: none;">Kontakt</span>
-    </h2>
-    <div class="contact-info">
-      <div class="contact-item">
-        <strong>Email:</strong> <a href="mailto:Kacper.Kulik2003@wp.pl">Kacper.Kulik2003@wp.pl</a>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>Kacper Kulik</strong> ·
+        <span data-lang="en">Kraków, Poland</span>
+        <span data-lang="pl" style="display: none;">Kraków, Polska</span>
       </div>
-      <div class="contact-item">
-        <strong>
-          <span data-lang="en">Phone:</span>
-          <span data-lang="pl" style="display: none;">Telefon:</span>
-        </strong>
-        <a href="tel:+48690900704">+48 690 900 704</a>
-      </div>
-      <div class="contact-item">
-        <strong>
-          <span data-lang="en">Location:</span>
-          <span data-lang="pl" style="display: none;">Lokalizacja:</span>
-        </strong>
-        <span data-lang="en">Kraków, Poland / Remote</span>
-        <span data-lang="pl" style="display: none;">Kraków, Polska / Zdalnie</span>
-      </div>
-      <div class="contact-item">
-        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kacper-kulik-3713b1302" target="_blank" rel="noopener noreferrer">linkedin.com/in/kacper-kulik</a>
-      </div>
-      <div class="contact-item">
-        <strong>GitHub:</strong> <a href="https://github.com/MrowkaH" target="_blank" rel="noopener noreferrer">github.com/MrowkaH</a>
+      <div class="contact-info">
+        <div class="contact-item"><a href="mailto:Kacper.Kulik2003@wp.pl">Kacper.Kulik2003@wp.pl</a></div>
+        <div class="contact-item"><a href="tel:+48690900704">+48 690 900 704</a></div>
+        <div class="contact-item"><a href="https://www.linkedin.com/in/kacper-kulik-3713b1302" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
+        <div class="contact-item"><a href="https://github.com/MrowkaH" target="_blank" rel="noopener noreferrer">GitHub</a></div>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>

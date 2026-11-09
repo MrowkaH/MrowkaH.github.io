@@ -49,16 +49,9 @@ function toggleMobileMenu() {
 
 function initializeModals() {
     const modalMappings = [
-        // Legacy mappings (trading-bots.html, etc.)
-        { imgId: "myImg", modalId: "myModal", modalImgId: "img01" },
-        { imgId: "myImg2", modalId: "myModal2", modalImgId: "img02" },
-        { imgId: "myImg3", modalId: "myModal3", modalImgId: "img03" },
-        { imgId: "myImg4", modalId: "myModal4", modalImgId: "img04" },
-        // Skills page certificates
         { imgId: "certImg1", modalId: "certModal1", modalImgId: "certModalImg1" },
         { imgId: "certImg2", modalId: "certModal2", modalImgId: "certModalImg2" },
         { imgId: "certImg3", modalId: "certModal3", modalImgId: "certModalImg3" },
-        // Projects page equity chart
         { imgId: "equityPreviewImg", modalId: "equityModal", modalImgId: "equityModalImg" },
     ];
 
@@ -143,6 +136,38 @@ function initializeModals() {
             }
         });
     });
+
+    // Escape key closes open modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.modal').forEach(m => {
+                m.style.display = 'none';
+            });
+        }
+    });
+}
+
+function initializeCopyButtons() {
+    document.querySelectorAll('.copy-btn[data-copy]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const text = btn.getAttribute('data-copy');
+            if (!text) return;
+            navigator.clipboard?.writeText(text).then(() => {
+                btn.classList.add('copied');
+                const enSpan = btn.querySelector('[data-lang="en"]');
+                const plSpan = btn.querySelector('[data-lang="pl"]');
+                const origEn = enSpan ? enSpan.textContent : '';
+                const origPl = plSpan ? plSpan.textContent : '';
+                if (enSpan) enSpan.textContent = 'Copied!';
+                if (plSpan) plSpan.textContent = 'Skopiowano!';
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    if (enSpan) enSpan.textContent = origEn;
+                    if (plSpan) plSpan.textContent = origPl;
+                }, 1600);
+            });
+        });
+    });
 }
 
 function getCurrentLanguage() {
@@ -152,11 +177,11 @@ function getCurrentLanguage() {
 document.addEventListener('DOMContentLoaded', () => {
     initializeLanguage();
     initializeModals();
+    initializeCopyButtons();
 
     const hamburger = document.querySelector('.hamburger');
     hamburger?.addEventListener('click', toggleMobileMenu);
 
-    // Close mobile menu when a link is clicked
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             document.querySelector('.nav-menu')?.classList.remove('active');

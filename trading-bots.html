@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trading Bots – Documentation | Kacper Kulik</title>
   <meta name="description" content="Trading Bots – brief project documentation: modular architecture, testing methodology, safe code samples, risk metrics, and equity curve.">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
 </head>
@@ -13,45 +13,51 @@
   <header>
     <nav class="navbar">
       <div class="nav-container">
-        <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link">
-              <span data-lang="en">Home</span>
-              <span data-lang="pl" style="display: none;">Strona główna</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="experience.html" class="nav-link">
-              <span data-lang="en">Experience</span>
-              <span data-lang="pl" style="display: none;">Doświadczenie</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="projects.html" class="nav-link active">
-              <span data-lang="en">Projects</span>
-              <span data-lang="pl" style="display: none;">Projekty</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="skills.html" class="nav-link">
-              <span data-lang="en">Skills &amp; Education</span>
-              <span data-lang="pl" style="display: none;">Umiejętności</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link">
-              <span data-lang="en">Contact</span>
-              <span data-lang="pl" style="display: none;">Kontakt</span>
-            </a>
-          </li>
-        </ul>
-        <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch language">
-          <span id="lang-text">PL</span>
-        </button>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+        <a href="index.html" class="nav-brand">
+          <span class="nav-brand-badge">KK</span>
+          <span>Kacper Kulik</span>
+        </a>
+        <div class="nav-right">
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">
+                <span data-lang="en">Home</span>
+                <span data-lang="pl" style="display: none;">Start</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="experience.html" class="nav-link">
+                <span data-lang="en">Experience</span>
+                <span data-lang="pl" style="display: none;">Doświadczenie</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="projects.html" class="nav-link active">
+                <span data-lang="en">Projects</span>
+                <span data-lang="pl" style="display: none;">Projekty</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="skills.html" class="nav-link">
+                <span data-lang="en">Skills &amp; Edu</span>
+                <span data-lang="pl" style="display: none;">Umiejętności</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">
+                <span data-lang="en">Contact</span>
+                <span data-lang="pl" style="display: none;">Kontakt</span>
+              </a>
+            </li>
+          </ul>
+          <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch language">
+            <span id="lang-text">PL</span>
+          </button>
+          <button class="hamburger" aria-label="Toggle navigation menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
         </div>
       </div>
     </nav>
@@ -60,7 +66,7 @@
   <main>
     <div class="container">
       <div style="margin-bottom: 1.5rem;">
-        <a href="projects.html" class="btn btn--outline">
+        <a href="projects.html" class="btn btn--outline btn--sm">
           <span data-lang="en">← Back to Projects</span>
           <span data-lang="pl" style="display: none;">← Powrót do Projektów</span>
         </a>
@@ -533,7 +539,7 @@ def load_data(cfg: DataConfig) -&gt; pd.DataFrame:
                     <li>Trades: 1484</li>
                     <li>Total PnL ($): 1873.93</li>
                     <li>Days ON: 58</li>
-                    <li>Trade WinRate (trades): 4</li>
+                    <li>Trade WinRate (trades): 45.3%</li>
                   </ul>
                 </div>
               </div>
@@ -688,38 +694,22 @@ def load_data(cfg: DataConfig) -&gt; pd.DataFrame:
   </main>
 
   <footer id="contact" class="contact-footer">
-    <h2>
-      <span data-lang="pl">Kontakt</span>
-      <span data-lang="en" style="display: none;">Contact</span>
-    </h2>
-    <div class="contact-info">
-      <div class="contact-item">
-        <strong>Email:</strong> <a href="mailto:Kacper.Kulik2003@wp.pl">Kacper.Kulik2003@wp.pl</a>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>Kacper Kulik</strong> ·
+        <span data-lang="en">Kraków, Poland</span>
+        <span data-lang="pl" style="display: none;">Kraków, Polska</span>
       </div>
-      <div class="contact-item">
-        <strong>
-          <span data-lang="pl">Telefon:</span>
-          <span data-lang="en" style="display: none;">Phone:</span>
-        </strong> <a href="tel:+48690900704">+48 690 900 704</a>
-      </div>
-      <div class="contact-item">
-        <strong>
-          <span data-lang="pl">Lokalizacja:</span>
-          <span data-lang="en" style="display: none;">Location:</span>
-        </strong>
-        <span data-lang="pl">Kraków, Polska / Zdalnie</span>
-        <span data-lang="en" style="display: none;">Krakow, Poland / Remote</span>
-      </div>
-      <div class="contact-item">
-        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kacper-kulik-3713b1302" target="_blank" rel="noopener noreferrer">linkedin.com/in/kacper-kulik</a>
-      </div>
-      <div class="contact-item">
-        <strong>GitHub:</strong> <a href="https://github.com/MrowkaH" target="_blank" rel="noopener noreferrer">github.com/MrowkaH</a>
+      <div class="contact-info">
+        <div class="contact-item"><a href="mailto:Kacper.Kulik2003@wp.pl">Kacper.Kulik2003@wp.pl</a></div>
+        <div class="contact-item"><a href="tel:+48690900704">+48 690 900 704</a></div>
+        <div class="contact-item"><a href="https://www.linkedin.com/in/kacper-kulik-3713b1302" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
+        <div class="contact-item"><a href="https://github.com/MrowkaH" target="_blank" rel="noopener noreferrer">GitHub</a></div>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
   
   <script>
     // Lightweight tooltips using existing language toggle
