@@ -542,6 +542,24 @@ header {
   font-weight: 500;
 }
 
+.snapshot-edu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: 0.15rem;
+}
+
+.snapshot-edu-item {
+  display: block;
+  line-height: 1.35;
+}
+
+.snapshot-edu-item small {
+  display: block;
+  font-size: 0.84rem;
+  margin-top: 0.15rem;
+}
+
 /* ====== HOME CARDS & PREVIEWS ====== */
 .pillars-grid {
   display: grid;
