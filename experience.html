@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience — Kacper Kulik</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-container">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <span data-lang="en">Home</span>
+              <span data-lang="pl" style="display: none;">Strona główna</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="experience.html" class="nav-link active">
+              <span data-lang="en">Experience</span>
+              <span data-lang="pl" style="display: none;">Doświadczenie</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="projects.html" class="nav-link">
+              <span data-lang="en">Projects</span>
+              <span data-lang="pl" style="display: none;">Projekty</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="skills.html" class="nav-link">
+              <span data-lang="en">Skills &amp; Education</span>
+              <span data-lang="pl" style="display: none;">Umiejętności</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">
+              <span data-lang="en">Contact</span>
+              <span data-lang="pl" style="display: none;">Kontakt</span>
+            </a>
+          </li>
+        </ul>
+        <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch language">
+          <span id="lang-text">PL</span>
+        </button>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <h1>
+        <span data-lang="en">Professional Experience</span>
+        <span data-lang="pl" style="display: none;">Doświadczenie Zawodowe</span>
+      </h1>
+      <p>
+        <span data-lang="en">Hands-on experience in banking technology, payment systems testing, legacy scripting, and enterprise IT operations.</span>
+        <span data-lang="pl" style="display: none;">Praktyczne doświadczenie w technologii bankowej, testowaniu systemów płatniczych, skryptowaniu legacy oraz operacjach IT.</span>
+      </p>
+    </div>
+
+    <div class="container">
+
+      <!-- Experience 1: BBH -->
+      <div class="card" style="padding: 0; overflow: hidden;">
+        <div class="card__header" style="background-color: #28303c; padding: 1.5rem 2rem; border-bottom: 1px solid var(--color-border); margin-bottom: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
+            <div>
+              <h2 style="margin-bottom: 0.35rem; color: #ffffff;">
+                <span data-lang="en">Business Analyst</span>
+                <span data-lang="pl" style="display: none;">Business Analyst</span>
+              </h2>
+              <h3 style="color: var(--color-primary); font-size: 1.25rem; margin: 0; font-weight: 600;">
+                Brown Brothers Harriman (BBH)
+              </h3>
+            </div>
+            <div style="color: var(--color-text-muted); font-size: 0.95rem; font-weight: 600; margin-top: 4px;">
+              <span data-lang="en">Apr 2026 – Present</span>
+              <span data-lang="pl" style="display: none;">Kwiecień 2026 – Obecnie</span>
+            </div>
+          </div>
+          <div class="tech-tags">
+            <span class="tech-tag">UAT / SIT</span>
+            <span class="tech-tag">SWIFT MT</span>
+            <span class="tech-tag">ISO 20022 MX</span>
+            <span class="tech-tag">IBM Legacy Scripting</span>
+            <span class="tech-tag">qTest</span>
+            <span class="tech-tag">Jenkins</span>
+            <span class="tech-tag">FircoSoft</span>
+            <span class="tech-tag">Excel &amp; Word</span>
+          </div>
+        </div>
+
+        <div class="card__body" style="padding: 1.75rem 2rem; text-align: left;">
+          <div data-lang="en">
+            <p>Working on payment applications across testing, defect investigation, and internal automation workflows, bridging business requirements and software engineering teams.</p>
+            <strong>Key Responsibilities:</strong>
+            <ul class="feature-list">
+              <li><strong>UAT &amp; SIT Execution:</strong> Execute User Acceptance Testing (UAT) and support System Integration Testing (SIT) for payment applications, identifying functional and technical defects before client release.</li>
+              <li><strong>Legacy-System Scripting:</strong> Write scripts and macros in a legacy IBM language for the internal payment management system.</li>
+              <li><strong>Payment Processing &amp; Messaging:</strong> Support payment processing and verification; investigate incorrect transactions and analyse SWIFT MT and ISO 20022 MX messages.</li>
+              <li><strong>Defect Investigation &amp; Coordination:</strong> Reproduce defects, document reproduction steps and expected versus actual behaviour, and coordinate findings with developers and business teams.</li>
+              <li><strong>Operational &amp; QA Tooling:</strong> Work with qTest, Jenkins, FircoSoft, Excel, and Word in testing and operational workflows.</li>
+            </ul>
+          </div>
+
+          <div data-lang="pl" style="display: none;">
+            <p>Praca przy aplikacjach płatniczych w obszarze testów, analizy defektów oraz wewnętrznej automatyzacji, łącząca wymagania biznesowe z zespołami developerskimi.</p>
+            <strong>Główne obowiązki:</strong>
+            <ul class="feature-list">
+              <li><strong>Testy UAT i SIT:</strong> Wykonywanie testów akceptacyjnych (UAT) oraz wsparcie testów integracyjnych (SIT) dla aplikacji płatniczych, wykrywanie defektów funkcjonalnych i technicznych przed wydaniem dla klienta.</li>
+              <li><strong>Skryptowanie systemów legacy:</strong> Pisanie skryptów i makr w języku legacy IBM dla wewnętrznego systemu zarządzania płatnościami.</li>
+              <li><strong>Przetwarzanie płatności:</strong> Wsparcie weryfikacji i procesowania płatności; badanie błędnych transakcji oraz analiza komunikatów SWIFT MT i ISO 20022 MX.</li>
+              <li><strong>Analiza i koordynacja defektów:</strong> Reprodukcja błędów, dokumentowanie kroków oraz zachowań oczekiwanych vs. rzeczywistych, a także koordynacja ustaleń z deweloperami i zespołami biznesowymi.</li>
+              <li><strong>Narzędzia testowe i operacyjne:</strong> Codzienna praca z qTest, Jenkins, FircoSoft, Excel oraz Word w procesach testowych i operacyjnych.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience 2: Luxoft -->
+      <div class="card" style="padding: 0; overflow: hidden;">
+        <div class="card__header" style="background-color: #28303c; padding: 1.5rem 2rem; border-bottom: 1px solid var(--color-border); margin-bottom: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
+            <div>
+              <h2 style="margin-bottom: 0.35rem; color: #ffffff;">
+                <span data-lang="en">IT Support / Asset Management</span>
+                <span data-lang="pl" style="display: none;">IT Support / Asset Management</span>
+              </h2>
+              <h3 style="color: var(--color-primary); font-size: 1.25rem; margin: 0; font-weight: 600;">
+                Luxoft Poland
+              </h3>
+            </div>
+            <div style="color: var(--color-text-muted); font-size: 0.95rem; font-weight: 600; margin-top: 4px;">
+              <span data-lang="en">Mar 2025 – Oct 2025 (8 mos.)</span>
+              <span data-lang="pl" style="display: none;">Marzec 2025 – Październik 2025 (8 mies.)</span>
+            </div>
+          </div>
+          <div class="tech-tags">
+            <span class="tech-tag">First-Line IT Support</span>
+            <span class="tech-tag">Ticketing Systems</span>
+            <span class="tech-tag">Oracle Tools</span>
+            <span class="tech-tag">Asset Management</span>
+            <span class="tech-tag">Onboarding / Offboarding</span>
+            <span class="tech-tag">Excel</span>
+          </div>
+        </div>
+
+        <div class="card__body" style="padding: 1.75rem 2rem; text-align: left;">
+          <div data-lang="en">
+            <p>Combined first-line technical support with corporate IT asset lifecycle management, serving as a direct point of contact for daily technical issues and workstation provisioning.</p>
+            <strong>Key Responsibilities:</strong>
+            <ul class="feature-list">
+              <li><strong>First-Line IT Support:</strong> Provided front-line technical support, internal ticket handling (ServiceNow-style platform), workstation setup, and hardware troubleshooting for corporate users.</li>
+              <li><strong>Asset Tracking &amp; Inventory:</strong> Supported IT asset tracking, stock management, handover documentation, and inventory audits using Oracle tools and Excel.</li>
+              <li><strong>Onboarding &amp; Offboarding:</strong> Prepared and configured workstations and user hardware for new hires and handled equipment verification and collection for departing employees.</li>
+              <li><strong>Office &amp; AV Infrastructure:</strong> Maintained conference room AV systems, videoconferencing setups, and office hardware reliability to ensure team continuity.</li>
+            </ul>
+          </div>
+
+          <div data-lang="pl" style="display: none;">
+            <p>Rola łącząca pierwszą linię wsparcia technicznego z zarządzaniem cyklem życia zasobów IT w środowisku korporacyjnym.</p>
+            <strong>Główne obowiązki:</strong>
+            <ul class="feature-list">
+              <li><strong>Pierwsza linia wsparcia IT:</strong> Obsługa zgłoszeń użytkowników w wewnętrznym systemie ticketowym, konfiguracja sprzętu oraz diagnozowanie i rozwiązywanie problemów technicznych.</li>
+              <li><strong>Zarządzanie zasobami (Asset Management):</strong> Ewidencja sprzętu IT, kontrola stanów magazynowych, archiwizacja dokumentacji oraz procesy inwentaryzacyjne w narzędziach Oracle i Excel.</li>
+              <li><strong>Onboarding i Offboarding:</strong> Przygotowywanie i konfiguracja stanowisk pracy dla nowych pracowników oraz weryfikacja i odbiór sprzętu przy odejściach.</li>
+              <li><strong>Infrastruktura biurowa i AV:</strong> Utrzymanie sprawności systemów audiowizualnych w salach konferencyjnych oraz sprzętu biurowego dla zapewnienia ciągłości pracy zespołów.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="contact-footer">
+    <h2>
+      <span data-lang="en">Contact</span>
+      <span data-lang="pl" style="display: none;">Kontakt</span>
+    </h2>
+    <div class="contact-info">
+      <div class="contact-item">
+        <strong>Email:</strong> <a href="mailto:Kacper.Kulik2003@wp.pl">Kacper.Kulik2003@wp.pl</a>
+      </div>
+      <div class="contact-item">
+        <strong>
+          <span data-lang="en">Phone:</span>
+          <span data-lang="pl" style="display: none;">Telefon:</span>
+        </strong>
+        <a href="tel:+48690900704">+48 690 900 704</a>
+      </div>
+      <div class="contact-item">
+        <strong>
+          <span data-lang="en">Location:</span>
+          <span data-lang="pl" style="display: none;">Lokalizacja:</span>
+        </strong>
+        <span data-lang="en">Kraków, Poland / Remote</span>
+        <span data-lang="pl" style="display: none;">Kraków, Polska / Zdalnie</span>
+      </div>
+      <div class="contact-item">
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kacper-kulik-3713b1302" target="_blank" rel="noopener noreferrer">linkedin.com/in/kacper-kulik</a>
+      </div>
+      <div class="contact-item">
+        <strong>GitHub:</strong> <a href="https://github.com/MrowkaH" target="_blank" rel="noopener noreferrer">github.com/MrowkaH</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

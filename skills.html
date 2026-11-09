@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills &amp; Education — Kacper Kulik</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-container">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <span data-lang="en">Home</span>
+              <span data-lang="pl" style="display: none;">Strona główna</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="experience.html" class="nav-link">
+              <span data-lang="en">Experience</span>
+              <span data-lang="pl" style="display: none;">Doświadczenie</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="projects.html" class="nav-link">
+              <span data-lang="en">Projects</span>
+              <span data-lang="pl" style="display: none;">Projekty</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="skills.html" class="nav-link active">
+              <span data-lang="en">Skills &amp; Education</span>
+              <span data-lang="pl" style="display: none;">Umiejętności</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">
+              <span data-lang="en">Contact</span>
+              <span data-lang="pl" style="display: none;">Kontakt</span>
+            </a>
+          </li>
+        </ul>
+        <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch language">
+          <span id="lang-text">PL</span>
+        </button>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <h1>
+        <span data-lang="en">Skills, Education &amp; Certifications</span>
+        <span data-lang="pl" style="display: none;">Umiejętności, Edukacja i Certyfikaty</span>
+      </h1>
+      <p>
+        <span data-lang="en">Technical stack across software engineering, testing, data science, and banking payment infrastructure.</span>
+        <span data-lang="pl" style="display: none;">Kompetencje technologiczne w obszarze inżynierii oprogramowania, testowania, analizy danych oraz bankowości.</span>
+      </p>
+    </div>
+
+    <div class="container">
+
+      <!-- ==================== TECHNICAL SKILLS ==================== -->
+      <section class="skills-section">
+        <h2>
+          <span data-lang="en">Technical Skills</span>
+          <span data-lang="pl" style="display: none;">Umiejętności Techniczne</span>
+        </h2>
+
+        <div class="skills-grid">
+
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <span class="skill-icon">💻</span>
+              <h3>
+                <span data-lang="en">Programming Languages</span>
+                <span data-lang="pl" style="display: none;">Języki Programowania</span>
+              </h3>
+            </div>
+            <p>
+              <span data-lang="en">General-purpose programming, OOP, performance-critical C++, foundational SQL, and legacy scripting.</span>
+              <span data-lang="pl" style="display: none;">Programowanie ogólnego przeznaczenia, OOP, wydajny C++, podstawy SQL oraz skryptowanie systemów legacy.</span>
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">C#</span>
+              <span class="tech-tag">SQL (foundational)</span>
+              <span class="tech-tag">MQL5</span>
+              <span class="tech-tag">Legacy IBM Scripting</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <span class="skill-icon">🧪</span>
+              <h3>
+                <span data-lang="en">Testing &amp; QA Tools</span>
+                <span data-lang="pl" style="display: none;">Testowanie i Narzędzia QA</span>
+              </h3>
+            </div>
+            <p>
+              <span data-lang="en">Acceptance &amp; integration testing, defect reproduction, CI pipelines, and enterprise tracking workflows.</span>
+              <span data-lang="pl" style="display: none;">Testy akceptacyjne i integracyjne, reprodukcja defektów, CI oraz narzędzia raportowania i weryfikacji.</span>
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">UAT</span>
+              <span class="tech-tag">SIT</span>
+              <span class="tech-tag">qTest</span>
+              <span class="tech-tag">Jenkins</span>
+              <span class="tech-tag">FircoSoft</span>
+              <span class="tech-tag">Jira</span>
+              <span class="tech-tag">Git</span>
+              <span class="tech-tag">Excel</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <span class="skill-icon">📊</span>
+              <h3>
+                <span data-lang="en">Libraries &amp; Platforms</span>
+                <span data-lang="pl" style="display: none;">Biblioteki i Platformy</span>
+              </h3>
+            </div>
+            <p>
+              <span data-lang="en">Data analysis, machine learning pipelines, real-time 3D engine development, and trading automation.</span>
+              <span data-lang="pl" style="display: none;">Analiza danych, uczenie maszynowe, rozwój systemów w silniku 3D oraz automatyzacja tradingu.</span>
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">NumPy</span>
+              <span class="tech-tag">Matplotlib</span>
+              <span class="tech-tag">Scikit-learn</span>
+              <span class="tech-tag">Unreal Engine 5</span>
+              <span class="tech-tag">MetaTrader 5</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <span class="skill-icon">🏦</span>
+              <h3>
+                <span data-lang="en">Banking &amp; Payments Domain</span>
+                <span data-lang="pl" style="display: none;">Domena Bankowa i Płatności</span>
+              </h3>
+            </div>
+            <p>
+              <span data-lang="en">International payment messaging standards, transaction verification, and post-trade operations knowledge.</span>
+              <span data-lang="pl" style="display: none;">Międzynarodowe standardy komunikatów płatniczych, weryfikacja transakcji i wiedza o cyklu życia transakcji.</span>
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">SWIFT MT</span>
+              <span class="tech-tag">ISO 20022 MX</span>
+              <span class="tech-tag">Payment Lifecycle</span>
+              <span class="tech-tag">Payment Investigation</span>
+              <span class="tech-tag">Verification</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== EDUCATION ==================== -->
+      <section class="education-section">
+        <h2>
+          <span data-lang="en">Education</span>
+          <span data-lang="pl" style="display: none;">Edukacja</span>
+        </h2>
+
+        <div class="education-card">
+          <div class="education-entry">
+            <span class="education-badge">
+              <span data-lang="en">In Progress · Part-time</span>
+              <span data-lang="pl" style="display: none;">W toku · Zaoczne</span>
+            </span>
+            <h3>
+              <span data-lang="en">MSc in Computer Science</span>
+              <span data-lang="pl" style="display: none;">Magister Informatyki</span>
+            </h3>
+            <p>
+              <span data-lang="en">University of the National Education Commission, Kraków</span>
+              <span data-lang="pl" style="display: none;">Uniwersytet Komisji Edukacji Narodowej, Kraków</span>
+            </p>
+          </div>
+
+          <div class="education-entry">
+            <span class="education-badge">
+              <span data-lang="en">Completed · 4.0 / 5.0</span>
+              <span data-lang="pl" style="display: none;">Ukończone · 4.0 / 5.0</span>
+            </span>
+            <h3>
+              <span data-lang="en">Bachelor of Engineering in Computer Science</span>
+              <span data-lang="pl" style="display: none;">Inżynier Informatyki</span>
+            </h3>
+            <p>
+              <span data-lang="en">Final grade: 4.0/5.0 (Polish scale)</span>
+              <span data-lang="pl" style="display: none;">Ocena końcowa: 4.0/5.0</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== CERTIFICATIONS ==================== -->
+      <section class="certificate-section">
+        <h2>
+          <span data-lang="en">Banking Certifications (Luxoft Training, 2025)</span>
+          <span data-lang="pl" style="display: none;">Certyfikaty Bankowe (Luxoft Training, 2025)</span>
+        </h2>
+
+        <div class="certificates-grid">
+
+          <div class="certificate-item">
+            <img src="img/cert2.png" alt="FIN-036 Trade Lifecycle Certificate" id="certImg1">
+            <h3>
+              <span data-lang="en">FIN-036: Trade Lifecycle</span>
+              <span data-lang="pl" style="display: none;">FIN-036: Cykl Życia Transakcji</span>
+            </h3>
+            <p>
+              <span data-lang="en">Complete financial transaction lifecycle from order placement through execution, clearing, settlement, reconciliation, and compliance.</span>
+              <span data-lang="pl" style="display: none;">Pełny cykl życia transakcji finansowych: front, middle i back office, clearing, settlement, reconciliation oraz compliance.</span>
+            </p>
+          </div>
+
+          <div class="certificate-item">
+            <img src="img/cert.png" alt="FIN-023 Introduction to Derivatives Certificate" id="certImg2">
+            <h3>
+              <span data-lang="en">FIN-023: Introduction to Derivatives</span>
+              <span data-lang="pl" style="display: none;">FIN-023: Instrumenty Pochodne</span>
+            </h3>
+            <p>
+              <span data-lang="en">Futures, forwards, options, and swaps — pricing mechanics, hedging strategies, and exchange vs. OTC market operations.</span>
+              <span data-lang="pl" style="display: none;">Kontrakty futures, forward, opcje i swapy — mechanizmy wyceny, strategie zabezpieczające oraz rynek giełdowy i OTC.</span>
+            </p>
+          </div>
+
+          <div class="certificate-item">
+            <img src="img/cert1.png" alt="FIN-020 Introduction to Investment Banking Certificate" id="certImg3">
+            <h3>
+              <span data-lang="en">FIN-020: Introduction to Investment Banking</span>
+              <span data-lang="pl" style="display: none;">FIN-020: Bankowość Inwestycyjna</span>
+            </h3>
+            <p>
+              <span data-lang="en">Capital markets fundamentals, M&amp;A, equity and debt offerings, due diligence, and corporate valuation methods.</span>
+              <span data-lang="pl" style="display: none;">Fundamenty bankowości inwestycyjnej, M&amp;A, emisje akcji i obligacji, procesy due diligence oraz metody wyceny spółek.</span>
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== LANGUAGES ==================== -->
+      <section class="languages-section">
+        <h2>
+          <span data-lang="en">Languages</span>
+          <span data-lang="pl" style="display: none;">Języki</span>
+        </h2>
+
+        <div class="languages-grid">
+          <div class="language-card">
+            <h3>
+              <span data-lang="en">Polish</span>
+              <span data-lang="pl" style="display: none;">Polski</span>
+            </h3>
+            <p>
+              <span data-lang="en">Native</span>
+              <span data-lang="pl" style="display: none;">Język ojczysty</span>
+            </p>
+          </div>
+
+          <div class="language-card">
+            <h3>
+              <span data-lang="en">English</span>
+              <span data-lang="pl" style="display: none;">Angielski</span>
+            </h3>
+            <p>
+              <span data-lang="en">C1 (Advanced)</span>
+              <span data-lang="pl" style="display: none;">C1 (Zaawansowany)</span>
+            </p>
+          </div>
+
+          <div class="language-card">
+            <h3>
+              <span data-lang="en">German</span>
+              <span data-lang="pl" style="display: none;">Niemiecki</span>
+            </h3>
+            <p>
+              <span data-lang="en">A2 (Elementary)</span>
+              <span data-lang="pl" style="display: none;">A2 (Podstawowy)</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Certificate Modals -->
+  <div id="certModal1" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="certModalImg1" alt="Trade Lifecycle Certificate">
+  </div>
+  <div id="certModal2" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="certModalImg2" alt="Derivatives Certificate">
+  </div>
+  <div id="certModal3" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="certModalImg3" alt="Investment Banking Certificate">
+  </div>
+
+  <footer class="contact-footer">
+    <h2>
+      <span data-lang="en">Contact</span>
+      <span data-lang="pl" style="display: none;">Kontakt</span>
+    </h2>
+    <div class="contact-info">
+      <div class="contact-item">
+        <strong>Email:</strong> <a href="mailto:Kacper.Kulik2003@wp.pl">Kacper.Kulik2003@wp.pl</a>
+      </div>
+      <div class="contact-item">
+        <strong>
+          <span data-lang="en">Phone:</span>
+          <span data-lang="pl" style="display: none;">Telefon:</span>
+        </strong>
+        <a href="tel:+48690900704">+48 690 900 704</a>
+      </div>
+      <div class="contact-item">
+        <strong>
+          <span data-lang="en">Location:</span>
+          <span data-lang="pl" style="display: none;">Lokalizacja:</span>
+        </strong>
+        <span data-lang="en">Kraków, Poland / Remote</span>
+        <span data-lang="pl" style="display: none;">Kraków, Polska / Zdalnie</span>
+      </div>
+      <div class="contact-item">
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kacper-kulik-3713b1302" target="_blank" rel="noopener noreferrer">linkedin.com/in/kacper-kulik</a>
+      </div>
+      <div class="contact-item">
+        <strong>GitHub:</strong> <a href="https://github.com/MrowkaH" target="_blank" rel="noopener noreferrer">github.com/MrowkaH</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

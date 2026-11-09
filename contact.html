@@ -1,122 +1,151 @@
 <!DOCTYPE html>
-<html lang="pl" id="html-root">
+<html lang="en" id="html-root">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt - Kacper Kulik</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Kacper Kulik</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="index-final.html" class="nav-link">
-                            <span data-lang="pl">Strona główna</span>
-                            <span data-lang="en" style="display: none;">Home</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="finance-final.html" class="nav-link">
-                            <span data-lang="pl">Portfolio</span>
-                            <span data-lang="en" style="display: none;">Portfolio</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="trading-bots.html" class="nav-link">
-                            <span data-lang="pl">Trading Bots</span>
-                            <span data-lang="en" style="display: none;">Trading Bots</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="it-experience.html" class="nav-link">
-                            <span data-lang="pl">IT Experience</span>
-                            <span data-lang="en" style="display: none;">IT Experience</span>
-                        </a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a href="contact.html" class="nav-link active">
-                            <span data-lang="pl">Kontakt</span>
-                            <span data-lang="en" style="display: none;">Contact</span>
-                        </a>
-                    </li>
-                </ul>
-                <button class="lang-toggle" onclick="toggleLanguage()">
-                    <span id="lang-text">EN</span>
-                </button>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <div class="contact-page-hero">
-            <div class="contact-hero-content">
-                <h1>
-                    <span data-lang="pl">Skontaktuj się ze mną</span>
-                    <span data-lang="en" style="display: none;">Get in Touch</span>
-                </h1>
-                <p class="contact-hero-subtitle">
-                    <span data-lang="pl">Jestem otwarty na nowe możliwości i chętnie nawiążę współpracę.</span>
-                    <span data-lang="en" style="display: none;">I'm open to new opportunities and eager to collaborate.</span>
-                </p>
-            </div>
+  <header>
+    <nav class="navbar">
+      <div class="nav-container">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <span data-lang="en">Home</span>
+              <span data-lang="pl" style="display: none;">Strona główna</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="experience.html" class="nav-link">
+              <span data-lang="en">Experience</span>
+              <span data-lang="pl" style="display: none;">Doświadczenie</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="projects.html" class="nav-link">
+              <span data-lang="en">Projects</span>
+              <span data-lang="pl" style="display: none;">Projekty</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="skills.html" class="nav-link">
+              <span data-lang="en">Skills &amp; Education</span>
+              <span data-lang="pl" style="display: none;">Umiejętności</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link active">
+              <span data-lang="en">Contact</span>
+              <span data-lang="pl" style="display: none;">Kontakt</span>
+            </a>
+          </li>
+        </ul>
+        <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch language">
+          <span id="lang-text">PL</span>
+        </button>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </div>
+      </div>
+    </nav>
+  </header>
 
-        <div class="container">
-            <section class="contact-main-section">
-                <div class="contact-grid">
-                    <div class="contact-card">
-                        <div class="contact-card-icon">📧</div>
-                        <h3>Email</h3>
-                        <p>
-                            <a href="mailto:Kacper.Kulik2003@wp.pl">Kacper.Kulik2003@wp.pl</a>
-                        </p>
-                    </div>
+  <main>
+    <div class="contact-page-hero">
+      <div class="contact-hero-content">
+        <h1>
+          <span data-lang="en">Get in Touch</span>
+          <span data-lang="pl" style="display: none;">Skontaktuj się ze mną</span>
+        </h1>
+        <p class="contact-hero-subtitle">
+          <span data-lang="en">Open to Software Engineer opportunities in banking and financial technology. Available for roles in Kraków or hybrid/remote setups.</span>
+          <span data-lang="pl" style="display: none;">Jestem otwarty na stanowiska Software Engineer w sektorze bankowym i fintech — stacjonarnie w Krakowie, hybrydowo lub zdalnie.</span>
+        </p>
+      </div>
+    </div>
 
-                    <div class="contact-card">
-                        <div class="contact-card-icon">📱</div>
-                        <h3>
-                            <span data-lang="pl">Telefon</span>
-                            <span data-lang="en" style="display: none;">Phone</span>
-                        </h3>
-                        <p>
-                            <a href="tel:+48690900704">+48 690 900 704</a>
-                        </p>
-                    </div>
+    <div class="container">
+      <section class="contact-main-section">
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-card-icon">📧</div>
+            <h3>Email</h3>
+            <p>
+              <a href="mailto:Kacper.Kulik2003@wp.pl">Kacper.Kulik2003@wp.pl</a>
+            </p>
+          </div>
 
-                    <div class="contact-card">
-                        <div class="contact-card-icon">📍</div>
-                        <h3>
-                            <span data-lang="pl">Lokalizacja</span>
-                            <span data-lang="en" style="display: none;">Location</span>
-                        </h3>
-                        <p>
-                            <span data-lang="pl">Kraków, Polska</span>
-                            <span data-lang="en" style="display: none;">Krakow, Poland</span>
-                        </p>
-                    </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">📱</div>
+            <h3>
+              <span data-lang="en">Phone</span>
+              <span data-lang="pl" style="display: none;">Telefon</span>
+            </h3>
+            <p>
+              <a href="tel:+48690900704">+48 690 900 704</a>
+            </p>
+          </div>
 
-                    <div class="contact-card">
-                        <div class="contact-card-icon">💼</div>
-                        <h3>LinkedIn</h3>
-                        <p>
-                            <a href="https://www.linkedin.com/in/kacper-kulik-3713b1302" target="_blank" rel="noopener">
-                                linkedin.com/in/kacper-kulik
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </section>
+          <div class="contact-card">
+            <div class="contact-card-icon">📍</div>
+            <h3>
+              <span data-lang="en">Location</span>
+              <span data-lang="pl" style="display: none;">Lokalizacja</span>
+            </h3>
+            <p>
+              <span data-lang="en">Kraków, Poland</span>
+              <span data-lang="pl" style="display: none;">Kraków, Polska</span>
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon">💼</div>
+            <h3>LinkedIn</h3>
+            <p>
+              <a href="https://www.linkedin.com/in/kacper-kulik-3713b1302" target="_blank" rel="noopener noreferrer">
+                linkedin.com/in/kacper-kulik
+              </a>
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon">🐙</div>
+            <h3>GitHub</h3>
+            <p>
+              <a href="https://github.com/MrowkaH" target="_blank" rel="noopener noreferrer">
+                github.com/MrowkaH
+              </a>
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon">🌐</div>
+            <h3>Portfolio</h3>
+            <p>
+              <a href="https://mrowkah.github.io/" target="_blank" rel="noopener noreferrer">
+                mrowkah.github.io
+              </a>
+            </p>
+          </div>
         </div>
-    </main>
+      </section>
+    </div>
+  </main>
 
-    <script src="script.js"></script>
+  <footer class="contact-footer">
+    <div class="contact-info">
+      <div class="contact-item">
+        <strong>Kacper Kulik</strong> —
+        <span data-lang="en">Computer Science Engineer | Banking Technology | Software Engineering</span>
+        <span data-lang="pl" style="display: none;">Inżynier Informatyki | Technologia Bankowa | Software Engineering</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

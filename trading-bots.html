@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pl" id="html-root">
+<html lang="en" id="html-root">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trading Bots – Dokumentacja | Kacper Kulik</title>
-  <meta name="description" content="Trading Bots – skrócona dokumentacja projektu: architektura, metodologia testów, bezpieczne próbki kodu, metryki i equity curve.">
+  <title>Trading Bots – Documentation | Kacper Kulik</title>
+  <meta name="description" content="Trading Bots – brief project documentation: modular architecture, testing methodology, safe code samples, risk metrics, and equity curve.">
   <link rel="stylesheet" href="style.css">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
@@ -15,45 +15,38 @@
       <div class="nav-container">
         <ul class="nav-menu">
           <li class="nav-item">
-            <a href="index-final.html" class="nav-link">
-              <span data-lang="pl">Strona główna</span>
-              <span data-lang="en" style="display: none;">Home</span>
+            <a href="index.html" class="nav-link">
+              <span data-lang="en">Home</span>
+              <span data-lang="pl" style="display: none;">Strona główna</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="finance-final.html" class="nav-link">
-              <span data-lang="pl">Portfolio</span>
-              <span data-lang="en" style="display: none;">Portfolio</span>
-            </a>
-          </li>
-          
-          <li class="nav-item">
-            <a href="trading-bots.html" class="nav-link active">
-              <span data-lang="pl">Trading Bots</span>
-              <span data-lang="en" style="display: none;">Trading Bots</span>
+            <a href="experience.html" class="nav-link">
+              <span data-lang="en">Experience</span>
+              <span data-lang="pl" style="display: none;">Doświadczenie</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="it-experience.html" class="nav-link">
-              <span data-lang="pl">IT Experience</span>
-              <span data-lang="en" style="display: none;">IT Experience</span>
+            <a href="projects.html" class="nav-link active">
+              <span data-lang="en">Projects</span>
+              <span data-lang="pl" style="display: none;">Projekty</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="inne-final.html" class="nav-link">
-              <span data-lang="pl">O mnie</span>
-              <span data-lang="en" style="display: none;">About Me</span>
+            <a href="skills.html" class="nav-link">
+              <span data-lang="en">Skills &amp; Education</span>
+              <span data-lang="pl" style="display: none;">Umiejętności</span>
             </a>
           </li>
           <li class="nav-item">
             <a href="contact.html" class="nav-link">
-              <span data-lang="pl">Kontakt</span>
-              <span data-lang="en" style="display: none;">Contact</span>
+              <span data-lang="en">Contact</span>
+              <span data-lang="pl" style="display: none;">Kontakt</span>
             </a>
           </li>
         </ul>
-        <button class="lang-toggle" onclick="toggleLanguage()">
-          <span id="lang-text">EN</span>
+        <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch language">
+          <span id="lang-text">PL</span>
         </button>
         <div class="hamburger">
           <span class="bar"></span>
@@ -66,6 +59,12 @@
 
   <main>
     <div class="container">
+      <div style="margin-bottom: 1.5rem;">
+        <a href="projects.html" class="btn btn--outline">
+          <span data-lang="en">← Back to Projects</span>
+          <span data-lang="pl" style="display: none;">← Powrót do Projektów</span>
+        </a>
+      </div>
       <!-- HERO / OVERVIEW -->
       <div class="card">
         <div class="card__header">
@@ -712,7 +711,10 @@ def load_data(cfg: DataConfig) -&gt; pd.DataFrame:
         <span data-lang="en" style="display: none;">Krakow, Poland / Remote</span>
       </div>
       <div class="contact-item">
-        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kacper-kulik-3713b1302" target="_blank" rel="noopener">linkedin.com/in/kacper-kulik</a>
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kacper-kulik-3713b1302" target="_blank" rel="noopener noreferrer">linkedin.com/in/kacper-kulik</a>
+      </div>
+      <div class="contact-item">
+        <strong>GitHub:</strong> <a href="https://github.com/MrowkaH" target="_blank" rel="noopener noreferrer">github.com/MrowkaH</a>
       </div>
     </div>
   </footer>
